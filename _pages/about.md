@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: San Carlos, Ca | (650) 704-3374 
+subtitle: San Carlos, Ca | (650) 704-3374
 
 profile:
   align: right
