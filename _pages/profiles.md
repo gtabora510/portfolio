@@ -1,9 +1,9 @@
 ---
 layout: profiles
-permalink: /people/
-title: people
-description: members of the lab or group
-nav: true
+permalink: /references/
+title: references
+description: Colleagues and mentors who influenced my career
+nav: false
 nav_order: 7
 
 profiles:
