@@ -3,7 +3,7 @@ cv:
   label: Content Designer
   email: gtabora@gmail.com
   location: Silicon Valley, CA
-  image: "profile_pic_color.jpg"
+  photo: "profile_pic_color.jpg"
   summary: 
 
   social_networks:
@@ -25,7 +25,7 @@ cv:
         position: Content Designer
         location: Palo Alto, CA
         start_date: 2024
-        end_date: Present
+        end_date: present
         highlights:
           - Defined content strategy for the JPMC Artificial Intelligence/Machine Learning platform.
           - Defined content strategy recommendations based on user personas, their journey with the JPMC Integrated Engineers Portal and AI/ML platform, content standards, needed improvements, integrations with other products, and content gaps.
