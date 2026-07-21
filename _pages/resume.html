@@ -1,21 +1,17 @@
 ---
-layout: resume
+layout: page
 permalink: /resume/
 title: resume
 nav: true
 nav_order: 9
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ginger Tabora — Technical Writer &amp; Content Strategist / UX Writer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<div class="resume-page">
 <style>
-  :root{
+  .resume-page{
     --ink:#1C232B;
     --navy-900:#0A1F3D;
     --navy-800:#122C52;
@@ -36,17 +32,7 @@ nav_order: 9
     --display:'Fraunces', serif;
     --body:'Inter', sans-serif;
     --mono:'JetBrains Mono', monospace;
-  }
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  }
-
-  body{
     font-family:var(--body);
     background:var(--silver);
     color:var(--ink);
@@ -54,65 +40,21 @@ nav_order: 9
     font-size:16px;
   }
 
-  a{color:var(--navy-700);}
-  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible{
+  .resume-page, .resume-page *{box-sizing:border-box; margin:0; padding:0;}
+
+  @media (prefers-reduced-motion: reduce){
+    .resume-page, .resume-page *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  .resume-page a{color:var(--navy-700);}
+  .resume-page a:focus-visible, .resume-page button:focus-visible, .resume-page input:focus-visible, .resume-page summary:focus-visible{
     outline:2px solid var(--navy-700);
     outline-offset:2px;
     border-radius:4px;
   }
 
-  /* ---------- TOP BAR ---------- */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    display:flex; align-items:center; gap:24px;
-    padding:14px 28px;
-    background:rgba(29,63,110,0.07);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .brand{
-    font-family:var(--display);
-    font-weight:700;
-    font-size:1.05rem;
-    color:var(--navy-900);
-    display:flex; align-items:center; gap:8px;
-    white-space:nowrap;
-  }
-  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--bluegray-600);display:inline-block;}
-  .topnav{display:flex; gap:20px; flex:1; overflow-x:auto;}
-  .topnav a{
-    font-family:var(--mono);
-    font-size:0.82rem;
-    color:var(--navy-900);
-    text-decoration:none;
-    white-space:nowrap;
-    padding:6px 4px;
-    border-bottom:2px solid transparent;
-    transition:border-color .15s ease, color .15s ease;
-  }
-  .topnav a:hover{border-color:var(--bluegray-600);}
-  .searchbox{
-    display:flex; align-items:center; gap:6px;
-    background:var(--bluegray-100);
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:6px 10px;
-    min-width:170px;
-  }
-  .searchbox input{
-    border:none; background:transparent; outline:none;
-    font-family:var(--mono); font-size:0.78rem; color:var(--ink);
-    width:100%;
-  }
-  .searchbox svg{flex-shrink:0; opacity:.55;}
-  .version-badge{
-    font-family:var(--mono); font-size:0.72rem;
-    background:var(--navy-900); color:var(--white);
-    padding:4px 9px; border-radius:6px; white-space:nowrap;
-  }
-
   /* ---------- LAYOUT ---------- */
-  .layout{
+  .resume-page .layout{
     display:grid;
     grid-template-columns:280px 1fr;
     max-width:1180px;
@@ -120,56 +62,38 @@ nav_order: 9
     gap:0;
   }
   @media (max-width: 860px){
-    .layout{grid-template-columns:1fr;}
-    .sidebar{position:static; height:auto; border-right:none; border-bottom:1px solid var(--line);}
+    .resume-page .layout{grid-template-columns:1fr;}
+    .resume-page .sidebar{position:static; height:auto; border-right:none; border-bottom:1px solid var(--line);}
   }
 
   /* ---------- SIDEBAR ---------- */
-  .sidebar{
+  .resume-page .sidebar{
     padding:36px 24px;
     border-right:1px solid var(--line);
     position:sticky;
     top:0;
   }
-  .avatar{
-    width:104px; height:104px; border-radius:50%;
-    border:2px dashed var(--bluegray-600);
-    background:var(--bluegray-100);
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:4px; color:var(--navy-700);
-    margin-bottom:16px;
-    cursor:default;
-    overflow:hidden;
-  }
-  .avatar img{
-    width:100%; height:100%;
-    object-fit:cover;
-    object-position:50% 50%;
-    display:block;
-    border-radius:50%;
-  }
-  .avatar span{font-size:0.62rem; font-family:var(--mono); text-align:center; line-height:1.2; padding:0 8px;}
-  .name{font-family:var(--display); font-size:1.4rem; font-weight:700; color:var(--navy-900); line-height:1.2;}
-  .role{font-size:0.92rem; color:var(--navy-700); margin-top:4px; font-weight:500;}
+  .resume-page .name{font-family:var(--display); font-size:1.4rem; font-weight:700; color:var(--navy-900); line-height:1.2;}
+  .resume-page .role{font-size:0.92rem; color:var(--navy-700); margin-top:4px; font-weight:500;}
 
-  .side-contact{list-style:none; margin-top:20px; font-size:0.86rem;}
-  .side-contact li{margin-bottom:8px; display:flex; gap:8px; align-items:flex-start; color:var(--ink);}
-  .side-contact li svg{flex-shrink:0; margin-top:3px; opacity:.6;}
-  .side-contact a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
-  .side-contact a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
+  .resume-page .side-contact{list-style:none; margin-top:20px; font-size:0.86rem;}
+  .resume-page .side-contact li{margin-bottom:8px; display:flex; gap:8px; align-items:flex-start; color:var(--ink);}
+  .resume-page .side-contact li svg{flex-shrink:0; margin-top:3px; opacity:.6;}
+  .resume-page .side-contact a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
+  .resume-page .side-contact a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
 
-  .side-block-title{
+  .resume-page .side-block-title{
     font-family:var(--mono); font-size:0.7rem; letter-spacing:.06em; text-transform:uppercase;
     color:var(--bluegray-600); margin:26px 0 10px;
   }
-  .toc{list-style:none; font-size:0.86rem;}
-  .toc li a{
+  .resume-page .toc{list-style:none; font-size:0.86rem;}
+  .resume-page .toc li a{
     display:block; padding:5px 0; color:var(--ink); text-decoration:none; border-left:2px solid transparent; padding-left:10px;
   }
-  .toc li a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
+  .resume-page .toc li a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
 
-  .tagcloud{display:flex; flex-wrap:wrap; gap:6px;}
-  .tag{
+  .resume-page .tagcloud{display:flex; flex-wrap:wrap; gap:6px;}
+  .resume-page .tag{
     font-family:var(--mono); font-size:0.68rem;
     background:var(--bluegray-100); color:var(--navy-900);
     border:1px solid var(--line);
@@ -177,9 +101,9 @@ nav_order: 9
   }
 
   /* ---------- MAIN ---------- */
-  main{padding:36px 40px 80px; min-width:0;}
+  .resume-page main{padding:36px 40px 80px; min-width:0;}
 
-  .hero-banner{
+  .resume-page .hero-banner{
     background:linear-gradient(135deg, var(--navy-900), var(--navy-700));
     border-radius:14px;
     padding:28px 30px;
@@ -188,23 +112,22 @@ nav_order: 9
     position:relative;
     overflow:hidden;
   }
-  .hero-banner::after{
+  .resume-page .hero-banner::after{
     content:"";
     position:absolute; inset:0;
     background:radial-gradient(circle at 90% -10%, rgba(193,93,122,0.45), transparent 60%);
     pointer-events:none;
   }
-  .hero-label{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-100); letter-spacing:.05em; position:relative;}
-  .hero-name{font-family:var(--display); font-size:1.9rem; font-weight:700; margin-top:12px; position:relative;}
-  .hero-role{font-size:1rem; color:var(--bluegray-100); margin-top:4px; font-weight:500; position:relative;}
-  .hero-tagline{font-size:0.98rem; color:#D7DEE5; margin-top:14px; max-width:56ch; line-height:1.55; position:relative;}
+  .resume-page .hero-name{font-family:var(--display); font-size:1.9rem; font-weight:700; margin-top:12px; position:relative; color:var(--white);}
+  .resume-page .hero-role{font-size:1rem; color:var(--bluegray-100); margin-top:4px; font-weight:500; position:relative;}
+  .resume-page .hero-tagline{font-size:0.98rem; color:#D7DEE5; margin-top:14px; max-width:56ch; line-height:1.55; position:relative;}
 
-  section{margin-bottom:56px; scroll-margin-top:80px;}
-  .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:20px;}
-  .section-head h2{font-family:var(--display); font-size:1.5rem; color:var(--navy-900); font-weight:700;}
-  .section-head .path{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
+  .resume-page section{margin-bottom:56px; scroll-margin-top:80px;}
+  .resume-page .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:20px;}
+  .resume-page .section-head h2{font-family:var(--display); font-size:1.5rem; color:var(--navy-900); font-weight:700;}
+  .resume-page .section-head .path{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
 
-  .readme{
+  .resume-page .readme{
     background:var(--bluegray-050);
     border:1px solid var(--line);
     border-left:4px solid var(--navy-700);
@@ -212,8 +135,8 @@ nav_order: 9
     padding:18px 22px;
     font-size:0.98rem;
   }
-  .readme p + p{margin-top:12px;}
-  .readme .quote{
+  .resume-page .readme p + p{margin-top:12px;}
+  .resume-page .readme .quote{
     font-style:italic;
     font-family:var(--display);
     color:var(--navy-900);
@@ -223,7 +146,7 @@ nav_order: 9
   }
 
   /* experience entry */
-  .entry{
+  .resume-page .entry{
     border:1px solid var(--line);
     border-radius:10px;
     padding:20px 22px;
@@ -231,39 +154,39 @@ nav_order: 9
     background:var(--white);
     transition:box-shadow .2s ease, transform .2s ease;
   }
-  .entry:hover{box-shadow:0 6px 18px rgba(30,73,118,0.14); transform:translateY(-1px);}
-  .entry-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center; margin-bottom:4px;}
-  .entry-version{font-family:var(--mono); font-weight:600; color:var(--navy-700); font-size:0.95rem;}
-  .entry-dates{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
-  .entry-company{font-family:var(--display); font-weight:600; font-size:1.05rem; margin-bottom:2px;}
-  .entry-note{font-size:0.82rem; color:var(--neutral); margin-bottom:14px;}
-  .entry ul{list-style:none;}
-  .entry li{
+  .resume-page .entry:hover{box-shadow:0 6px 18px rgba(30,73,118,0.14); transform:translateY(-1px);}
+  .resume-page .entry-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center; margin-bottom:4px;}
+  .resume-page .entry-version{font-family:var(--mono); font-weight:600; color:var(--navy-700); font-size:0.95rem;}
+  .resume-page .entry-dates{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
+  .resume-page .entry-company{font-family:var(--display); font-weight:600; font-size:1.05rem; margin-bottom:2px;}
+  .resume-page .entry-note{font-size:0.82rem; color:var(--neutral); margin-bottom:14px;}
+  .resume-page .entry ul{list-style:none;}
+  .resume-page .entry li{
     display:flex; gap:10px; padding:6px 0; font-size:0.92rem; align-items:flex-start;
     border-top:1px solid var(--bluegray-050);
   }
-  .entry li:first-child{border-top:none;}
-  .commit-tag{
+  .resume-page .entry li:first-child{border-top:none;}
+  .resume-page .commit-tag{
     font-family:var(--mono); font-size:0.68rem; font-weight:600;
     padding:2px 6px; border-radius:4px; flex-shrink:0; margin-top:2px;
     white-space:nowrap;
   }
-  .tag-feature{background:var(--bluegray-100); color:var(--navy-700);}
-  .tag-fix{background:var(--bluegray-deep); color:var(--navy-900);}
-  .tag-docs{background:var(--bluegray-050); color:var(--navy-600);}
-  .tag-perf{background:var(--silver-100); color:var(--navy-700);}
-  .tag-product-management{background:var(--neutral-bg); color:var(--neutral);}
+  .resume-page .tag-feature{background:var(--bluegray-100); color:var(--navy-700);}
+  .resume-page .tag-fix{background:var(--bluegray-deep); color:var(--navy-900);}
+  .resume-page .tag-docs{background:var(--bluegray-050); color:var(--navy-600);}
+  .resume-page .tag-perf{background:var(--silver-100); color:var(--navy-700);}
+  .resume-page .tag-product-management{background:var(--neutral-bg); color:var(--neutral);}
 
   /* archive (collapsed older experience) */
-  .archive{
+  .resume-page .archive{
     border:1px dashed var(--line);
     border-radius:var(--radius);
     background:rgba(29,63,110,0.07);
     padding:14px 18px;
     margin-bottom:18px;
   }
-  .archive[open]{padding-bottom:20px;}
-  .archive summary{
+  .resume-page .archive[open]{padding-bottom:20px;}
+  .resume-page .archive summary{
     cursor:pointer;
     list-style:none;
     display:flex;
@@ -275,88 +198,83 @@ nav_order: 9
     color:var(--navy-700);
     user-select:none;
   }
-  .archive summary::-webkit-details-marker{display:none;}
-  .archive summary::before{
+  .resume-page .archive summary::-webkit-details-marker{display:none;}
+  .resume-page .archive summary::before{
     content:'▸';
     display:inline-block;
     color:var(--bluegray-600);
     transition:transform .2s ease;
   }
-  .archive[open] summary::before{transform:rotate(90deg);}
-  .archive summary:hover{color:var(--navy-900);}
-  .archive summary:hover::before{color:var(--navy-700);}
-  .archive .entry{margin-top:16px; margin-bottom:0;}
-  .archive .entry + .entry{margin-top:18px;}
+  .resume-page .archive[open] summary::before{transform:rotate(90deg);}
+  .resume-page .archive summary:hover{color:var(--navy-900);}
+  .resume-page .archive summary:hover::before{color:var(--navy-700);}
+  .resume-page .archive .entry{margin-top:16px; margin-bottom:0;}
+  .resume-page .archive .entry + .entry{margin-top:18px;}
 
   /* skills */
-  .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
-  .skill-group{border:1px solid var(--line); border-radius:10px; padding:16px 18px; background:var(--white);}
-  .skill-group h3{font-family:var(--mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:.04em; color:var(--bluegray-600); margin-bottom:10px;}
-  .skill-badges{display:flex; flex-wrap:wrap; gap:6px;}
-  .skill-subgroup{margin-bottom:8px;}
-  .skill-subgroup:last-child{margin-bottom:0;}
-  .badge{
+  .resume-page .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
+  .resume-page .skill-group{border:1px solid var(--line); border-radius:10px; padding:16px 18px; background:var(--white);}
+  .resume-page .skill-group h3{font-family:var(--mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:.04em; color:var(--bluegray-600); margin-bottom:10px;}
+  .resume-page .skill-badges{display:flex; flex-wrap:wrap; gap:6px;}
+  .resume-page .skill-subgroup{margin-bottom:8px;}
+  .resume-page .skill-subgroup:last-child{margin-bottom:0;}
+  .resume-page .badge{
     font-family:var(--mono); font-size:0.72rem;
     background:var(--bluegray-100); color:var(--navy-900);
     border:1px solid var(--line); padding:4px 9px; border-radius:5px;
   }
 
   /* education */
-  .ref-list{border:1px solid var(--line); border-radius:10px; background:var(--white); overflow:hidden;}
-  .ref-list li{list-style:none; display:flex; gap:12px; padding:13px 18px; font-size:0.92rem; border-top:1px solid var(--line); align-items:flex-start;}
-  .ref-list li:first-child{border-top:none;}
-  .ref-list .req-tag{font-family:var(--mono); font-size:0.68rem; font-weight:600; margin-top:2px;}
+  .resume-page .ref-list{border:1px solid var(--line); border-radius:10px; background:var(--white); overflow:hidden;}
+  .resume-page .ref-list li{list-style:none; display:flex; gap:12px; padding:13px 18px; font-size:0.92rem; border-top:1px solid var(--line); align-items:flex-start;}
+  .resume-page .ref-list li:first-child{border-top:none;}
+  .resume-page .ref-list .req-tag{font-family:var(--mono); font-size:0.68rem; font-weight:600; margin-top:2px;}
 
-  .strengths-list{
+  .resume-page .strengths-list{
     border:1px solid var(--line); border-radius:10px; background:var(--white);
     overflow:hidden; list-style:none;
   }
-  .strengths-list li{
+  .resume-page .strengths-list li{
     padding:14px 18px 14px 44px;
     font-size:0.92rem; line-height:1.55;
     border-top:1px solid var(--line);
     position:relative;
   }
-  .strengths-list li:first-child{border-top:none;}
-  .strengths-list li::before{
+  .resume-page .strengths-list li:first-child{border-top:none;}
+  .resume-page .strengths-list li::before{
     content:"\2192";
     position:absolute; left:18px; top:14px;
     font-family:var(--mono); font-weight:600; color:var(--navy-700);
   }
-  .strengths-list strong{color:var(--navy-900);}
-  .req-tag.req{color:var(--navy-700);}
-  .req-tag.cert{color:var(--bluegray-600);}
+  .resume-page .strengths-list strong{color:var(--navy-900);}
+  .resume-page .req-tag.req{color:var(--navy-700);}
+  .resume-page .req-tag.cert{color:var(--bluegray-600);}
 
   /* footer terminal */
-  footer{
+  .resume-page .terminal-footer{
     background:var(--navy-900); color:var(--bluegray-100);
     padding:30px 40px 40px; margin-top:20px;
   }
-  .terminal{
+  .resume-page .terminal{
     max-width:1180px; margin:0 auto;
     font-family:var(--mono); font-size:0.85rem;
     background:#071224; border-radius:10px; padding:18px 22px;
     border:1px solid var(--navy-700);
   }
-  .terminal .line{margin-bottom:6px;}
-  .terminal .prompt{color:var(--bluegray-500);}
-  .terminal .out{color:#C7CDD3; padding-left:20px;}
-  .cursor{display:inline-block; width:7px; height:1em; background:var(--bluegray-500); vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
+  .resume-page .terminal .line{margin-bottom:6px;}
+  .resume-page .terminal .prompt{color:var(--bluegray-500);}
+  .resume-page .terminal .out{color:#C7CDD3; padding-left:20px;}
+  .resume-page .cursor{display:inline-block; width:7px; height:1em; background:var(--bluegray-500); vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
   @keyframes blink{0%,49%{opacity:1;} 50%,100%{opacity:0;}}
-  .footer-note{max-width:1180px; margin:16px auto 0; font-size:0.8rem; color:var(--bluegray-100); opacity:.75;}
-  .footer-note a{color:var(--bluegray-100);}
+  .resume-page .footer-note{max-width:1180px; margin:16px auto 0; font-size:0.8rem; color:var(--bluegray-100); opacity:.75;}
+  .resume-page .footer-note a{color:var(--bluegray-100);}
 
-  mark.hit{background:var(--bluegray-600); color:var(--white); border-radius:3px; padding:0 2px;}
+  .resume-page mark.hit{background:var(--bluegray-600); color:var(--white); border-radius:3px; padding:0 2px;}
 </style>
-</head>
-<body>
 
 <div class="layout">
 
   <aside class="sidebar">
-    <div class="avatar">
-      <img src="prof_pic_color.jpg" alt="Ginger Tabora">
-    </div>
     <div class="name">Ginger Tabora</div>
     <div class="role">Technical Writer | UX Writer </div>
 
@@ -389,7 +307,6 @@ nav_order: 9
   <main>
 
     <div class="hero-banner" id="summary">
-      <span class="hero-label">// profile.status</span>
       <div class="hero-name">Ginger Tabora</div>
       <div class="hero-role">Technical Writer &amp; Content Strategist | UX Writer &amp; Content Designer</div>
       <p class="hero-tagline">Ten-plus years shaping user-facing language for consumer and enterprise products — spanning UX writing and content design for UI screens and product flows, and technical documentation for developers and end users, grounded in content strategy, user personas, and cross-functional collaboration with design, research, product, and engineering.</p>
@@ -450,7 +367,7 @@ nav_order: 9
           <li>Authored and updated conceptual, reference, and task-based documentation in Markdown.</li>
         </ul>
       </div>
-    
+
       <div class="entry">
         <div class="entry-head">
           <span class="entry-version">Senior Information Developer → Lead Technical Writer</span>
@@ -469,7 +386,7 @@ nav_order: 9
           <li>Represented documentation during scrums and sprint planning meetings.</li>
         </ul>
       </div>
-    
+
     <details class="archive">
       <summary>Show more previous roles</summary>
 
@@ -674,14 +591,14 @@ nav_order: 9
     <section id="portfolio" aria-labelledby="portfolio-h">
       <div class="section-head"><h2 id="portfolio-h">Portfolio</h2></div>
       <div class="readme">
-        <p>Portfolio coming soon.</p>
+        <p>See the full <a href="{{ '/projects/' | relative_url }}">projects page</a>.</p>
       </div>
     </section>
 
   </main>
 </div>
 
-<footer>
+<div class="terminal-footer">
   <div class="terminal">
     <div class="line"><span class="prompt">$</span> whoami</div>
     <div class="line out">ginger tabora — technical writer, content strategist &amp; UX writer</div>
@@ -689,8 +606,6 @@ nav_order: 9
     <div class="line out">currently: shaping clear, user-first content — one commit at a time.<span class="cursor"></span></div>
   </div>
   <p class="footer-note">Hand-rolled HTML prototype — a Hugo port is next. Navy blue and gunmetal — on purpose.</p>
-</footer>
+</div>
 
-
-</body>
-</html>
+</div>
