@@ -43,25 +43,25 @@ Select one of the following environments to associate with the deployment intent
 
 Set the deployment intent controls to apply to the deployment intent. The following controls are available for Atlas 2.0:
 
-| Control attribute | Description |
-|---|---|
-| Data Classification | Organizes and categorizes data based on sensitivity and importance, ensuring proper handling and protection. |
-| Connectivity | Ensures applications communicate in an appropriate way that satisfies JPMC standards and risk allowance. Refer to Connectivity Risk Governance for more information. |
-| Jurisdiction | Refers to the legal authority or geographic area where certain laws, regulations, and rules apply. |
-| HITrust | HITRUST certification by the HITRUST Alliance enables vendors and covered entities to demonstrate healthcare data compliance requirements based on a standardized framework. |
-| PCI | Payment Card Industry (PCI) workloads are subject to additional scrutiny across all platforms. Refer to PCI Compliance to review obligations and initiate conversations. |
-| SOC | System and Organization Control (SOC) reports provide valuable information that clients require to assess and address the risks associated with use of an outsourced service. |
-| SOX | Sarbanes-Oxley Act of 2002 (SOX) is a wide-ranging landmark legislation that was designed to improve the overall quality of financial reporting, independent audits, and accounting services for public companies. |
+| Control attribute   | Description                                                                                                                                                                                                        |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Data Classification | Organizes and categorizes data based on sensitivity and importance, ensuring proper handling and protection.                                                                                                       |
+| Connectivity        | Ensures applications communicate in an appropriate way that satisfies JPMC standards and risk allowance. Refer to Connectivity Risk Governance for more information.                                               |
+| Jurisdiction        | Refers to the legal authority or geographic area where certain laws, regulations, and rules apply.                                                                                                                 |
+| HITrust             | HITRUST certification by the HITRUST Alliance enables vendors and covered entities to demonstrate healthcare data compliance requirements based on a standardized framework.                                       |
+| PCI                 | Payment Card Industry (PCI) workloads are subject to additional scrutiny across all platforms. Refer to PCI Compliance to review obligations and initiate conversations.                                           |
+| SOC                 | System and Organization Control (SOC) reports provide valuable information that clients require to assess and address the risks associated with use of an outsourced service.                                      |
+| SOX                 | Sarbanes-Oxley Act of 2002 (SOX) is a wide-ranging landmark legislation that was designed to improve the overall quality of financial reporting, independent audits, and accounting services for public companies. |
 
-| Values | Mutability |
-|---|---|
-| confidential, highly confidential, internal, public | yes |
-| ext, int | yes |
-| default, lux | yes |
-| r2, e1, i1, none | yes |
-| cat1, cat2, cat3 | yes |
-| soc1, soc2, none | yes |
-| false, true | yes |
+| Values                                              | Mutability |
+| --------------------------------------------------- | ---------- |
+| confidential, highly confidential, internal, public | yes        |
+| ext, int                                            | yes        |
+| default, lux                                        | yes        |
+| r2, e1, i1, none                                    | yes        |
+| cat1, cat2, cat3                                    | yes        |
+| soc1, soc2, none                                    | yes        |
+| false, true                                         | yes        |
 
 ## Review summary
 

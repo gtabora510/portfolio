@@ -33,13 +33,13 @@ From a high level, the Confluence MCP integration with GitHub Copilot works as f
 
 ### Prerequisites
 
-| Component | Supported Version/Status | Action | Notes |
-|---|---|---|---|
-| GitHub Copilot Onboarding | Required | Complete both the onboarding and installation of the GitHub Copilot IDE plugin. | Follow the guides found in go/copilot: Onboarding to GitHub Copilot and Installing the Plugin. |
-| IntelliJ IDEA | Idea2025.1 or later | Upgrade to idea2025.1+ to use the MCP registry features. | See go/devshelltools > IDEA for latest version. |
-| GitHub Copilot plugin for IDEA | v1.9.1 or later | Ensure you have the correct version of the Copilot plugin. | Required for MCP Registry. |
-| Visual Studio Code (VS Code) | 1.100.3 or later | Upgrade to v1.100.3+ to use the MCP registry features. | See go/devshelltools > VS Code for latest version. |
-| GitHub Copilot plugin for VS Code | v0.33.6 or later | Ensure you have the correct version of the Copilot plugin. | Required for MCP Registry |
+| Component                         | Supported Version/Status | Action                                                                          | Notes                                                                                          |
+| --------------------------------- | ------------------------ | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| GitHub Copilot Onboarding         | Required                 | Complete both the onboarding and installation of the GitHub Copilot IDE plugin. | Follow the guides found in go/copilot: Onboarding to GitHub Copilot and Installing the Plugin. |
+| IntelliJ IDEA                     | Idea2025.1 or later      | Upgrade to idea2025.1+ to use the MCP registry features.                        | See go/devshelltools > IDEA for latest version.                                                |
+| GitHub Copilot plugin for IDEA    | v1.9.1 or later          | Ensure you have the correct version of the Copilot plugin.                      | Required for MCP Registry.                                                                     |
+| Visual Studio Code (VS Code)      | 1.100.3 or later         | Upgrade to v1.100.3+ to use the MCP registry features.                          | See go/devshelltools > VS Code for latest version.                                             |
+| GitHub Copilot plugin for VS Code | v0.33.6 or later         | Ensure you have the correct version of the Copilot plugin.                      | Required for MCP Registry                                                                      |
 
 ### Installing the Confluence MCP Server for IntelliJ IDEA
 
@@ -61,7 +61,7 @@ From a high level, the Confluence MCP integration with GitHub Copilot works as f
 3. Close any open Visual Studio Code instances, then relaunch a new instance.
 4. Configure your IDE for use with the Confluence MCP Server:
    1. Navigate to **File** > **Preferences** > **Settings**, search for "MCP".
-   2. Locate the **Chat > MCP: Access** setting. *If the drop-down is enabled*, set it to **registry**.
+   2. Locate the **Chat > MCP: Access** setting. _If the drop-down is enabled_, set it to **registry**.
 5. Install the plugin:
    1. Open the **Extensions Marketplace** and type "@mcp" in the search bar. Alternatively, you can navigate to the **MCP SERVERS** section directly.
    2. Select **Enable MCP Servers Marketplace**.

@@ -6,606 +6,1050 @@ nav: true
 nav_order: 9
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
 
 <div class="resume-page">
-<style>
-  .resume-page{
-    --ink:#1C232B;
-    --navy-900:#0A1F3D;
-    --navy-800:#122C52;
-    --navy-700:#1D3F6E;
-    --navy-600:#2C5686;
-    --bluegray-600:#4B565C;
-    --bluegray-500:#6E787D;
-    --bluegray-100:#DDE1E3;
-    --bluegray-050:#F0F1F2;
-    --bluegray-deep:#8A949A;
-    --silver:#D9D9D9;
-    --silver-100:#E4E4E5;
-    --white:#FFFFFF;
-    --line:#D9DBDC;
-    --neutral:#63676C;
-    --neutral-bg:#EAEAEB;
-    --radius:10px;
-    --display:'Fraunces', serif;
-    --body:'Inter', sans-serif;
-    --mono:'JetBrains Mono', monospace;
+  <style>
+    .resume-page {
+      --ink: #1c232b;
+      --navy-900: #0a1f3d;
+      --navy-800: #122c52;
+      --navy-700: #1d3f6e;
+      --navy-600: #2c5686;
+      --bluegray-600: #4b565c;
+      --bluegray-500: #6e787d;
+      --bluegray-100: #dde1e3;
+      --bluegray-050: #f0f1f2;
+      --bluegray-deep: #8a949a;
+      --silver: #d9d9d9;
+      --silver-100: #e4e4e5;
+      --white: #ffffff;
+      --line: #d9dbdc;
+      --neutral: #63676c;
+      --neutral-bg: #eaeaeb;
+      --radius: 10px;
+      --display: "Fraunces", serif;
+      --body: "Inter", sans-serif;
+      --mono: "JetBrains Mono", monospace;
 
-    font-family:var(--body);
-    background:var(--silver);
-    color:var(--ink);
-    line-height:1.6;
-    font-size:16px;
-  }
+      font-family: var(--body);
+      background: var(--silver);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 16px;
+    }
 
-  .resume-page, .resume-page *{box-sizing:border-box; margin:0; padding:0;}
+    .resume-page,
+    .resume-page * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    .resume-page, .resume-page *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  }
+    @media (prefers-reduced-motion: reduce) {
+      .resume-page,
+      .resume-page * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
 
-  .resume-page a{color:var(--navy-700);}
-  .resume-page a:focus-visible, .resume-page button:focus-visible, .resume-page input:focus-visible, .resume-page summary:focus-visible{
-    outline:2px solid var(--navy-700);
-    outline-offset:2px;
-    border-radius:4px;
-  }
+    .resume-page a {
+      color: var(--navy-700);
+    }
+    .resume-page a:focus-visible,
+    .resume-page button:focus-visible,
+    .resume-page input:focus-visible,
+    .resume-page summary:focus-visible {
+      outline: 2px solid var(--navy-700);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
 
-  /* ---------- LAYOUT ---------- */
-  .resume-page .layout{
-    display:grid;
-    grid-template-columns:280px 1fr;
-    max-width:1180px;
-    margin:0 auto;
-    gap:0;
-  }
-  @media (max-width: 860px){
-    .resume-page .layout{grid-template-columns:1fr;}
-    .resume-page .sidebar{position:static; height:auto; border-right:none; border-bottom:1px solid var(--line);}
-  }
+    /* ---------- LAYOUT ---------- */
+    .resume-page .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      max-width: 1180px;
+      margin: 0 auto;
+      gap: 0;
+    }
+    @media (max-width: 860px) {
+      .resume-page .layout {
+        grid-template-columns: 1fr;
+      }
+      .resume-page .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+    }
 
-  /* ---------- SIDEBAR ---------- */
-  .resume-page .sidebar{
-    padding:36px 24px;
-    border-right:1px solid var(--line);
-    position:sticky;
-    top:0;
-  }
-  .resume-page .name{font-family:var(--display); font-size:1.4rem; font-weight:700; color:var(--navy-900); line-height:1.2;}
-  .resume-page .role{font-size:0.92rem; color:var(--navy-700); margin-top:4px; font-weight:500;}
+    /* ---------- SIDEBAR ---------- */
+    .resume-page .sidebar {
+      padding: 36px 24px;
+      border-right: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+    }
+    .resume-page .name {
+      font-family: var(--display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      line-height: 1.2;
+    }
+    .resume-page .role {
+      font-size: 0.92rem;
+      color: var(--navy-700);
+      margin-top: 4px;
+      font-weight: 500;
+    }
 
-  .resume-page .side-contact{list-style:none; margin-top:20px; font-size:0.86rem;}
-  .resume-page .side-contact li{margin-bottom:8px; display:flex; gap:8px; align-items:flex-start; color:var(--ink);}
-  .resume-page .side-contact li svg{flex-shrink:0; margin-top:3px; opacity:.6;}
-  .resume-page .side-contact a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
-  .resume-page .side-contact a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
+    .resume-page .side-contact {
+      list-style: none;
+      margin-top: 20px;
+      font-size: 0.86rem;
+    }
+    .resume-page .side-contact li {
+      margin-bottom: 8px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      color: var(--ink);
+    }
+    .resume-page .side-contact li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+      opacity: 0.6;
+    }
+    .resume-page .side-contact a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .resume-page .side-contact a:hover {
+      border-color: var(--bluegray-600);
+      color: var(--navy-700);
+    }
 
-  .resume-page .side-block-title{
-    font-family:var(--mono); font-size:0.7rem; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--bluegray-600); margin:26px 0 10px;
-  }
-  .resume-page .toc{list-style:none; font-size:0.86rem;}
-  .resume-page .toc li a{
-    display:block; padding:5px 0; color:var(--ink); text-decoration:none; border-left:2px solid transparent; padding-left:10px;
-  }
-  .resume-page .toc li a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
+    .resume-page .side-block-title {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bluegray-600);
+      margin: 26px 0 10px;
+    }
+    .resume-page .toc {
+      list-style: none;
+      font-size: 0.86rem;
+    }
+    .resume-page .toc li a {
+      display: block;
+      padding: 5px 0;
+      color: var(--ink);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      padding-left: 10px;
+    }
+    .resume-page .toc li a:hover {
+      border-color: var(--bluegray-600);
+      color: var(--navy-700);
+    }
 
-  .resume-page .tagcloud{display:flex; flex-wrap:wrap; gap:6px;}
-  .resume-page .tag{
-    font-family:var(--mono); font-size:0.68rem;
-    background:var(--bluegray-100); color:var(--navy-900);
-    border:1px solid var(--line);
-    padding:3px 8px; border-radius:5px;
-  }
+    .resume-page .tagcloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .resume-page .tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      background: var(--bluegray-100);
+      color: var(--navy-900);
+      border: 1px solid var(--line);
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
 
-  /* ---------- MAIN ---------- */
-  .resume-page main{padding:36px 40px 80px; min-width:0;}
+    /* ---------- MAIN ---------- */
+    .resume-page main {
+      padding: 36px 40px 80px;
+      min-width: 0;
+    }
 
-  .resume-page .hero-banner{
-    background:linear-gradient(135deg, var(--navy-900), var(--navy-700));
-    border-radius:14px;
-    padding:28px 30px;
-    color:var(--white);
-    margin-bottom:44px;
-    position:relative;
-    overflow:hidden;
-  }
-  .resume-page .hero-banner::after{
-    content:"";
-    position:absolute; inset:0;
-    background:radial-gradient(circle at 90% -10%, rgba(193,93,122,0.45), transparent 60%);
-    pointer-events:none;
-  }
-  .resume-page .hero-name{font-family:var(--display); font-size:1.9rem; font-weight:700; margin-top:12px; position:relative; color:var(--white);}
-  .resume-page .hero-role{font-size:1rem; color:var(--bluegray-100); margin-top:4px; font-weight:500; position:relative;}
-  .resume-page .hero-tagline{font-size:0.98rem; color:#D7DEE5; margin-top:14px; max-width:56ch; line-height:1.55; position:relative;}
+    .resume-page .hero-banner {
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      border-radius: 14px;
+      padding: 28px 30px;
+      color: var(--white);
+      margin-bottom: 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .resume-page .hero-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 90% -10%, rgba(193, 93, 122, 0.45), transparent 60%);
+      pointer-events: none;
+    }
+    .resume-page .hero-name {
+      font-family: var(--display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-top: 12px;
+      position: relative;
+      color: var(--white);
+    }
+    .resume-page .hero-role {
+      font-size: 1rem;
+      color: var(--bluegray-100);
+      margin-top: 4px;
+      font-weight: 500;
+      position: relative;
+    }
+    .resume-page .hero-tagline {
+      font-size: 0.98rem;
+      color: #d7dee5;
+      margin-top: 14px;
+      max-width: 56ch;
+      line-height: 1.55;
+      position: relative;
+    }
 
-  .resume-page section{margin-bottom:56px; scroll-margin-top:80px;}
-  .resume-page .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:20px;}
-  .resume-page .section-head h2{font-family:var(--display); font-size:1.5rem; color:var(--navy-900); font-weight:700;}
-  .resume-page .section-head .path{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
+    .resume-page section {
+      margin-bottom: 56px;
+      scroll-margin-top: 80px;
+    }
+    .resume-page .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .resume-page .section-head h2 {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      color: var(--navy-900);
+      font-weight: 700;
+    }
+    .resume-page .section-head .path {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--bluegray-600);
+    }
 
-  .resume-page .readme{
-    background:var(--bluegray-050);
-    border:1px solid var(--line);
-    border-left:4px solid var(--navy-700);
-    border-radius:0 8px 8px 0;
-    padding:18px 22px;
-    font-size:0.98rem;
-  }
-  .resume-page .readme p + p{margin-top:12px;}
-  .resume-page .readme .quote{
-    font-style:italic;
-    font-family:var(--display);
-    color:var(--navy-900);
-    border-top:1px dashed var(--line);
-    margin-top:14px;
-    padding-top:14px;
-  }
+    .resume-page .readme {
+      background: var(--bluegray-050);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy-700);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      font-size: 0.98rem;
+    }
+    .resume-page .readme p + p {
+      margin-top: 12px;
+    }
+    .resume-page .readme .quote {
+      font-style: italic;
+      font-family: var(--display);
+      color: var(--navy-900);
+      border-top: 1px dashed var(--line);
+      margin-top: 14px;
+      padding-top: 14px;
+    }
 
-  /* experience entry */
-  .resume-page .entry{
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:20px 22px;
-    margin-bottom:18px;
-    background:var(--white);
-    transition:box-shadow .2s ease, transform .2s ease;
-  }
-  .resume-page .entry:hover{box-shadow:0 6px 18px rgba(30,73,118,0.14); transform:translateY(-1px);}
-  .resume-page .entry-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center; margin-bottom:4px;}
-  .resume-page .entry-version{font-family:var(--mono); font-weight:600; color:var(--navy-700); font-size:0.95rem;}
-  .resume-page .entry-dates{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
-  .resume-page .entry-company{font-family:var(--display); font-weight:600; font-size:1.05rem; margin-bottom:2px;}
-  .resume-page .entry-note{font-size:0.82rem; color:var(--neutral); margin-bottom:14px;}
-  .resume-page .entry ul{list-style:none;}
-  .resume-page .entry li{
-    display:flex; gap:10px; padding:6px 0; font-size:0.92rem; align-items:flex-start;
-    border-top:1px solid var(--bluegray-050);
-  }
-  .resume-page .entry li:first-child{border-top:none;}
-  .resume-page .commit-tag{
-    font-family:var(--mono); font-size:0.68rem; font-weight:600;
-    padding:2px 6px; border-radius:4px; flex-shrink:0; margin-top:2px;
-    white-space:nowrap;
-  }
-  .resume-page .tag-feature{background:var(--bluegray-100); color:var(--navy-700);}
-  .resume-page .tag-fix{background:var(--bluegray-deep); color:var(--navy-900);}
-  .resume-page .tag-docs{background:var(--bluegray-050); color:var(--navy-600);}
-  .resume-page .tag-perf{background:var(--silver-100); color:var(--navy-700);}
-  .resume-page .tag-product-management{background:var(--neutral-bg); color:var(--neutral);}
+    /* experience entry */
+    .resume-page .entry {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+      background: var(--white);
+      transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    }
+    .resume-page .entry:hover {
+      box-shadow: 0 6px 18px rgba(30, 73, 118, 0.14);
+      transform: translateY(-1px);
+    }
+    .resume-page .entry-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .resume-page .entry-version {
+      font-family: var(--mono);
+      font-weight: 600;
+      color: var(--navy-700);
+      font-size: 0.95rem;
+    }
+    .resume-page .entry-dates {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--bluegray-600);
+    }
+    .resume-page .entry-company {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 2px;
+    }
+    .resume-page .entry-note {
+      font-size: 0.82rem;
+      color: var(--neutral);
+      margin-bottom: 14px;
+    }
+    .resume-page .entry ul {
+      list-style: none;
+    }
+    .resume-page .entry li {
+      display: flex;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 0.92rem;
+      align-items: flex-start;
+      border-top: 1px solid var(--bluegray-050);
+    }
+    .resume-page .entry li:first-child {
+      border-top: none;
+    }
+    .resume-page .commit-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+    .resume-page .tag-feature {
+      background: var(--bluegray-100);
+      color: var(--navy-700);
+    }
+    .resume-page .tag-fix {
+      background: var(--bluegray-deep);
+      color: var(--navy-900);
+    }
+    .resume-page .tag-docs {
+      background: var(--bluegray-050);
+      color: var(--navy-600);
+    }
+    .resume-page .tag-perf {
+      background: var(--silver-100);
+      color: var(--navy-700);
+    }
+    .resume-page .tag-product-management {
+      background: var(--neutral-bg);
+      color: var(--neutral);
+    }
 
-  /* archive (collapsed older experience) */
-  .resume-page .archive{
-    border:1px dashed var(--line);
-    border-radius:var(--radius);
-    background:rgba(29,63,110,0.07);
-    padding:14px 18px;
-    margin-bottom:18px;
-  }
-  .resume-page .archive[open]{padding-bottom:20px;}
-  .resume-page .archive summary{
-    cursor:pointer;
-    list-style:none;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-family:var(--mono);
-    font-size:0.85rem;
-    font-weight:600;
-    color:var(--navy-700);
-    user-select:none;
-  }
-  .resume-page .archive summary::-webkit-details-marker{display:none;}
-  .resume-page .archive summary::before{
-    content:'▸';
-    display:inline-block;
-    color:var(--bluegray-600);
-    transition:transform .2s ease;
-  }
-  .resume-page .archive[open] summary::before{transform:rotate(90deg);}
-  .resume-page .archive summary:hover{color:var(--navy-900);}
-  .resume-page .archive summary:hover::before{color:var(--navy-700);}
-  .resume-page .archive .entry{margin-top:16px; margin-bottom:0;}
-  .resume-page .archive .entry + .entry{margin-top:18px;}
+    /* archive (collapsed older experience) */
+    .resume-page .archive {
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      background: rgba(29, 63, 110, 0.07);
+      padding: 14px 18px;
+      margin-bottom: 18px;
+    }
+    .resume-page .archive[open] {
+      padding-bottom: 20px;
+    }
+    .resume-page .archive summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy-700);
+      user-select: none;
+    }
+    .resume-page .archive summary::-webkit-details-marker {
+      display: none;
+    }
+    .resume-page .archive summary::before {
+      content: "▸";
+      display: inline-block;
+      color: var(--bluegray-600);
+      transition: transform 0.2s ease;
+    }
+    .resume-page .archive[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .resume-page .archive summary:hover {
+      color: var(--navy-900);
+    }
+    .resume-page .archive summary:hover::before {
+      color: var(--navy-700);
+    }
+    .resume-page .archive .entry {
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+    .resume-page .archive .entry + .entry {
+      margin-top: 18px;
+    }
 
-  /* skills */
-  .resume-page .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
-  .resume-page .skill-group{border:1px solid var(--line); border-radius:10px; padding:16px 18px; background:var(--white);}
-  .resume-page .skill-group h3{font-family:var(--mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:.04em; color:var(--bluegray-600); margin-bottom:10px;}
-  .resume-page .skill-badges{display:flex; flex-wrap:wrap; gap:6px;}
-  .resume-page .skill-subgroup{margin-bottom:8px;}
-  .resume-page .skill-subgroup:last-child{margin-bottom:0;}
-  .resume-page .badge{
-    font-family:var(--mono); font-size:0.72rem;
-    background:var(--bluegray-100); color:var(--navy-900);
-    border:1px solid var(--line); padding:4px 9px; border-radius:5px;
-  }
+    /* skills */
+    .resume-page .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .resume-page .skill-group {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px 18px;
+      background: var(--white);
+    }
+    .resume-page .skill-group h3 {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--bluegray-600);
+      margin-bottom: 10px;
+    }
+    .resume-page .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .resume-page .skill-subgroup {
+      margin-bottom: 8px;
+    }
+    .resume-page .skill-subgroup:last-child {
+      margin-bottom: 0;
+    }
+    .resume-page .badge {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      background: var(--bluegray-100);
+      color: var(--navy-900);
+      border: 1px solid var(--line);
+      padding: 4px 9px;
+      border-radius: 5px;
+    }
 
-  /* education */
-  .resume-page .ref-list{border:1px solid var(--line); border-radius:10px; background:var(--white); overflow:hidden;}
-  .resume-page .ref-list li{list-style:none; display:flex; gap:12px; padding:13px 18px; font-size:0.92rem; border-top:1px solid var(--line); align-items:flex-start;}
-  .resume-page .ref-list li:first-child{border-top:none;}
-  .resume-page .ref-list .req-tag{font-family:var(--mono); font-size:0.68rem; font-weight:600; margin-top:2px;}
+    /* education */
+    .resume-page .ref-list {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      overflow: hidden;
+    }
+    .resume-page .ref-list li {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      padding: 13px 18px;
+      font-size: 0.92rem;
+      border-top: 1px solid var(--line);
+      align-items: flex-start;
+    }
+    .resume-page .ref-list li:first-child {
+      border-top: none;
+    }
+    .resume-page .ref-list .req-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      margin-top: 2px;
+    }
 
-  .resume-page .strengths-list{
-    border:1px solid var(--line); border-radius:10px; background:var(--white);
-    overflow:hidden; list-style:none;
-  }
-  .resume-page .strengths-list li{
-    padding:14px 18px 14px 44px;
-    font-size:0.92rem; line-height:1.55;
-    border-top:1px solid var(--line);
-    position:relative;
-  }
-  .resume-page .strengths-list li:first-child{border-top:none;}
-  .resume-page .strengths-list li::before{
-    content:"\2192";
-    position:absolute; left:18px; top:14px;
-    font-family:var(--mono); font-weight:600; color:var(--navy-700);
-  }
-  .resume-page .strengths-list strong{color:var(--navy-900);}
-  .resume-page .req-tag.req{color:var(--navy-700);}
-  .resume-page .req-tag.cert{color:var(--bluegray-600);}
+    .resume-page .strengths-list {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      overflow: hidden;
+      list-style: none;
+    }
+    .resume-page .strengths-list li {
+      padding: 14px 18px 14px 44px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      border-top: 1px solid var(--line);
+      position: relative;
+    }
+    .resume-page .strengths-list li:first-child {
+      border-top: none;
+    }
+    .resume-page .strengths-list li::before {
+      content: "\2192";
+      position: absolute;
+      left: 18px;
+      top: 14px;
+      font-family: var(--mono);
+      font-weight: 600;
+      color: var(--navy-700);
+    }
+    .resume-page .strengths-list strong {
+      color: var(--navy-900);
+    }
+    .resume-page .req-tag.req {
+      color: var(--navy-700);
+    }
+    .resume-page .req-tag.cert {
+      color: var(--bluegray-600);
+    }
 
-  /* footer terminal */
-  .resume-page .terminal-footer{
-    background:var(--navy-900); color:var(--bluegray-100);
-    padding:30px 40px 40px; margin-top:20px;
-  }
-  .resume-page .terminal{
-    max-width:1180px; margin:0 auto;
-    font-family:var(--mono); font-size:0.85rem;
-    background:#071224; border-radius:10px; padding:18px 22px;
-    border:1px solid var(--navy-700);
-  }
-  .resume-page .terminal .line{margin-bottom:6px;}
-  .resume-page .terminal .prompt{color:var(--bluegray-500);}
-  .resume-page .terminal .out{color:#C7CDD3; padding-left:20px;}
-  .resume-page .cursor{display:inline-block; width:7px; height:1em; background:var(--bluegray-500); vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
-  @keyframes blink{0%,49%{opacity:1;} 50%,100%{opacity:0;}}
-  .resume-page .footer-note{max-width:1180px; margin:16px auto 0; font-size:0.8rem; color:var(--bluegray-100); opacity:.75;}
-  .resume-page .footer-note a{color:var(--bluegray-100);}
+    /* footer terminal */
+    .resume-page .terminal-footer {
+      background: var(--navy-900);
+      color: var(--bluegray-100);
+      padding: 30px 40px 40px;
+      margin-top: 20px;
+    }
+    .resume-page .terminal {
+      max-width: 1180px;
+      margin: 0 auto;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      background: #071224;
+      border-radius: 10px;
+      padding: 18px 22px;
+      border: 1px solid var(--navy-700);
+    }
+    .resume-page .terminal .line {
+      margin-bottom: 6px;
+    }
+    .resume-page .terminal .prompt {
+      color: var(--bluegray-500);
+    }
+    .resume-page .terminal .out {
+      color: #c7cdd3;
+      padding-left: 20px;
+    }
+    .resume-page .cursor {
+      display: inline-block;
+      width: 7px;
+      height: 1em;
+      background: var(--bluegray-500);
+      vertical-align: text-bottom;
+      animation: blink 1s steps(1) infinite;
+    }
+    @keyframes blink {
+      0%,
+      49% {
+        opacity: 1;
+      }
+      50%,
+      100% {
+        opacity: 0;
+      }
+    }
+    .resume-page .footer-note {
+      max-width: 1180px;
+      margin: 16px auto 0;
+      font-size: 0.8rem;
+      color: var(--bluegray-100);
+      opacity: 0.75;
+    }
+    .resume-page .footer-note a {
+      color: var(--bluegray-100);
+    }
 
-  .resume-page mark.hit{background:var(--bluegray-600); color:var(--white); border-radius:3px; padding:0 2px;}
-</style>
+    .resume-page mark.hit {
+      background: var(--bluegray-600);
+      color: var(--white);
+      border-radius: 3px;
+      padding: 0 2px;
+    }
+  </style>
 
-<div class="layout">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="name">Ginger Tabora</div>
+      <div class="role">Technical Writer | UX Writer</div>
 
-  <aside class="sidebar">
-    <div class="name">Ginger Tabora</div>
-    <div class="role">Technical Writer | UX Writer </div>
-
-    <ul class="side-contact">
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6 12 13 2 6"/></svg> <a href="mailto:gtabora@gmail.com">gtabora@gmail.com</a></li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (650) 704-3374</li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M8 9h4v2a4 4 0 0 1 8 0v9h-4v-8a2 2 0 0 0-4 0v8H8z"/></svg> <a href="https://www.linkedin.com/in/gtabora" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <a href="https://github.com/gtabora510" target="_blank" rel="noopener">GitHub ↗</a></li>
-    </ul>
-
-    <div class="side-block-title">on this page</div>
-    <ul class="toc">
-      <li><a href="#summary">01 · Summary</a></li>
-      <li><a href="#strengths">02 · Core Strengths</a></li>
-      <li><a href="#experience">03 · Experience</a></li>
-      <li><a href="#skills">04 · Skills</a></li>
-      <li><a href="#education">05 · Education</a></li>
-      <li><a href="#portfolio">06 · Portfolio</a></li>
-    </ul>
-
-    <div class="side-block-title">stack</div>
-    <div class="tagcloud">
-      <span class="tag">CSS</span><span class="tag">Claude Code</span><span class="tag">Copilot</span>
-      <span class="tag">DITA</span><span class="tag">Git</span><span class="tag">HTML/CSS</span>
-      <span class="tag">Hugo</span><span class="tag">IntelliJ IDEA</span><span class="tag">Jekyll</span>
-      <span class="tag">Markdown</span><span class="tag">Visual Studio Code</span><span class="tag">YAML</span>
-    </div>
-  </aside>
-
-  <main>
-
-    <div class="hero-banner" id="summary">
-      <div class="hero-name">Ginger Tabora</div>
-      <div class="hero-role">Technical Writer &amp; Content Strategist | UX Writer &amp; Content Designer</div>
-      <p class="hero-tagline">Ten-plus years shaping user-facing language for consumer and enterprise products — spanning UX writing and content design for UI screens and product flows, and technical documentation for developers and end users, grounded in content strategy, user personas, and cross-functional collaboration with design, research, product, and engineering.</p>
-    </div>
-
-    <section aria-labelledby="summary-h">
-      <div class="section-head"><h2 id="summary-h">Summary</h2></div>
-      <div class="readme">
-        <p>Content strategist and writer with 10+ years shaping user-facing language for consumer and enterprise products in Silicon Valley — spanning UX writing and content design for UI screens and product flows, and technical documentation for developers and end users. Skilled at consolidating input from UX research, design, product, and engineering partners into content strategy, clear task-based content, and a cohesive product voice across multi-platform experiences.</p>
-        <p>Proven track record turning complex workflows and requirements into streamlined, intuitive experiences, with deep experience in docs-as-code and Agile practices, DITA and Markdown authoring, single-sourcing migrations, and AI-assisted content workflows.</p>
-      </div>
-    </section>
-
-    <section id="strengths" aria-labelledby="strengths-h">
-      <div class="section-head"><h2 id="strengths-h">Core Strengths</h2></div>
-      <ul class="strengths-list">
-        <li><strong>Technical Documentation</strong> — authoring conceptual, task-based, and reference content in DITA and Markdown using docs-as-code workflows.</li>
-        <li><strong>UX Writing &amp; Content Design</strong> — shaping UI copy, microcopy, and product narratives grounded in user personas.</li>
-        <li><strong>Content Strategy</strong> — setting content standards and strategy across multi-platform, multi-disciplinary product ecosystems, from analysis through publish.</li>
-        <li><strong>Cross-Functional Collaboration</strong> — partnering daily with UX researchers, designers, product managers, and engineers to build a unified voice, while advocating for the end user.</li>
-        <li><strong>AI-Assisted Workflows</strong> — using Claude Code and GitHub Copilot to accelerate content QA, style-guide compliance, and publishing.</li>
+      <ul class="side-contact">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M22 6 12 13 2 6" />
+          </svg>
+          <a href="mailto:gtabora@gmail.com">gtabora@gmail.com</a>
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+            />
+          </svg>
+          (650) 704-3374
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+            <path d="M8 9h4v2a4 4 0 0 1 8 0v9h-4v-8a2 2 0 0 0-4 0v8H8z" />
+          </svg>
+          <a href="https://www.linkedin.com/in/gtabora" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+          </svg>
+          <a href="https://github.com/gtabora510" target="_blank" rel="noopener">GitHub ↗</a>
+        </li>
       </ul>
-    </section>
 
-    <section id="experience" aria-labelledby="experience-h">
-      <div class="section-head"><h2 id="experience-h">Experience</h2></div>
+      <div class="side-block-title">on this page</div>
+      <ul class="toc">
+        <li><a href="#summary">01 · Summary</a></li>
+        <li><a href="#strengths">02 · Core Strengths</a></li>
+        <li><a href="#experience">03 · Experience</a></li>
+        <li><a href="#skills">04 · Skills</a></li>
+        <li><a href="#education">05 · Education</a></li>
+        <li><a href="#portfolio">06 · Portfolio</a></li>
+      </ul>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Content Designer</span>
-          <span class="entry-dates">2024 – Present &amp; 2021 – 2022</span>
-        </div>
-        <div class="entry-company">JPMorgan Chase — Palo Alto, CA</div>
-        <ul>
-          <li>Defined content strategy for the JPMC Global Technology products.</li>
-          <li>Defined content strategy recommendations based on user personas, their journey with the JPMC Global Technology products, content standards, needed improvements, integrations with other products, and content gaps.</li>
-          <li>Led documentation efforts across functional areas to demonstrate the content strategy for the JPMC Global Technology products.</li>
-          <li>Authored and maintained conceptual, reference, and task-based software documentation in Markdown, using IntelliJ and GIT.</li>
-          <li>Wrote all UX content from scratch for the JPMC Global Technology products, including onboarding flows, forms and data-entry fields, dashboards, notifications, and error messages.</li>
-          <li>Identified and resolved inconsistent terminology across screens, establishing a unified vocabulary that improved clarity and consistency throughout the user experience.</li>
-          <li>Documented REST APIs for the JPMC Global Technology products.</li>
-          <li>Created and implemented procedures, as well as process improvements, for software product specifications, bulletins, and internal FAQs.</li>
-          <li>Used GitHub Copilot and Claude Code to automate Jira ticket creation and updates, update Confluence pages, and create prompts to automate documentation and Jira tasks.</li>
-          <li>Used GitHub Copilot and Claude Code to run prompts that check documentation against department and company style guides, ensuring consistency and compliance.</li>
-          <li>Worked closely with customer success, developers, product management, quality assurance, researchers, and UX designers to align content, terminology, and product narratives across the JPMC Global Technology product lines.</li>
-        </ul>
+      <div class="side-block-title">stack</div>
+      <div class="tagcloud">
+        <span class="tag">CSS</span><span class="tag">Claude Code</span><span class="tag">Copilot</span> <span class="tag">DITA</span
+        ><span class="tag">Git</span><span class="tag">HTML/CSS</span> <span class="tag">Hugo</span><span class="tag">IntelliJ IDEA</span
+        ><span class="tag">Jekyll</span> <span class="tag">Markdown</span><span class="tag">Visual Studio Code</span><span class="tag">YAML</span>
+      </div>
+    </aside>
+
+    <main>
+      <div class="hero-banner" id="summary">
+        <div class="hero-name">Ginger Tabora</div>
+        <div class="hero-role">Technical Writer &amp; Content Strategist | UX Writer &amp; Content Designer</div>
+        <p class="hero-tagline">
+          Ten-plus years shaping user-facing language for consumer and enterprise products — spanning UX writing and content design for UI screens and
+          product flows, and technical documentation for developers and end users, grounded in content strategy, user personas, and cross-functional
+          collaboration with design, research, product, and engineering.
+        </p>
       </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Contract Senior Technical Writer</span>
-          <span class="entry-dates">2024</span>
+      <section aria-labelledby="summary-h">
+        <div class="section-head"><h2 id="summary-h">Summary</h2></div>
+        <div class="readme">
+          <p>
+            Content strategist and writer with 10+ years shaping user-facing language for consumer and enterprise products in Silicon Valley —
+            spanning UX writing and content design for UI screens and product flows, and technical documentation for developers and end users. Skilled
+            at consolidating input from UX research, design, product, and engineering partners into content strategy, clear task-based content, and a
+            cohesive product voice across multi-platform experiences.
+          </p>
+          <p>
+            Proven track record turning complex workflows and requirements into streamlined, intuitive experiences, with deep experience in
+            docs-as-code and Agile practices, DITA and Markdown authoring, single-sourcing migrations, and AI-assisted content workflows.
+          </p>
         </div>
-        <div class="entry-company">Apex — Remote</div>
-        <div class="entry-note">Short-term contract engagement.</div>
-        <ul>
-          <li>Authored and updated REST API documentation in Markdown, following a docs-as-code workflow.</li>
-          <li>Authored and updated conceptual, reference, and task-based documentation in Markdown.</li>
-        </ul>
-      </div>
+      </section>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Senior Information Developer → Lead Technical Writer</span>
-          <span class="entry-dates">2018 – 2023</span>
+      <section id="strengths" aria-labelledby="strengths-h">
+        <div class="section-head"><h2 id="strengths-h">Core Strengths</h2></div>
+        <ul class="strengths-list">
+          <li>
+            <strong>Technical Documentation</strong> — authoring conceptual, task-based, and reference content in DITA and Markdown using docs-as-code
+            workflows.
+          </li>
+          <li><strong>UX Writing &amp; Content Design</strong> — shaping UI copy, microcopy, and product narratives grounded in user personas.</li>
+          <li>
+            <strong>Content Strategy</strong> — setting content standards and strategy across multi-platform, multi-disciplinary product ecosystems,
+            from analysis through publish.
+          </li>
+          <li>
+            <strong>Cross-Functional Collaboration</strong> — partnering daily with UX researchers, designers, product managers, and engineers to
+            build a unified voice, while advocating for the end user.
+          </li>
+          <li>
+            <strong>AI-Assisted Workflows</strong> — using Claude Code and GitHub Copilot to accelerate content QA, style-guide compliance, and
+            publishing.
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-h">
+        <div class="section-head"><h2 id="experience-h">Experience</h2></div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-version">Content Designer</span>
+            <span class="entry-dates">2024 – Present &amp; 2021 – 2022</span>
+          </div>
+          <div class="entry-company">JPMorgan Chase — Palo Alto, CA</div>
+          <ul>
+            <li>Defined content strategy for the JPMC Global Technology products.</li>
+            <li>
+              Defined content strategy recommendations based on user personas, their journey with the JPMC Global Technology products, content
+              standards, needed improvements, integrations with other products, and content gaps.
+            </li>
+            <li>Led documentation efforts across functional areas to demonstrate the content strategy for the JPMC Global Technology products.</li>
+            <li>Authored and maintained conceptual, reference, and task-based software documentation in Markdown, using IntelliJ and GIT.</li>
+            <li>
+              Wrote all UX content from scratch for the JPMC Global Technology products, including onboarding flows, forms and data-entry fields,
+              dashboards, notifications, and error messages.
+            </li>
+            <li>
+              Identified and resolved inconsistent terminology across screens, establishing a unified vocabulary that improved clarity and consistency
+              throughout the user experience.
+            </li>
+            <li>Documented REST APIs for the JPMC Global Technology products.</li>
+            <li>
+              Created and implemented procedures, as well as process improvements, for software product specifications, bulletins, and internal FAQs.
+            </li>
+            <li>
+              Used GitHub Copilot and Claude Code to automate Jira ticket creation and updates, update Confluence pages, and create prompts to
+              automate documentation and Jira tasks.
+            </li>
+            <li>
+              Used GitHub Copilot and Claude Code to run prompts that check documentation against department and company style guides, ensuring
+              consistency and compliance.
+            </li>
+            <li>
+              Worked closely with customer success, developers, product management, quality assurance, researchers, and UX designers to align content,
+              terminology, and product narratives across the JPMC Global Technology product lines.
+            </li>
+          </ul>
         </div>
-        <div class="entry-company">Dolby Labs — Sunnyvale, CA</div>
-        <ul>
-          <li>Defined content strategy for Dolby Voice and Dolby Vision products.</li>
-          <li>Defined content strategy recommendations based on user personas, their journey with Dolby Voice and Dolby Vision products, content standards, needed improvements, integrations with other products, and content gaps.</li>
-          <li>Led documentation efforts across functional areas to demonstrate the content strategy for Dolby Vision products.</li>
-          <li>Trained new writers on the content strategy for Dolby Voice and Dolby Vision products.</li>
-          <li>Authored and maintained conceptual, task-based, and reference documentation for Dolby Voice, Dolby Vision, and Dolby.io products in DITA and Markdown, using Oxygen and GIT.</li>
-          <li>Documented REST APIs for Dolby.io.</li>
-          <li>Wrote all UX content from scratch for Dolby Voice and Dolby Vision products, including onboarding/setup flows, error messages and alerts, and status notifications.</li>
-          <li>Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile development environment.</li>
-          <li>Represented documentation during scrums and sprint planning meetings.</li>
-        </ul>
-      </div>
 
-    <details class="archive">
-      <summary>Show more previous roles</summary>
-
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Contract Principal Writer</span>
-          <span class="entry-dates">2017 – 2018</span>
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-version">Contract Senior Technical Writer</span>
+            <span class="entry-dates">2024</span>
+          </div>
+          <div class="entry-company">Apex — Remote</div>
+          <div class="entry-note">Short-term contract engagement.</div>
+          <ul>
+            <li>Authored and updated REST API documentation in Markdown, following a docs-as-code workflow.</li>
+            <li>Authored and updated conceptual, reference, and task-based documentation in Markdown.</li>
+          </ul>
         </div>
-        <div class="entry-company">Audible Magic — Los Gatos, CA</div>
-        <ul>
-          <li>Defined content strategy for the Audible Magic content identification product.</li>
-          <li>Led documentation efforts across functional areas to demonstrate the content strategy for the Audible Magic content identification product.</li>
-          <li>Documented REST APIs using Postman for the Audible Magic content identification product.</li>
-          <li>Authored and maintained conceptual and task-based software documentation using Confluence.</li>
-          <li>Wrote all UX content from scratch for the Audible Magic content identification product, including administration, configuration, and installation screens, forms, dashboards, notifications, and error messages.</li>
-          <li>Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile development environment.</li>
-        </ul>
-      </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Senior Technical Writer</span>
-          <span class="entry-dates">2015 – 2017</span>
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-version">Senior Information Developer → Lead Technical Writer</span>
+            <span class="entry-dates">2018 – 2023</span>
+          </div>
+          <div class="entry-company">Dolby Labs — Sunnyvale, CA</div>
+          <ul>
+            <li>Defined content strategy for Dolby Voice and Dolby Vision products.</li>
+            <li>
+              Defined content strategy recommendations based on user personas, their journey with Dolby Voice and Dolby Vision products, content
+              standards, needed improvements, integrations with other products, and content gaps.
+            </li>
+            <li>Led documentation efforts across functional areas to demonstrate the content strategy for Dolby Vision products.</li>
+            <li>Trained new writers on the content strategy for Dolby Voice and Dolby Vision products.</li>
+            <li>
+              Authored and maintained conceptual, task-based, and reference documentation for Dolby Voice, Dolby Vision, and Dolby.io products in DITA
+              and Markdown, using Oxygen and GIT.
+            </li>
+            <li>Documented REST APIs for Dolby.io.</li>
+            <li>
+              Wrote all UX content from scratch for Dolby Voice and Dolby Vision products, including onboarding/setup flows, error messages and
+              alerts, and status notifications.
+            </li>
+            <li>
+              Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile
+              development environment.
+            </li>
+            <li>Represented documentation during scrums and sprint planning meetings.</li>
+          </ul>
         </div>
-        <div class="entry-company">Cisco — San Jose, CA</div>
-        <ul>
-          <li>Authored and maintained conceptual and task-based software documentation in DITA, using Oxygen for authoring and Astoria as the CMS, for Cisco UCS Manager and Cisco UCS Director.</li>
-          <li>Wrote all UX content from scratch for Cisco UCS Manager and Cisco UCS Director, including administration, configuration, and installation screens, forms, dashboards, notifications, and error messages.</li>
-          <li>Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile development environment.</li>
-          <li>Worked with documentation team to create standards and processes.</li>
-        </ul>
-      </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Senior Technical Writer</span>
-          <span class="entry-dates">2013 – 2015</span>
-        </div>
-        <div class="entry-company">Zuora — Foster City, CA</div>
-        <ul>
-          <li>Documented REST and SOAP APIs.</li>
-          <li>Authored and maintained documentation on Zuora's customer self-service documentation portal, using MindTouch.</li>
-          <li>Wrote all UX content from scratch for Zuora's customer self-service portal, including onboarding flows, forms, dashboards, notifications, and error messages.</li>
-          <li>Worked with engineering, product management, customer support, quality assurance, and professional services in an Agile development environment to make sure all publications were technically accurate.</li>
-        </ul>
-      </div>
+        <details class="archive">
+          <summary>Show more previous roles</summary>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Senior Technical Writer</span>
-          <span class="entry-dates">2011 – 2013</span>
-        </div>
-        <div class="entry-company">Model N, Inc. — Redwood City, CA</div>
-        <ul>
-          <li>Authored, maintained, and published complete, accurate, and usable software documentation — administration guides, installation guides, reference guides, release notes, and online help — in DITA, using Oxygen and MindTouch.</li>
-          <li>Led documentation initiative to migrate from traditional print documentation into a single-sourcing, wiki environment.</li>
-        </ul>
-      </div>
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Contract Principal Writer</span>
+              <span class="entry-dates">2017 – 2018</span>
+            </div>
+            <div class="entry-company">Audible Magic — Los Gatos, CA</div>
+            <ul>
+              <li>Defined content strategy for the Audible Magic content identification product.</li>
+              <li>
+                Led documentation efforts across functional areas to demonstrate the content strategy for the Audible Magic content identification
+                product.
+              </li>
+              <li>Documented REST APIs using Postman for the Audible Magic content identification product.</li>
+              <li>Authored and maintained conceptual and task-based software documentation using Confluence.</li>
+              <li>
+                Wrote all UX content from scratch for the Audible Magic content identification product, including administration, configuration, and
+                installation screens, forms, dashboards, notifications, and error messages.
+              </li>
+              <li>
+                Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile
+                development environment.
+              </li>
+            </ul>
+          </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Lead Technical Writer</span>
-          <span class="entry-dates">2009 – 2011</span>
-        </div>
-        <div class="entry-company">Openwave Systems — Redwood City, CA</div>
-        <ul>
-          <li>Defined content strategy for Openwave mobile e-mail, location, and mobile analytics products.</li>
-          <li>Led documentation efforts across functional areas to demonstrate the content strategy for Openwave mobile e-mail, location, and mobile analytics products.</li>
-          <li>Authored, maintained, and published complete, accurate, and usable software documentation — administration guides, installation guides, reference guides, release notes, and online help — in DITA, using Oxygen.</li>
-          <li>Provided text for UI strings.</li>
-          <li>Wrote all UX content from scratch for Openwave mobile e-mail, location, and mobile analytics products, including administration, configuration, and installation screens, forms, dashboards, notifications, and error messages.</li>
-          <li>Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile development environment.</li>
-          <li>Represented the documentation team during core team, product development, bug triage, and UI design meetings for the analytics, location, and traffic controller products.</li>
-          <li>Trained and supervised a team of five writers on the content strategy for multiple product lines.</li>
-        </ul>
-      </div>
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Senior Technical Writer</span>
+              <span class="entry-dates">2015 – 2017</span>
+            </div>
+            <div class="entry-company">Cisco — San Jose, CA</div>
+            <ul>
+              <li>
+                Authored and maintained conceptual and task-based software documentation in DITA, using Oxygen for authoring and Astoria as the CMS,
+                for Cisco UCS Manager and Cisco UCS Director.
+              </li>
+              <li>
+                Wrote all UX content from scratch for Cisco UCS Manager and Cisco UCS Director, including administration, configuration, and
+                installation screens, forms, dashboards, notifications, and error messages.
+              </li>
+              <li>
+                Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile
+                development environment.
+              </li>
+              <li>Worked with documentation team to create standards and processes.</li>
+            </ul>
+          </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Senior Technical Writer</span>
-          <span class="entry-dates">2007 – 2009</span>
-        </div>
-        <div class="entry-company">Electronics for Imaging — Foster City, CA</div>
-        <ul>
-          <li>Authored, maintained, and published software product specifications, bulletins, and internal FAQs.</li>
-          <li>Created and implemented procedures, as well as process improvements, for software product specifications, bulletins, and internal FAQs.</li>
-        </ul>
-      </div>
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Senior Technical Writer</span>
+              <span class="entry-dates">2013 – 2015</span>
+            </div>
+            <div class="entry-company">Zuora — Foster City, CA</div>
+            <ul>
+              <li>Documented REST and SOAP APIs.</li>
+              <li>Authored and maintained documentation on Zuora's customer self-service documentation portal, using MindTouch.</li>
+              <li>
+                Wrote all UX content from scratch for Zuora's customer self-service portal, including onboarding flows, forms, dashboards,
+                notifications, and error messages.
+              </li>
+              <li>
+                Worked with engineering, product management, customer support, quality assurance, and professional services in an Agile development
+                environment to make sure all publications were technically accurate.
+              </li>
+            </ul>
+          </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Contract Senior Technical Writer</span>
-          <span class="entry-dates">2007</span>
-        </div>
-        <div class="entry-company">IBM Corporation — San Jose, CA</div>
-        <ul>
-          <li>Authored and maintained administration and user guides for the Total Storage Productivity Center products, using the IBM DITA authoring tool (supported by Arbortext).</li>
-          <li>Edited and updated online help documentation.</li>
-        </ul>
-      </div>
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Senior Technical Writer</span>
+              <span class="entry-dates">2011 – 2013</span>
+            </div>
+            <div class="entry-company">Model N, Inc. — Redwood City, CA</div>
+            <ul>
+              <li>
+                Authored, maintained, and published complete, accurate, and usable software documentation — administration guides, installation
+                guides, reference guides, release notes, and online help — in DITA, using Oxygen and MindTouch.
+              </li>
+              <li>Led documentation initiative to migrate from traditional print documentation into a single-sourcing, wiki environment.</li>
+            </ul>
+          </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-version">Senior Technical Writer</span>
-          <span class="entry-dates">1998 – 2006</span>
-        </div>
-        <div class="entry-company">Oracle Corporation — Redwood City, CA</div>
-        <ul>
-          <li>Defined the content strategy for the Oracle Collaboration Suite products.</li>
-          <li>Trained new writers on the content strategy for the Oracle Collaboration Suite products.</li>
-          <li>Led documentation efforts across functional areas to demonstrate the content strategy for the Oracle Collaboration Suite products.</li>
-          <li>Trained and supervised a team of four writers on the content strategy for the Oracle Collaboration Suite products.</li>
-          <li>Authored, maintained, and published online help, PL/SQL reference, Java API reference, administration, concepts, installation, migration, and security guides for the Oracle Collaboration Suite products.</li>
-          <li>Edited and updated user interface error and status messages and tool tips for the content management and records management products.</li>
-          <li>Provided text for UI strings.</li>
-          <li>Wrote all UX content from scratch for the Oracle Collaboration Suite products, including administration, configuration, and installation screens, forms, dashboards, notifications, and error messages.</li>
-          <li>Managed and scheduled projects of three other writers on the e-mail and voice-mail documentation team.</li>
-          <li>Performed software installations and usability testing for the Oracle Collaboration Suite products.</li>
-          <li>Performed quality assurance testing to look for application bugs in each application release.</li>
-          <li>Point person for collaborative projects with writers in other documentation groups (local and in Canada and India): responsible for scheduling, collecting information, reviewing, and coordinating the delivery of documentation to release engineering.</li>
-        </ul>
-      </div>
-    </details>
-    </section>
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Lead Technical Writer</span>
+              <span class="entry-dates">2009 – 2011</span>
+            </div>
+            <div class="entry-company">Openwave Systems — Redwood City, CA</div>
+            <ul>
+              <li>Defined content strategy for Openwave mobile e-mail, location, and mobile analytics products.</li>
+              <li>
+                Led documentation efforts across functional areas to demonstrate the content strategy for Openwave mobile e-mail, location, and mobile
+                analytics products.
+              </li>
+              <li>
+                Authored, maintained, and published complete, accurate, and usable software documentation — administration guides, installation
+                guides, reference guides, release notes, and online help — in DITA, using Oxygen.
+              </li>
+              <li>Provided text for UI strings.</li>
+              <li>
+                Wrote all UX content from scratch for Openwave mobile e-mail, location, and mobile analytics products, including administration,
+                configuration, and installation screens, forms, dashboards, notifications, and error messages.
+              </li>
+              <li>
+                Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile
+                development environment.
+              </li>
+              <li>
+                Represented the documentation team during core team, product development, bug triage, and UI design meetings for the analytics,
+                location, and traffic controller products.
+              </li>
+              <li>Trained and supervised a team of five writers on the content strategy for multiple product lines.</li>
+            </ul>
+          </div>
 
-    <section id="skills" aria-labelledby="skills-h">
-      <div class="section-head"><h2 id="skills-h">Skills</h2></div>
-      <div class="skill-groups">
-        <div class="skill-group">
-          <h3>Content Design, Technical Documentation, &amp; UX Writing</h3>
-          <div class="skill-subgroup">
-            <div class="skill-badges">
-              <span class="badge">API Documentation</span><span class="badge">Content Design</span><span class="badge">Content Strategy</span>
-              <span class="badge">Cross-functional Collaboration</span><span class="badge">Docs-as-Code</span><span class="badge">Information Architecture</span>
-              <span class="badge">Single-Sourcing</span><span class="badge">Structured Authoring</span><span class="badge">UI Copy &amp; Microcopy</span>
-              <span class="badge">User Personas</span><span class="badge">UX Writing</span><span class="badge">Voice &amp; Tone / Style Guides</span>
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Senior Technical Writer</span>
+              <span class="entry-dates">2007 – 2009</span>
+            </div>
+            <div class="entry-company">Electronics for Imaging — Foster City, CA</div>
+            <ul>
+              <li>Authored, maintained, and published software product specifications, bulletins, and internal FAQs.</li>
+              <li>
+                Created and implemented procedures, as well as process improvements, for software product specifications, bulletins, and internal
+                FAQs.
+              </li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Contract Senior Technical Writer</span>
+              <span class="entry-dates">2007</span>
+            </div>
+            <div class="entry-company">IBM Corporation — San Jose, CA</div>
+            <ul>
+              <li>
+                Authored and maintained administration and user guides for the Total Storage Productivity Center products, using the IBM DITA
+                authoring tool (supported by Arbortext).
+              </li>
+              <li>Edited and updated online help documentation.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-version">Senior Technical Writer</span>
+              <span class="entry-dates">1998 – 2006</span>
+            </div>
+            <div class="entry-company">Oracle Corporation — Redwood City, CA</div>
+            <ul>
+              <li>Defined the content strategy for the Oracle Collaboration Suite products.</li>
+              <li>Trained new writers on the content strategy for the Oracle Collaboration Suite products.</li>
+              <li>
+                Led documentation efforts across functional areas to demonstrate the content strategy for the Oracle Collaboration Suite products.
+              </li>
+              <li>Trained and supervised a team of four writers on the content strategy for the Oracle Collaboration Suite products.</li>
+              <li>
+                Authored, maintained, and published online help, PL/SQL reference, Java API reference, administration, concepts, installation,
+                migration, and security guides for the Oracle Collaboration Suite products.
+              </li>
+              <li>
+                Edited and updated user interface error and status messages and tool tips for the content management and records management products.
+              </li>
+              <li>Provided text for UI strings.</li>
+              <li>
+                Wrote all UX content from scratch for the Oracle Collaboration Suite products, including administration, configuration, and
+                installation screens, forms, dashboards, notifications, and error messages.
+              </li>
+              <li>Managed and scheduled projects of three other writers on the e-mail and voice-mail documentation team.</li>
+              <li>Performed software installations and usability testing for the Oracle Collaboration Suite products.</li>
+              <li>Performed quality assurance testing to look for application bugs in each application release.</li>
+              <li>
+                Point person for collaborative projects with writers in other documentation groups (local and in Canada and India): responsible for
+                scheduling, collecting information, reviewing, and coordinating the delivery of documentation to release engineering.
+              </li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-h">
+        <div class="section-head"><h2 id="skills-h">Skills</h2></div>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Content Design, Technical Documentation, &amp; UX Writing</h3>
+            <div class="skill-subgroup">
+              <div class="skill-badges">
+                <span class="badge">API Documentation</span><span class="badge">Content Design</span><span class="badge">Content Strategy</span>
+                <span class="badge">Cross-functional Collaboration</span><span class="badge">Docs-as-Code</span
+                ><span class="badge">Information Architecture</span> <span class="badge">Single-Sourcing</span
+                ><span class="badge">Structured Authoring</span><span class="badge">UI Copy &amp; Microcopy</span>
+                <span class="badge">User Personas</span><span class="badge">UX Writing</span
+                ><span class="badge">Voice &amp; Tone / Style Guides</span>
+              </div>
+            </div>
+            <div class="skill-subgroup">
+              <div class="skill-badges">
+                <span class="badge">DITA</span><span class="badge">HTML</span><span class="badge">Markdown</span> <span class="badge">XML</span
+                ><span class="badge">YAML</span>
+              </div>
             </div>
           </div>
-          <div class="skill-subgroup">
+          <div class="skill-group">
+            <h3>CCMS &amp; Authoring Tools</h3>
             <div class="skill-badges">
-              <span class="badge">DITA</span><span class="badge">HTML</span><span class="badge">Markdown</span>
-              <span class="badge">XML</span><span class="badge">YAML</span>
+              <span class="badge">Adobe FrameMaker</span><span class="badge">Arbortext</span><span class="badge">EasyDITA</span>
+              <span class="badge">MindTouch</span><span class="badge">Oxygen</span><span class="badge">ReadMe.io</span>
+              <span class="badge">RoboHelp</span><span class="badge">XMetaL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Development &amp; Version Control</h3>
+            <div class="skill-badges">
+              <span class="badge">Apache Cassandra (familiar)</span><span class="badge">Astoria</span><span class="badge">Bitbucket</span>
+              <span class="badge">Cisco UCS (familiar)</span><span class="badge">Eclipse</span><span class="badge">Git</span>
+              <span class="badge">IntelliJ</span><span class="badge">Java (familiar)</span><span class="badge">Oracle Database (familiar)</span>
+              <span class="badge">Perforce</span><span class="badge">Postman</span><span class="badge">Python (familiar)</span>
+              <span class="badge">SQL (familiar)</span><span class="badge">Unity (familiar)</span><span class="badge">Unreal (familiar)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Agile &amp; Project Management</h3>
+            <div class="skill-badges">
+              <span class="badge">Asana</span><span class="badge">Confluence</span><span class="badge">Jira</span><span class="badge">Rally</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>AI &amp; Productivity</h3>
+            <div class="skill-badges">
+              <span class="badge">ChatGPT</span><span class="badge">Claude Code</span><span class="badge">GitHub Copilot</span
+              ><span class="badge">Grammarly</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Design &amp; Collaboration</h3>
+            <div class="skill-badges">
+              <span class="badge">Adobe XD</span><span class="badge">Figma</span><span class="badge">Lucidspark</span>
+              <span class="badge">OmniGraffle</span><span class="badge">Snagit</span><span class="badge">Visio</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Platforms</h3>
+            <div class="skill-badges">
+              <span class="badge">Android</span><span class="badge">iOS</span><span class="badge">Linux</span><span class="badge">Unix</span
+              ><span class="badge">Windows</span>
             </div>
           </div>
         </div>
-        <div class="skill-group">
-          <h3>CCMS &amp; Authoring Tools</h3>
-          <div class="skill-badges">
-            <span class="badge">Adobe FrameMaker</span><span class="badge">Arbortext</span><span class="badge">EasyDITA</span>
-            <span class="badge">MindTouch</span><span class="badge">Oxygen</span><span class="badge">ReadMe.io</span>
-            <span class="badge">RoboHelp</span><span class="badge">XMetaL</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Development &amp; Version Control</h3>
-          <div class="skill-badges">
-            <span class="badge">Apache Cassandra (familiar)</span><span class="badge">Astoria</span><span class="badge">Bitbucket</span>
-            <span class="badge">Cisco UCS (familiar)</span><span class="badge">Eclipse</span><span class="badge">Git</span>
-            <span class="badge">IntelliJ</span><span class="badge">Java (familiar)</span><span class="badge">Oracle Database (familiar)</span>
-            <span class="badge">Perforce</span><span class="badge">Postman</span><span class="badge">Python (familiar)</span>
-            <span class="badge">SQL (familiar)</span><span class="badge">Unity (familiar)</span><span class="badge">Unreal (familiar)</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Agile &amp; Project Management</h3>
-          <div class="skill-badges">
-            <span class="badge">Asana</span><span class="badge">Confluence</span><span class="badge">Jira</span><span class="badge">Rally</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>AI &amp; Productivity</h3>
-          <div class="skill-badges">
-            <span class="badge">ChatGPT</span><span class="badge">Claude Code</span><span class="badge">GitHub Copilot</span><span class="badge">Grammarly</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Design &amp; Collaboration</h3>
-          <div class="skill-badges">
-            <span class="badge">Adobe XD</span><span class="badge">Figma</span><span class="badge">Lucidspark</span>
-            <span class="badge">OmniGraffle</span><span class="badge">Snagit</span><span class="badge">Visio</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Platforms</h3>
-          <div class="skill-badges">
-            <span class="badge">Android</span><span class="badge">iOS</span><span class="badge">Linux</span><span class="badge">Unix</span><span class="badge">Windows</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="education" aria-labelledby="education-h">
-      <div class="section-head"><h2 id="education-h">Education</h2></div>
-      <ul class="ref-list">
-        <li><span class="req-tag req">req</span> BA, English (Technical Writing concentration) — San Jose State University</li>
-        <li><span class="req-tag req">req</span> BA, Philosophy — San Jose State University</li>
-        <li><span class="req-tag cert">cert</span> Technical Communications Certificate — San Jose State University</li>
-        <li><span class="req-tag cert">cert</span> Certified Scrum Master — Scrum Alliance</li>
-      </ul>
-    </section>
+      <section id="education" aria-labelledby="education-h">
+        <div class="section-head"><h2 id="education-h">Education</h2></div>
+        <ul class="ref-list">
+          <li><span class="req-tag req">req</span> BA, English (Technical Writing concentration) — San Jose State University</li>
+          <li><span class="req-tag req">req</span> BA, Philosophy — San Jose State University</li>
+          <li><span class="req-tag cert">cert</span> Technical Communications Certificate — San Jose State University</li>
+          <li><span class="req-tag cert">cert</span> Certified Scrum Master — Scrum Alliance</li>
+        </ul>
+      </section>
 
-    <section id="portfolio" aria-labelledby="portfolio-h">
-      <div class="section-head"><h2 id="portfolio-h">Portfolio</h2></div>
-      <div class="readme">
-        <p>See the full <a href="{{ '/projects/' | relative_url }}">projects page</a>.</p>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<div class="terminal-footer">
-  <div class="terminal">
-    <div class="line"><span class="prompt">$</span> whoami</div>
-    <div class="line out">ginger tabora — technical writer, content strategist &amp; UX writer</div>
-    <div class="line"><span class="prompt">$</span> cat status.txt</div>
-    <div class="line out">currently: shaping clear, user-first content — one commit at a time.<span class="cursor"></span></div>
+      <section id="portfolio" aria-labelledby="portfolio-h">
+        <div class="section-head"><h2 id="portfolio-h">Portfolio</h2></div>
+        <div class="readme">
+          <p>See the full <a href="{{ '/projects/' | relative_url }}">projects page</a>.</p>
+        </div>
+      </section>
+    </main>
   </div>
-  <p class="footer-note">Hand-rolled HTML prototype — a Hugo port is next. Navy blue and gunmetal — on purpose.</p>
-</div>
 
+  <div class="terminal-footer">
+    <div class="terminal">
+      <div class="line"><span class="prompt">$</span> whoami</div>
+      <div class="line out">ginger tabora — technical writer, content strategist &amp; UX writer</div>
+      <div class="line"><span class="prompt">$</span> cat status.txt</div>
+      <div class="line out">currently: shaping clear, user-first content — one commit at a time.<span class="cursor"></span></div>
+    </div>
+    <p class="footer-note">Hand-rolled HTML prototype — a Hugo port is next. Navy blue and gunmetal — on purpose.</p>
+  </div>
 </div>

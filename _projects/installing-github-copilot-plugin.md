@@ -40,6 +40,7 @@ Complete **all the following steps** before proceeding with installation:
 
 > **Warning — Compatible plugin versions**
 > Ensure you install the latest compatible version of the Copilot plugin:
+>
 > - For Visual Studio Code, use Copilot that version 0.17+ or later. This also requires VS Code to be higher than version 1.91.
 > - For IntelliJ IDEs, use Copilot version 1.5.6.5092 or later.
 
@@ -90,8 +91,8 @@ At JPMC, the GitHub Copilot plugin is available for the following IDEs on Window
 
    Once the authorization is successful, the GitHub Copilot icon displays in the lower, right-hand corner of your IDE, indicating it is available for use.
 
-9. Confirm that you are signed in with `SID_jpmcai` account by clicking on the profile icon in the lower, left-hand corner of your IDE.
-5. Review the Next Steps to begin leveraging Copilot.
+5. Confirm that you are signed in with `SID_jpmcai` account by clicking on the profile icon in the lower, left-hand corner of your IDE.
+6. Review the Next Steps to begin leveraging Copilot.
 
 #### Installing Copilot for Visual Studio
 
@@ -200,13 +201,13 @@ At JPMC, the GitHub Copilot plugin is available for the following IDEs on macOS:
       6. Click **OK** to close the device activation code pop-up.
       7. Click **Refresh** and confirm that the **Status** shows as **OK**.
    3. Complete the **Advanced** section:
-      1. Select **Verbose logs**, if you would prefer lengthier log output. *This is optional.*
-      2. Select **Pretend IDE to be VSCode**. *Existing suggestions may not work if this is not selected.*
+      1. Select **Verbose logs**, if you would prefer lengthier log output. _This is optional._
+      2. Select **Pretend IDE to be VSCode**. _Existing suggestions may not work if this is not selected._
    4. Complete the **Enterprise** section: Enter `https://github.com/settings/copilot` in the **Auth Provider URL** field.
    5. Complete the **Proxy** section as follows, if not selected:
       1. **Proxy Host:** `proxy.jpmchase.net`
       2. **Proxy port:** `9443`
-      3. Select the **Proxy strict SSL checkbox**. *Note that you will not be able to complete the next step if this is not selected.*
+      3. Select the **Proxy strict SSL checkbox**. _Note that you will not be able to complete the next step if this is not selected._
 8. Navigate to the **Features** tab, select **Chat** from the left navigation pane, then complete the fields as follows:
    1. Select **edgeschat panel** for the **Open Chat Mode** field.
    2. Select **GitHub Copilot (pss)** for the **Chat model** field.

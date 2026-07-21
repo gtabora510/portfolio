@@ -8,14 +8,14 @@ The Spinnaker API skill provides read-only access to JET Spinnaker's REST API fo
 
 ## Metadata
 
-| Field | Value |
-|---|---|
-| Plugin | spinnaker-api-plugin |
-| Version | 1.0.1 |
-| Compatibility | Windows |
-| Runtime | PowerShell 7+ |
+| Field          | Value                                                        |
+| -------------- | ------------------------------------------------------------ |
+| Plugin         | spinnaker-api-plugin                                         |
+| Version        | 1.0.1                                                        |
+| Compatibility  | Windows                                                      |
+| Runtime        | PowerShell 7+                                                |
 | Authentication | OAuth2 PKCE via IDAnywhere ADFS (SSO only — no PAT fallback) |
-| Target | JET Spinnaker (`jet-spinnaker-api.jpmchase.net`) |
+| Target         | JET Spinnaker (`jet-spinnaker-api.jpmchase.net`)             |
 
 ## Installation
 
@@ -64,10 +64,10 @@ List SEAL applications:
 
 ## Troubleshooting
 
-| Symptom | Likely cause | Resolution |
-|---|---|---|
-| `DEPENDENCY_MISSING` | authentication-helper-plugin not installed | Install `authentication-helper-plugin` from CIB Marketplace first |
-| 403 on project access | Missing DevX DEPLOY_READ group | Check entitlements via the skill or request group access from DevX Fabric team |
-| OAuth2 token not acquired | SSO session issue | Skill will reattempt authentication automatically; confirm consent if prompted |
-| Project not found | Incorrect project key | Verify the DevX project key — it may differ from the Jira project key |
-| Execution ID not found | Execution has expired or ID is incorrect | Spinnaker execution history has a retention window; verify the ID format |
+| Symptom                   | Likely cause                               | Resolution                                                                     |
+| ------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------ |
+| `DEPENDENCY_MISSING`      | authentication-helper-plugin not installed | Install `authentication-helper-plugin` from CIB Marketplace first              |
+| 403 on project access     | Missing DevX DEPLOY_READ group             | Check entitlements via the skill or request group access from DevX Fabric team |
+| OAuth2 token not acquired | SSO session issue                          | Skill will reattempt authentication automatically; confirm consent if prompted |
+| Project not found         | Incorrect project key                      | Verify the DevX project key — it may differ from the Jira project key          |
+| Execution ID not found    | Execution has expired or ID is incorrect   | Spinnaker execution history has a retention window; verify the ID format       |
