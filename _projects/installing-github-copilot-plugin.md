@@ -2,7 +2,7 @@
 layout: page
 title: Installing the GitHub Copilot Plugin
 description: Instructions for installing the GitHub Copilot IDE plugin.
-importance: 8
+importance: 7
 category: installation
 ---
 

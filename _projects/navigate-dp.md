@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Navigating the Developer Portal
-description: Learn how to use the Developer Portal Context selector and the primary navigation.
+description: Learn how to use the Acme Developer Portal Context selector and the primary navigation.
 importance: 5
 category: administration
 ---

@@ -532,9 +532,9 @@ This section discusses best practices for documenting a process. Processes are d
 
 Processes should start with an introductory sentence that provides context to the reader. However, the introductory sentence should not be a repeat of the section header. You can end the introductory sentence with a colon or a period. A colon should be used if the sentence precedes the process' steps. Use a complete sentence and not a partial sentence that is complete by the steps.
 
-| Avoid                        | Recommended                                          |
-| ---------------------------- | ---------------------------------------------------- |
-| _To personalize the portal:_ | _To personalize the portal, follow the steps below:_ |
+| Avoid                        | Recommended                                      |
+| ---------------------------- | ------------------------------------------------ |
+| _To personalize the portal:_ | _To personalize the portal, follow these steps:_ |
 
 If a procedure only has one step, do not number the step.
 
@@ -564,13 +564,13 @@ You should orient your reader by telling them what task they are completing befo
 
 All notifications should follow these best practices:
 
-- **Use clear, succinct subject lines** â€” your subject line should quickly convey to the reader what the message is about and whether they need to act. Guidance on writing subject lines with easily understood prefixes for each notification type is provided below.
+- **Use clear, succinct subject lines** â€” your subject line should quickly convey to the reader what the message is about and whether they need to act. Guidance on writing subject lines with easily understood prefixes for each notification type follows.
 - **Keep them brief** â€” convey your message as concisely as possible, using bullet points when it makes sense to improve scanning.
 - **Help the users find additional information** â€” include links if possible to any information supporting the message, such as new or updated product documentation.
 - **Provide a means to ask questions** â€” include an email address or a Teams site where questions may be directed.
 - **Follow the developer portal Content Style Guide** â€” follow the content writing guidelines to ensure consistency in the content.
 
-The table below summarizes common notifications.
+The following table summarizes common notifications.
 
 | Category           | Sub-category           | Frequency                                                                                                                                                 |
 | ------------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -606,7 +606,7 @@ You should write a release note for the following:
 
 **Release note subject line guidance:**
 
-Follow the structure below to help provide consistency in product release notes.
+Follow this structure to help provide consistency in product release notes.
 
 _[Product Name] [announces or another verb] [feature / event summary]_
 
@@ -623,7 +623,7 @@ When writing the announcement, be mindful of your objective. What is that you wa
 
 **Announcement subject line guidance:**
 
-Follow the structure below to help provide consistency in product announcements.
+Follow this structure to help provide consistency in product announcements.
 
 _[Product Name] [announces or another verb] [event summary]_
 
@@ -644,7 +644,7 @@ Incident notifications should have a minimum of three messages associated with t
 
 **Incident subject line guidance:**
 
-Follow the structure below to help provide consistency in service issue notifications.
+Follow this structure to help provide consistency in service issue notifications.
 
 _Incident notice with [Product Name] [optional brief descriptor of issue]_
 _Incident update with [Product Name] [optional brief descriptor of issue]_
@@ -669,7 +669,7 @@ Planned outage notifications should have a minimum of three messages associated 
 
 **Planned outage subject line guidance:**
 
-Follow the structure below to help provide consistency in planned outage notifications.
+Follow this structure to help provide consistency in planned outage notifications.
 
 _Outage scheduled for [Product Name] on [Date]_
 _Planned outage initiated for [Product Name]_
@@ -695,7 +695,7 @@ Unplanned outage notifications should have a minimum of two messages associated 
 
 **Unplanned outage subject line guidance:**
 
-Follow the structure below to help provide consistency in unplanned outage notifications.
+Follow this structure to help provide consistency in unplanned outage notifications.
 
 _Service outage for [Product Name] on [Date]_
 _Service outage update for [Product Name]_
@@ -727,7 +727,7 @@ User action notifications should have a minimum of two messages â€“ notice 
 
 **User action required subject line guidance:**
 
-Follow the structure below to help provide consistency in user action notifications.
+Follow this structure to help provide consistency in user action notifications.
 
 _Action Required for [Product Name] users by [Date]_
 _Reminder: Action Required for [Product Name] users by [Date]_
@@ -745,7 +745,7 @@ The suggested statuses to be used throughout the developer portal, whenever poss
 
 **Process subject line guidance:**
 
-Follow the structure below to help provide consistency in your process notifications.
+Follow this structure to help provide consistency in your process notifications.
 
 **Status:** _[context] [Task/Process Name] [additional information as needed]_
 
