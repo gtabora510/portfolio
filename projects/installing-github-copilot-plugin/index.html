@@ -1,7 +1,610 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h2 id="overview">Overview</h2> <p>This page provides instructions for installing the GitHub Copilot IDE plugin. For more details on which IDEs are currently supported, see the Supported IDEs section.</p> <p>Note that <strong>all existing firmwide policies apply to your use of JPMC GitHub Copilot</strong>, including the Code of Conduct, Information Safeguarding and Barriers Policy (and applicable supplement), Information Confidentiality Classifications Standard, and Acceptable Use of Technology and Information Assets Policy.</p> <h2 id="prerequisites">Prerequisites</h2> <blockquote> <p><strong>Warning — Proxy Disclaimer</strong> <strong>Important:</strong> Understand and configure the recommended system proxy settings to ensure proper functionality. Copilot is compatible with system-configured proxy for Windows machines. You are responsible for finding and layering additional compliant proxy configurations your specific use case requires. The Copilot team will not support proxy configurations added at the DevShell or IDE level; the responsibility to engineer configurations appropriate for extraneous and bespoke use cases is not in scope for the JPMC Copilot team.</p> </blockquote> <p>Complete <strong>all the following steps</strong> before proceeding with installation:</p> <ol> <li>Ensure you have completed all steps in the Onboarding guide, including the <strong>Prerequisites</strong>.</li> <li>Close any and all open IDE windows.</li> <li>Ensure you have the latest version of IDE installed and activated: <ol> <li>Determine if you are on the latest IDE version available in DevShell by running <code class="language-plaintext highlighter-rouge">os-tool list idea</code> for IntelliJ IDEA or <code class="language-plaintext highlighter-rouge">os-tool list vscode</code> for Visual Studio Code (VS Code), then ensure the latest version shows as <code class="language-plaintext highlighter-rouge">activated</code>.</li> <li>If you have Visual Studio (not to be confused with VS Code) installed from go/software, you must manually check what version you have installed (Help &gt; About); ensure you are on version VS 2022 17.11 or later.</li> </ol> </li> <li> <p>Run the following command to perform a clean installation of the latest IDE version, if you are not on the latest version:</p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>os-tool <span class="nb">install</span> <span class="nt">-u</span> <span class="s2">"&lt;latestIDEversion&gt;"</span>
-</code></pre></div> </div> </li> <li>Launch the freshly installed IDE by running <code class="language-plaintext highlighter-rouge">idea</code> or <code class="language-plaintext highlighter-rouge">rcode</code> in DevShell.</li> </ol> <h2 id="installation-steps-by-platform">Installation steps by platform</h2> <blockquote> <p><strong>Warning — Compatible plugin versions</strong> Ensure you install the latest compatible version of the Copilot plugin:</p> <ul> <li>For Visual Studio Code, use Copilot that version 0.17+ or later. This also requires VS Code to be higher than version 1.91.</li> <li>For IntelliJ IDEs, use Copilot version 1.5.6.5092 or later.</li> </ul> </blockquote> <h3 id="windows">Windows</h3> <p>At JPMC, the GitHub Copilot plugin is available for the following IDEs on Windows OS:</p> <ul> <li>IntelliJ IDEA</li> <li>Visual Studio Code (VS Code)</li> <li>Visual Studio</li> </ul> <h4 id="installing-copilot-for-intellij-idea">Installing Copilot for IntelliJ IDEA</h4> <ol> <li>Ensure you have completed and understood all the Prerequisites.</li> <li>Understand the disclaimers detailed in Copilot Proxy Configuration and configure your settings accordingly.</li> <li>Install the plugin to IntelliJ IDEA: <ol> <li>Open IDEA and navigate to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Plugins</strong>.</li> <li>Click on the <strong>Marketplace</strong> tab, then search for GitHub Copilot. Click <strong>Install</strong>.</li> <li>Click <strong>Accept</strong> for the Third Party Plugins Notice pop-up, then <strong>Restart IDE</strong>.</li> </ol> </li> <li>Authenticate your local IDE to your JPMC GitHub account: <ol> <li>Click <strong>Sign in to GitHub</strong> from the pop-up, or click the Copilot icon in the bottom, right corner and select <strong>Login to GitHub</strong> from the menu.</li> <li>Click <strong>Copy and Open</strong> when the “Sign in to GitHub” pop-up displays with a device code. This opens a GitHub Sign-on window in your internet browser.</li> <li>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</li> <li>Click <strong>Continue</strong> when prompted to “Single sign on to jpmcai.”</li> <li>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</li> <li>Paste the device code copied from your IDE into the Device Activation field, then click <strong>Continue</strong>.</li> <li>Ensure your SID shows in the “Verify your GitHub identity [SID_jpmcai]” statement, then click <strong>Authorize GitHub Copilot Plugin</strong>. A success message displays.</li> <li>Return to your IDE, click on the Copilot icon, and confirm that it shows <strong>Status: Ready</strong>.</li> </ol> </li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-visual-studio-code-vs-code">Installing Copilot for Visual Studio Code (VS Code)</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Understand the disclaimers detailed in Copilot Proxy Configuration and configure your settings accordingly.</li> <li>Install the plugin to Visual Studio Code: <ol> <li>Open VS Code by running <code class="language-plaintext highlighter-rouge">code</code> from your DevShell command line.</li> <li>Select the <strong>building blocks icon</strong> from the left toolbar to visit the <strong>Extensions Marketplace</strong>.</li> <li>Search for “GitHub Copilot”, then click <strong>Install</strong> next to the Copilot extension.</li> </ol> </li> <li>Authorize VS Code to use GitHub Copilot: <ol> <li>Select the <strong>User</strong> icon from the lower-left toolbar, then select <strong>Sign in with GitHub to use GitHub Copilot</strong>.</li> <li>Click <strong>Allow</strong> to allow the extension to sign in using GitHub at JPMC.</li> <li>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</li> <li>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</li> <li>Ensure your SID shows in the “…wants to access your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account”, then click <strong>Authorize Visual-Studio-Code</strong>.</li> <li>Close the additional IDE session that opens as a result of signing in, and return to your original IDE session.</li> <li>Click <strong>Cancel</strong> from the sign-in pop up window, then click <strong>Yes</strong> when asked “Would you like to try a different way?”</li> <li>Again, ensure your SID shows in the “…wants to access your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account”, then click <strong>Authorize Visual-Studio-Code</strong>.</li> </ol> <p>Once the authorization is successful, the GitHub Copilot icon displays in the lower, right-hand corner of your IDE, indicating it is available for use.</p> </li> <li>Confirm that you are signed in with <code class="language-plaintext highlighter-rouge">SID_jpmcai</code> account by clicking on the profile icon in the lower, left-hand corner of your IDE.</li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-visual-studio">Installing Copilot for Visual Studio</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Submit a software request for <strong>Microsoft Visual Studio Enterprise v17.12+</strong> via go/software. Search by Package Name “VS2022” (or by the software name “Microsoft Visual Studio”).</li> <li>Navigate to “Software Center” (from the Start menu) and install <strong>VS2022-17-12+</strong>, once you’ve received confirmation that your software request is complete.</li> <li>Ensure that GitHub Copilot is selected as part of the installation options.</li> <li>Launch Visual Studio from the Start menu.</li> <li>Click <strong>Sign In</strong> from the top-right corner to sign in to Visual Studio. Note that this must be done before logging into GitHub Copilot. <ul> <li>Select your JPMC account when prompted for a Microsoft signin.</li> <li>A success message displays once you are signed in.</li> </ul> </li> <li>Sign in to GitHub Copilot using your JPMC/GitHub account (<code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code>). <ol> <li>Click on the <strong>GitHub Copilot</strong> icon in the top-right corner, then click <strong>Sign in</strong>.</li> <li>Click <strong>Sign in with your browser</strong>. This opens a new browser window.</li> </ol> </li> <li>Enter your GitHub username as <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code>, leave the <strong>Password</strong> field blank, then click <strong>Sign in with your identity provider</strong>.</li> <li> <p>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</p> <p>The following success message displays once you are signed in.</p> </li> <li> <p>Restart Visual Studio and verify it says “GitHub Copilot is active” or GitHub Copilot shows a green check mark. For example:</p> </li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h3 id="macos">macOS</h3> <p>At JPMC, the GitHub Copilot plugin is available for the following IDEs on macOS:</p> <ul> <li>IntelliJ IDEA</li> <li>Visual Studio Code (VS Code)</li> <li>Xcode</li> </ul> <h4 id="installing-copilot-for-intellij-idea-on-mac">Installing Copilot for IntelliJ IDEA on Mac</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Configure the IntelliJ IDEA proxy settings: <ol> <li>Open IntelliJ IDEA and navigate to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Appearance &amp; Behavior</strong> &gt; <strong>System Settings</strong> &gt; <strong>HTTP Proxy</strong>.</li> <li>Input <code class="language-plaintext highlighter-rouge">proxy.jpmchase.net</code> in the <strong>Host</strong> field.</li> <li>Input <code class="language-plaintext highlighter-rouge">10443</code> in the <strong>Port</strong> field.</li> <li>Input <code class="language-plaintext highlighter-rouge">*.jpmchase.net</code> in the <strong>No proxy</strong> field.</li> <li>Click <strong>Apply</strong>, then <strong>OK</strong>.</li> <li>Restart IntelliJ IDEA to apply the proxy settings.</li> </ol> </li> <li>Install the GitHub Copilot plugin: <ol> <li>Navigate to <strong>Preferences</strong> &gt; <strong>Plugins</strong>.</li> <li>Click on the <strong>Marketplace</strong> tab, search for GitHub Copilot. Click <strong>Install</strong>.</li> <li>Click <strong>Accept</strong> for the Third Party Plugins Notice pop-up, if applicable, then click <strong>Restart IDE</strong>.</li> </ol> </li> <li>Authenticate your IDE to your JPMC GitHub account: <ol> <li>Click on the <strong>Copilot icon</strong> from the bottom toolbar, then select <strong>Login to GitHub</strong> from the menu.</li> <li>Click <strong>Copy and Open</strong>. This displays a pop-up window with a device activation code. This opens a GitHub Sign-on window in your internet browser.</li> <li> <p>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</p> <p>Or, if you have already logged into the JPMCAI GitHub account directly, click the <strong>Continue</strong> button that is aligned with your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account:</p> </li> <li>Click <strong>Continue</strong> when prompted to “Single sign on to jpmcai.”</li> <li>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</li> <li>Paste the activation code copied earlier into the <strong>Device Activation</strong> screen, then click <strong>Continue</strong>.</li> <li>Ensure your SID shows in the “Verify your GitHub identity [SID_jpmcai]” statement, then click <strong>Authorize GitHub Copilot Plugin</strong>. A success message displays.</li> </ol> </li> <li>Return to your IDE. A pop-up stating <strong>Successfully logged in to GitHub for GitHub Copilot</strong> displays.</li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-visual-studio-code-vs-code-on-mac">Installing Copilot for Visual Studio Code (VS Code) on Mac</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Configure the VS Code proxy settings: <ol> <li>Select <strong>File</strong> &gt; <strong>Preferences</strong> &gt; <strong>Settings</strong>, then type “proxy” in the search bar.</li> <li>Input <code class="language-plaintext highlighter-rouge">http://proxy.jpmchase.net:10443</code> in the <strong>http: Proxy</strong> field.</li> <li>Click <strong>Add Item</strong> under <strong>No Proxy</strong>, then input <code class="language-plaintext highlighter-rouge">*.jpmchase.net</code> in the field.</li> </ol> </li> <li>Install the plugin to Visual Studio Code: <ol> <li>Open VS Code by running <code class="language-plaintext highlighter-rouge">code</code> from your DevShell command line.</li> <li>Select the <strong>building blocks icon</strong> from the left toolbar to visit the <strong>Extensions Marketplace</strong>.</li> <li>Search for “GitHub Copilot”, then click <strong>Install</strong> next to the Copilot extension.</li> <li>Restart VS Code.</li> </ol> </li> <li>Authorize VS Code to use GitHub Copilot: <ol> <li>Select the <strong>User</strong> icon from the lower-left toolbar, then select <strong>Sign in with GitHub to use GitHub Copilot</strong>.</li> <li>Click the <strong>Sign in</strong> button that is aligned with your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account.</li> <li>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</li> <li>Click <strong>Continue</strong> when prompted to “Single sign on to jpmcai.”</li> <li>Enter your JPMC email in the <strong>Email</strong> field of the Microsoft/JPMC sign on page, then click <strong>Next</strong>.</li> <li>Enter your JPMC desktop login credentials, then click <strong>Sign In</strong>.</li> <li>Ensure your SID shows in the “…wants to access your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account”, then click <strong>Authorize Visual-Studio-Code</strong>.</li> </ol> </li> <li>Confirm that you are signed in with <code class="language-plaintext highlighter-rouge">SID_jpmcai</code> account by clicking on the profile icon in the lower, left-hand corner of your IDE.</li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-xcode">Installing Copilot for Xcode</h4> <ol> <li>Ensure you have updated Xcode version 26 or later. See the Prerequisites for more details on how to get Xcode for your corporate Mac.</li> <li>Ensure you have completed all the Prerequisites.</li> <li>Close any and all Xcode windows, if applicable.</li> <li>Install the required applications via the <code class="language-plaintext highlighter-rouge">xServe</code> application: <ol> <li>Search for “Copilot for Xcode”, then click <strong>Install</strong>, then this can take over 10 minutes to complete; plan accordingly.</li> <li>Search for “Node” and click <strong>Install</strong> for <code class="language-plaintext highlighter-rouge">Node.js w/npm 20.18.0</code>.</li> </ol> </li> <li>Enable the Copilot extension: <ol> <li>Open <strong>System Settings</strong> and navigate to <strong>General</strong> &gt; <strong>Login Items and Extensions</strong>.</li> <li>Click on the information icon next to <strong>Copilot for Xcode</strong>, then click on the toggle for <strong>Xcode Source Editor</strong> and click <strong>Done</strong>. This enables the Copilot extension for Xcode.</li> </ol> </li> <li>Open the <strong>Copilot for Xcode</strong> application, if it does not automatically launch once installed.</li> <li>Complete the required configurations in the <strong>Service</strong> tab: <ol> <li>Complete the <strong>Node Settings</strong> section: <ol> <li>Enter <code class="language-plaintext highlighter-rouge">/usr/local/bin/node</code> in the <strong>Path to Node</strong> field.</li> <li>Enter <code class="language-plaintext highlighter-rouge">/usr/bin/env</code> in the <strong>Max Node</strong> field. <blockquote> <p>Run the <code class="language-plaintext highlighter-rouge">which node</code> command in Terminal to verify these field inputs.</p> </blockquote> </li> </ol> </li> <li>Complete the <strong>GitHub Copilot Language Server</strong> section: <ol> <li>Click <strong>Install</strong> to install the language server.</li> <li>Click <strong>Sign In</strong>. This displays a pop-up window, copies the device activation code (presented in the pop-up) to your clipboard, and opens the JPMC GitHub SSO login screen in your browser.</li> <li>Click <strong>Continue</strong> to proceed to the Device Activation screen.</li> <li>Paste the activation code copied earlier into your clipboard to the Device Activation screen.</li> <li>Click <strong>Sign In</strong> to authenticate to JPMC GitHub. A success message displays, indicating Copilot for Xcode has been authenticated.</li> <li>Click <strong>OK</strong> to close the device activation code pop-up.</li> <li>Click <strong>Refresh</strong> and confirm that the <strong>Status</strong> shows as <strong>OK</strong>.</li> </ol> </li> <li>Complete the <strong>Advanced</strong> section: <ol> <li>Select <strong>Verbose logs</strong>, if you would prefer lengthier log output. <em>This is optional.</em> </li> <li>Select <strong>Pretend IDE to be VSCode</strong>. <em>Existing suggestions may not work if this is not selected.</em> </li> </ol> </li> <li>Complete the <strong>Enterprise</strong> section: Enter <code class="language-plaintext highlighter-rouge">https://github.com/settings/copilot</code> in the <strong>Auth Provider URL</strong> field.</li> <li>Complete the <strong>Proxy</strong> section as follows, if not selected: <ol> <li> <strong>Proxy Host:</strong> <code class="language-plaintext highlighter-rouge">proxy.jpmchase.net</code> </li> <li> <strong>Proxy port:</strong> <code class="language-plaintext highlighter-rouge">9443</code> </li> <li>Select the <strong>Proxy strict SSL checkbox</strong>. <em>Note that you will not be able to complete the next step if this is not selected.</em> </li> </ol> </li> </ol> </li> <li>Navigate to the <strong>Features</strong> tab, select <strong>Chat</strong> from the left navigation pane, then complete the fields as follows: <ol> <li>Select <strong>edgeschat panel</strong> for the <strong>Open Chat Mode</strong> field.</li> <li>Select <strong>GitHub Copilot (pss)</strong> for the <strong>Chat model</strong> field.</li> <li>Select <strong>Use the default model</strong> for the <strong>Utility chat model</strong> field.</li> <li>Select <strong>GitHub Copilot (pss)</strong> for the <strong>Embedding model</strong> field.</li> <li>Select <strong>Auto-detected by LLM</strong> for the <strong>Reply in Language</strong> field.</li> <li>Select your desired <strong>Memory</strong> option.</li> <li> <p>Optionally, you can set a desired <strong>Default system prompt</strong>. JET recommends using the following prompt to start:</p> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>You are a helpful senior programming assistant.
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Installing the GitHub Copilot Plugin | Ginger Y. Tabora </title> <meta name="author" content="Ginger Y. Tabora"> <meta name="description" content="Instructions for installing the GitHub Copilot IDE plugin."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/portfolio/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/portfolio/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8D%81&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/portfolio/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://gtabora510.github.io/portfolio/projects/installing-github-copilot-plugin/"> <script src="/portfolio/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/portfolio/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/portfolio/"> <span class="font-weight-bold">Ginger</span> Y. Tabora </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/portfolio/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/portfolio/projects/">portfolio <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/portfolio/resume/">resume </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Installing the GitHub Copilot Plugin</h1> <p class="post-description">Instructions for installing the GitHub Copilot IDE plugin.</p> </header> <article> <h2 id="overview">Overview</h2> <p>This page provides instructions for installing the GitHub Copilot IDE plugin. For more details on which IDEs are currently supported, see the Supported IDEs section.</p> <p>Note that <strong>all existing firmwide policies apply to your use of JPMC GitHub Copilot</strong>, including the Code of Conduct, Information Safeguarding and Barriers Policy (and applicable supplement), Information Confidentiality Classifications Standard, and Acceptable Use of Technology and Information Assets Policy.</p> <h2 id="prerequisites">Prerequisites</h2> <blockquote> <p><strong>Warning — Proxy Disclaimer</strong> <strong>Important:</strong> Understand and configure the recommended system proxy settings to ensure proper functionality. Copilot is compatible with system-configured proxy for Windows machines. You are responsible for finding and layering additional compliant proxy configurations your specific use case requires. The Copilot team will not support proxy configurations added at the DevShell or IDE level; the responsibility to engineer configurations appropriate for extraneous and bespoke use cases is not in scope for the JPMC Copilot team.</p> </blockquote> <p>Complete <strong>all the following steps</strong> before proceeding with installation:</p> <ol> <li>Ensure you have completed all steps in the Onboarding guide, including the <strong>Prerequisites</strong>.</li> <li>Close any and all open IDE windows.</li> <li>Ensure you have the latest version of IDE installed and activated: <ol> <li>Determine if you are on the latest IDE version available in DevShell by running <code class="language-plaintext highlighter-rouge">os-tool list idea</code> for IntelliJ IDEA or <code class="language-plaintext highlighter-rouge">os-tool list vscode</code> for Visual Studio Code (VS Code), then ensure the latest version shows as <code class="language-plaintext highlighter-rouge">activated</code>.</li> <li>If you have Visual Studio (not to be confused with VS Code) installed from go/software, you must manually check what version you have installed (Help &gt; About); ensure you are on version VS 2022 17.11 or later.</li> </ol> </li> <li> <p>Run the following command to perform a clean installation of the latest IDE version, if you are not on the latest version:</p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>os-tool <span class="nb">install</span> <span class="nt">-u</span> <span class="s2">"&lt;latestIDEversion&gt;"</span>
+</code></pre></div> </div> </li> <li>Launch the freshly installed IDE by running <code class="language-plaintext highlighter-rouge">idea</code> or <code class="language-plaintext highlighter-rouge">rcode</code> in DevShell.</li> </ol> <h2 id="installation-steps-by-platform">Installation Steps by Platform</h2> <blockquote> <p><strong>Warning — Compatible plugin versions</strong> Ensure you install the latest compatible version of the Copilot plugin:</p> <ul> <li>For Visual Studio Code, use Copilot that version 0.17+ or later. This also requires VS Code to be higher than version 1.91.</li> <li>For IntelliJ IDEs, use Copilot version 1.5.6.5092 or later.</li> </ul> </blockquote> <h3 id="windows">Windows</h3> <p>At JPMC, the GitHub Copilot plugin is available for the following IDEs on Windows OS:</p> <ul> <li>IntelliJ IDEA</li> <li>Visual Studio Code (VS Code)</li> <li>Visual Studio</li> </ul> <h4 id="installing-copilot-for-intellij-idea">Installing Copilot for IntelliJ IDEA</h4> <ol> <li>Ensure you have completed and understood all the Prerequisites.</li> <li>Understand the disclaimers detailed in Copilot Proxy Configuration and configure your settings accordingly.</li> <li>Install the plugin to IntelliJ IDEA: <ol> <li>Open IDEA and navigate to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Plugins</strong>.</li> <li>Click on the <strong>Marketplace</strong> tab, then search for GitHub Copilot. Click <strong>Install</strong>.</li> <li>Click <strong>Accept</strong> for the Third Party Plugins Notice pop-up, then <strong>Restart IDE</strong>.</li> </ol> </li> <li>Authenticate your local IDE to your JPMC GitHub account: <ol> <li>Click <strong>Sign in to GitHub</strong> from the pop-up, or click the Copilot icon in the bottom, right corner and select <strong>Login to GitHub</strong> from the menu.</li> <li>Click <strong>Copy and Open</strong> when the “Sign in to GitHub” pop-up displays with a device code. This opens a GitHub Sign-on window in your internet browser.</li> <li>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</li> <li>Click <strong>Continue</strong> when prompted to “Single sign on to jpmcai.”</li> <li>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</li> <li>Paste the device code copied from your IDE into the Device Activation field, then click <strong>Continue</strong>.</li> <li>Ensure your SID shows in the “Verify your GitHub identity [SID_jpmcai]” statement, then click <strong>Authorize GitHub Copilot Plugin</strong>. A success message displays.</li> <li>Return to your IDE, click on the Copilot icon, and confirm that it shows <strong>Status: Ready</strong>.</li> </ol> </li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-visual-studio-code-vs-code">Installing Copilot for Visual Studio Code (VS Code)</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Understand the disclaimers detailed in Copilot Proxy Configuration and configure your settings accordingly.</li> <li>Install the plugin to Visual Studio Code: <ol> <li>Open VS Code by running <code class="language-plaintext highlighter-rouge">code</code> from your DevShell command line.</li> <li>Select the <strong>building blocks icon</strong> from the left toolbar to visit the <strong>Extensions Marketplace</strong>.</li> <li>Search for “GitHub Copilot”, then click <strong>Install</strong> next to the Copilot extension.</li> </ol> </li> <li>Authorize VS Code to use GitHub Copilot: <ol> <li>Select the <strong>User</strong> icon from the lower-left toolbar, then select <strong>Sign in with GitHub to use GitHub Copilot</strong>.</li> <li>Click <strong>Allow</strong> to allow the extension to sign in using GitHub at JPMC.</li> <li>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</li> <li>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</li> <li>Ensure your SID shows in the “…wants to access your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account”, then click <strong>Authorize Visual-Studio-Code</strong>.</li> <li>Close the additional IDE session that opens as a result of signing in, and return to your original IDE session.</li> <li>Click <strong>Cancel</strong> from the sign-in pop up window, then click <strong>Yes</strong> when asked “Would you like to try a different way?”</li> <li>Again, ensure your SID shows in the “…wants to access your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account”, then click <strong>Authorize Visual-Studio-Code</strong>.</li> </ol> <p>Once the authorization is successful, the GitHub Copilot icon displays in the lower, right-hand corner of your IDE, indicating it is available for use.</p> </li> <li>Confirm that you are signed in with <code class="language-plaintext highlighter-rouge">SID_jpmcai</code> account by clicking on the profile icon in the lower, left-hand corner of your IDE.</li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-visual-studio">Installing Copilot for Visual Studio</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Submit a software request for <strong>Microsoft Visual Studio Enterprise v17.12+</strong> via go/software. Search by Package Name “VS2022” (or by the software name “Microsoft Visual Studio”).</li> <li>Navigate to “Software Center” (from the Start menu) and install <strong>VS2022-17-12+</strong>, once you’ve received confirmation that your software request is complete.</li> <li>Ensure that GitHub Copilot is selected as part of the installation options.</li> <li>Launch Visual Studio from the Start menu.</li> <li>Click <strong>Sign In</strong> from the top-right corner to sign in to Visual Studio. Note that this must be done before logging into GitHub Copilot. <ul> <li>Select your JPMC account when prompted for a Microsoft signin.</li> <li>A success message displays once you are signed in.</li> </ul> </li> <li>Sign in to GitHub Copilot using your JPMC/GitHub account (<code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code>). <ol> <li>Click on the <strong>GitHub Copilot</strong> icon in the top-right corner, then click <strong>Sign in</strong>.</li> <li>Click <strong>Sign in with your browser</strong>. This opens a new browser window.</li> </ol> </li> <li>Enter your GitHub username as <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code>, leave the <strong>Password</strong> field blank, then click <strong>Sign in with your identity provider</strong>.</li> <li> <p>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</p> <p>The following success message displays once you are signed in.</p> </li> <li> <p>Restart Visual Studio and verify it says “GitHub Copilot is active” or GitHub Copilot shows a green check mark. For example:</p> </li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h3 id="macos">macOS</h3> <p>At JPMC, the GitHub Copilot plugin is available for the following IDEs on macOS:</p> <ul> <li>IntelliJ IDEA</li> <li>Visual Studio Code (VS Code)</li> <li>Xcode</li> </ul> <h4 id="installing-copilot-for-intellij-idea-on-mac">Installing Copilot for IntelliJ IDEA on Mac</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Configure the IntelliJ IDEA proxy settings: <ol> <li>Open IntelliJ IDEA and navigate to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Appearance &amp; Behavior</strong> &gt; <strong>System Settings</strong> &gt; <strong>HTTP Proxy</strong>.</li> <li>Input <code class="language-plaintext highlighter-rouge">proxy.jpmchase.net</code> in the <strong>Host</strong> field.</li> <li>Input <code class="language-plaintext highlighter-rouge">10443</code> in the <strong>Port</strong> field.</li> <li>Input <code class="language-plaintext highlighter-rouge">*.jpmchase.net</code> in the <strong>No proxy</strong> field.</li> <li>Click <strong>Apply</strong>, then <strong>OK</strong>.</li> <li>Restart IntelliJ IDEA to apply the proxy settings.</li> </ol> </li> <li>Install the GitHub Copilot plugin: <ol> <li>Navigate to <strong>Preferences</strong> &gt; <strong>Plugins</strong>.</li> <li>Click on the <strong>Marketplace</strong> tab, search for GitHub Copilot. Click <strong>Install</strong>.</li> <li>Click <strong>Accept</strong> for the Third Party Plugins Notice pop-up, if applicable, then click <strong>Restart IDE</strong>.</li> </ol> </li> <li>Authenticate your IDE to your JPMC GitHub account: <ol> <li>Click on the <strong>Copilot icon</strong> from the bottom toolbar, then select <strong>Login to GitHub</strong> from the menu.</li> <li>Click <strong>Copy and Open</strong>. This displays a pop-up window with a device activation code. This opens a GitHub Sign-on window in your internet browser.</li> <li> <p>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</p> <p>Or, if you have already logged into the JPMCAI GitHub account directly, click the <strong>Continue</strong> button that is aligned with your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account:</p> </li> <li>Click <strong>Continue</strong> when prompted to “Single sign on to jpmcai.”</li> <li>If you receive a Microsoft/JPMC sign on page, enter your JPMC email in the <strong>Email</strong> field, then click <strong>Next</strong>. If prompted for additional credentials, enter your JPMC desktop login. If you do not receive these prompts, skip to the next step.</li> <li>Paste the activation code copied earlier into the <strong>Device Activation</strong> screen, then click <strong>Continue</strong>.</li> <li>Ensure your SID shows in the “Verify your GitHub identity [SID_jpmcai]” statement, then click <strong>Authorize GitHub Copilot Plugin</strong>. A success message displays.</li> </ol> </li> <li>Return to your IDE. A pop-up stating <strong>Successfully logged in to GitHub for GitHub Copilot</strong> displays.</li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-visual-studio-code-vs-code-on-mac">Installing Copilot for Visual Studio Code (VS Code) on Mac</h4> <ol> <li>Ensure you have completed all the Prerequisites.</li> <li>Configure the VS Code proxy settings: <ol> <li>Select <strong>File</strong> &gt; <strong>Preferences</strong> &gt; <strong>Settings</strong>, then type “proxy” in the search bar.</li> <li>Input <code class="language-plaintext highlighter-rouge">http://proxy.jpmchase.net:10443</code> in the <strong>http: Proxy</strong> field.</li> <li>Click <strong>Add Item</strong> under <strong>No Proxy</strong>, then input <code class="language-plaintext highlighter-rouge">*.jpmchase.net</code> in the field.</li> </ol> </li> <li>Install the plugin to Visual Studio Code: <ol> <li>Open VS Code by running <code class="language-plaintext highlighter-rouge">code</code> from your DevShell command line.</li> <li>Select the <strong>building blocks icon</strong> from the left toolbar to visit the <strong>Extensions Marketplace</strong>.</li> <li>Search for “GitHub Copilot”, then click <strong>Install</strong> next to the Copilot extension.</li> <li>Restart VS Code.</li> </ol> </li> <li>Authorize VS Code to use GitHub Copilot: <ol> <li>Select the <strong>User</strong> icon from the lower-left toolbar, then select <strong>Sign in with GitHub to use GitHub Copilot</strong>.</li> <li>Click the <strong>Sign in</strong> button that is aligned with your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account.</li> <li>Enter <code class="language-plaintext highlighter-rouge">&lt;your SID&gt;_jpmcai</code> in the <strong>Username</strong> field, leave the <strong>Password</strong> blank, then click <strong>Sign in with your identity provider</strong>.</li> <li>Click <strong>Continue</strong> when prompted to “Single sign on to jpmcai.”</li> <li>Enter your JPMC email in the <strong>Email</strong> field of the Microsoft/JPMC sign on page, then click <strong>Next</strong>.</li> <li>Enter your JPMC desktop login credentials, then click <strong>Sign In</strong>.</li> <li>Ensure your SID shows in the “…wants to access your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account”, then click <strong>Authorize Visual-Studio-Code</strong>.</li> </ol> </li> <li>Confirm that you are signed in with <code class="language-plaintext highlighter-rouge">SID_jpmcai</code> account by clicking on the profile icon in the lower, left-hand corner of your IDE.</li> <li>Review the Next Steps to begin leveraging Copilot.</li> </ol> <h4 id="installing-copilot-for-xcode">Installing Copilot for Xcode</h4> <ol> <li>Ensure you have updated Xcode version 26 or later. See the Prerequisites for more details on how to get Xcode for your corporate Mac.</li> <li>Ensure you have completed all the Prerequisites.</li> <li>Close any and all Xcode windows, if applicable.</li> <li>Install the required applications via the <code class="language-plaintext highlighter-rouge">xServe</code> application: <ol> <li>Search for “Copilot for Xcode”, then click <strong>Install</strong>, then this can take over 10 minutes to complete; plan accordingly.</li> <li>Search for “Node” and click <strong>Install</strong> for <code class="language-plaintext highlighter-rouge">Node.js w/npm 20.18.0</code>.</li> </ol> </li> <li>Enable the Copilot extension: <ol> <li>Open <strong>System Settings</strong> and navigate to <strong>General</strong> &gt; <strong>Login Items and Extensions</strong>.</li> <li>Click on the information icon next to <strong>Copilot for Xcode</strong>, then click on the toggle for <strong>Xcode Source Editor</strong> and click <strong>Done</strong>. This enables the Copilot extension for Xcode.</li> </ol> </li> <li>Open the <strong>Copilot for Xcode</strong> application, if it does not automatically launch once installed.</li> <li>Complete the required configurations in the <strong>Service</strong> tab: <ol> <li>Complete the <strong>Node Settings</strong> section: <ol> <li>Enter <code class="language-plaintext highlighter-rouge">/usr/local/bin/node</code> in the <strong>Path to Node</strong> field.</li> <li>Enter <code class="language-plaintext highlighter-rouge">/usr/bin/env</code> in the <strong>Max Node</strong> field. <blockquote> <p>Run the <code class="language-plaintext highlighter-rouge">which node</code> command in Terminal to verify these field inputs.</p> </blockquote> </li> </ol> </li> <li>Complete the <strong>GitHub Copilot Language Server</strong> section: <ol> <li>Click <strong>Install</strong> to install the language server.</li> <li>Click <strong>Sign In</strong>. This displays a pop-up window, copies the device activation code (presented in the pop-up) to your clipboard, and opens the JPMC GitHub SSO login screen in your browser.</li> <li>Click <strong>Continue</strong> to proceed to the Device Activation screen.</li> <li>Paste the activation code copied earlier into your clipboard to the Device Activation screen.</li> <li>Click <strong>Sign In</strong> to authenticate to JPMC GitHub. A success message displays, indicating Copilot for Xcode has been authenticated.</li> <li>Click <strong>OK</strong> to close the device activation code pop-up.</li> <li>Click <strong>Refresh</strong> and confirm that the <strong>Status</strong> shows as <strong>OK</strong>.</li> </ol> </li> <li>Complete the <strong>Advanced</strong> section: <ol> <li>Select <strong>Verbose logs</strong>, if you would prefer lengthier log output. <em>This is optional.</em> </li> <li>Select <strong>Pretend IDE to be VSCode</strong>. <em>Existing suggestions may not work if this is not selected.</em> </li> </ol> </li> <li>Complete the <strong>Enterprise</strong> section: Enter <code class="language-plaintext highlighter-rouge">https://github.com/settings/copilot</code> in the <strong>Auth Provider URL</strong> field.</li> <li>Complete the <strong>Proxy</strong> section as follows, if not selected: <ol> <li> <strong>Proxy Host:</strong> <code class="language-plaintext highlighter-rouge">proxy.jpmchase.net</code> </li> <li> <strong>Proxy port:</strong> <code class="language-plaintext highlighter-rouge">9443</code> </li> <li>Select the <strong>Proxy strict SSL checkbox</strong>. <em>Note that you will not be able to complete the next step if this is not selected.</em> </li> </ol> </li> </ol> </li> <li>Navigate to the <strong>Features</strong> tab, select <strong>Chat</strong> from the left navigation pane, then complete the fields as follows: <ol> <li>Select <strong>edgeschat panel</strong> for the <strong>Open Chat Mode</strong> field.</li> <li>Select <strong>GitHub Copilot (pss)</strong> for the <strong>Chat model</strong> field.</li> <li>Select <strong>Use the default model</strong> for the <strong>Utility chat model</strong> field.</li> <li>Select <strong>GitHub Copilot (pss)</strong> for the <strong>Embedding model</strong> field.</li> <li>Select <strong>Auto-detected by LLM</strong> for the <strong>Reply in Language</strong> field.</li> <li>Select your desired <strong>Memory</strong> option.</li> <li> <p>Optionally, you can set a desired <strong>Default system prompt</strong>. JET recommends using the following prompt to start:</p> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>You are a helpful senior programming assistant.
 You should respond in natural language.
 Your response should be correct, concise, clear, informative, and factual, etc.
 Use Markdown if you need to present code, table, list, etc.
 If you are asked to help perform a task, you MUST think step-by-step, then describe each step concisely.
-</code></pre></div> </div> </li> <li>Select the desired <strong>Font size of message</strong>. The recommended size is <code class="language-plaintext highlighter-rouge">12</code>.</li> <li>Select <code class="language-plaintext highlighter-rouge">.AppleSystemUIFontMonospaced-Regular - 12 opt</code> for the <strong>Font of code</strong> field.</li> <li>Select the <strong>Wrap text in code blocks</strong> checkbox.</li> <li>Select the <strong>Disable always-on-top</strong> checkbox when the chat panel is detached from Xcode.</li> <li>Select the <strong>Keep always-on-top</strong> if the chat panel and Xcode overlaps and Xcode is active checkbox.</li> <li>Input the desired amount in the <strong>Search plugin max iterations</strong> field. The recommended value is <code class="language-plaintext highlighter-rouge">7</code>.</li> </ol> </li> <li>Open Xcode and enable the Copilot extension permission, if prompted.</li> <li>To open the chat dialogue and begin using Copilot, use one of two methods; in either case, a separate chat window opens, allowing you to interact with Copilot: <ul> <li>Click the grey circle in the bottom-right corner of the Xcode editor window, then click the “+”. This adds a new chat tab to the pop-up and turns the circle blue, indicating you have a Copilot chat open. If you close the window, the circle returns to grey; or,</li> <li>Select <strong>Editor</strong> &gt; <strong>Copilot</strong> &gt; <strong>Open Chat</strong> from the Xcode menu bar.</li> </ul> </li> <li>Review the Next Steps below to leverage Copilot further.</li> </ol> <h2 id="next-steps">Next steps</h2> <p>Review the following guides to get the most out of GitHub Copilot:</p> <ul> <li>Using Agent Mode</li> <li>Enabling Telemetry</li> <li>Determining Usage</li> </ul> <h2 id="troubleshooting">Troubleshooting</h2> <h3 id="scenario-1-you-cannot-install-the-plugin-but-can-log-in-to-github-with-sid_jpmcai-but-do-not-see-the-copilot-business-is-active-for-your-account-message">Scenario 1: You cannot install the plugin but can log in to GitHub with <code class="language-plaintext highlighter-rouge">SID_jpmcai</code> but do not see the “Copilot Business is active for your account” message.</h3> <p>If you cannot install the plugin and do not see the “Copilot Business is active for your account” message (when logging into https://github.com/settings/copilot), this likely means you do not have a license.</p> <ul> <li>Ensure you have a license to the tool by following the Onboarding steps.</li> <li>If you were previously able to install the plugin but are no longer able to access it, check to ensure you have logged out of your <code class="language-plaintext highlighter-rouge">SID_bemgmt</code> account, then log back in with your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account. If you are still unable to log in, please reach out to your L2B POC for further assistance.</li> </ul> <h3 id="scenario-2-you-cannot-install-the-plugin-but-can-log-in-to-github-and-see-the-copilot-business-is-active-for-your-account-message">Scenario 2: You cannot install the plugin but can log in to GitHub and see the “Copilot Business is active for your account” message.</h3> <p>If you cannot install the plugin but see the “Copilot Business is active for your account” message when logging into https://github.com/settings/copilot, complete the following steps <strong>in the order presented</strong> to troubleshoot this issue:</p> <ol> <li>Ensure you have configured the proxy properly (see steps above). Be sure to restart your IDE after any proxy setting change. <strong>Note that inaccurate proxy configuration is an extremely common reason users have issues installing the plugin.</strong> <ul> <li>If the Chrome browser opens with the login/device activation screen, that is indicative of an incorrect proxy configuration.</li> <li>If you received either of these errors, these are indicative of an incorrect proxy configuration.</li> </ul> </li> <li>Ensure you’ve completed all the Prerequisites. <ul> <li>Only certain versions of the GitHub Copilot plugin are compatible with the latest version of IntelliJ IDEA. If you are using an older version of either, you may encounter issues.</li> <li>If you are using a corporate Mac, there may be additional configurations needed, depending on use case. Review the steps above for configuring the <strong>Login Items and Extensions</strong> in your System Settings.</li> </ul> </li> <li>Check the GitHub Copilot Stack Overflow community for any known issues with the plugin.</li> </ol> <p>If you are still unable to install the plugin after completing the steps above, reach out to your L2B POC for further assistance.</p> <p>If you belong to the CIB Payments Technology organization, you may need to follow these workaround steps to successfully install the plugin. If you are unable to resolve the issue, visit go/MYitHelp or reach out to your L2B POC for further assistance.</p> </body></html>
+</code></pre></div> </div> </li> <li>Select the desired <strong>Font size of message</strong>. The recommended size is <code class="language-plaintext highlighter-rouge">12</code>.</li> <li>Select <code class="language-plaintext highlighter-rouge">.AppleSystemUIFontMonospaced-Regular - 12 opt</code> for the <strong>Font of code</strong> field.</li> <li>Select the <strong>Wrap text in code blocks</strong> checkbox.</li> <li>Select the <strong>Disable always-on-top</strong> checkbox when the chat panel is detached from Xcode.</li> <li>Select the <strong>Keep always-on-top</strong> if the chat panel and Xcode overlaps and Xcode is active checkbox.</li> <li>Input the desired amount in the <strong>Search plugin max iterations</strong> field. The recommended value is <code class="language-plaintext highlighter-rouge">7</code>.</li> </ol> </li> <li>Open Xcode and enable the Copilot extension permission, if prompted.</li> <li>To open the chat dialogue and begin using Copilot, use one of two methods; in either case, a separate chat window opens, allowing you to interact with Copilot: <ul> <li>Click the grey circle in the bottom-right corner of the Xcode editor window, then click the “+”. This adds a new chat tab to the pop-up and turns the circle blue, indicating you have a Copilot chat open. If you close the window, the circle returns to grey; or,</li> <li>Select <strong>Editor</strong> &gt; <strong>Copilot</strong> &gt; <strong>Open Chat</strong> from the Xcode menu bar.</li> </ul> </li> <li>Review the Next Steps below to leverage Copilot further.</li> </ol> <h2 id="next-steps">Next Steps</h2> <p>Review the following guides to get the most out of GitHub Copilot:</p> <ul> <li>Using Agent Mode</li> <li>Enabling Telemetry</li> <li>Determining Usage</li> </ul> <h2 id="troubleshooting">Troubleshooting</h2> <h3 id="scenario-1-you-cannot-install-the-plugin-but-can-log-in-to-github-with-sid_jpmcai-but-do-not-see-the-copilot-business-is-active-for-your-account-message">Scenario 1: You Cannot Install the Plugin but Can Log in to GitHub with <code class="language-plaintext highlighter-rouge">SID_jpmcai</code> but Do Not See the “Copilot Business is active for your account” Message</h3> <p>If you cannot install the plugin and do not see the “Copilot Business is active for your account” message (when logging into https://github.com/settings/copilot), this likely means you do not have a license.</p> <ul> <li>Ensure you have a license to the tool by following the Onboarding steps.</li> <li>If you were previously able to install the plugin but are no longer able to access it, check to ensure you have logged out of your <code class="language-plaintext highlighter-rouge">SID_bemgmt</code> account, then log back in with your <code class="language-plaintext highlighter-rouge">&lt;SID&gt;_jpmcai</code> account. If you are still unable to log in, please reach out to your L2B POC for further assistance.</li> </ul> <h3 id="scenario-2-you-cannot-install-the-plugin-but-can-log-in-to-github-and-see-the-copilot-business-is-active-for-your-account-message">Scenario 2: You Cannot Install the Plugin but Can Log in to GitHub and See the “Copilot Business is active for your account” Message</h3> <p>If you cannot install the plugin but see the “Copilot Business is active for your account” message when logging into https://github.com/settings/copilot, complete the following steps <strong>in the order presented</strong> to troubleshoot this issue:</p> <ol> <li>Ensure you have configured the proxy properly (see steps above). Be sure to restart your IDE after any proxy setting change. <strong>Note that inaccurate proxy configuration is an extremely common reason users have issues installing the plugin.</strong> <ul> <li>If the Chrome browser opens with the login/device activation screen, that is indicative of an incorrect proxy configuration.</li> <li>If you received either of these errors, these are indicative of an incorrect proxy configuration.</li> </ul> </li> <li>Ensure you’ve completed all the Prerequisites. <ul> <li>Only certain versions of the GitHub Copilot plugin are compatible with the latest version of IntelliJ IDEA. If you are using an older version of either, you may encounter issues.</li> <li>If you are using a corporate Mac, there may be additional configurations needed, depending on use case. Review the steps above for configuring the <strong>Login Items and Extensions</strong> in your System Settings.</li> </ul> </li> <li>Check the GitHub Copilot Stack Overflow community for any known issues with the plugin.</li> </ol> <p>If you are still unable to install the plugin after completing the steps above, reach out to your L2B POC for further assistance.</p> <p>If you belong to the CIB Payments Technology organization, you may need to follow these workaround steps to successfully install the plugin. If you are unable to resolve the issue, visit go/MYitHelp or reach out to your L2B POC for further assistance.</p> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ginger Y. Tabora. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/portfolio/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/portfolio/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/portfolio/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/portfolio/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/portfolio/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/portfolio/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/portfolio/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/portfolio/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/portfolio/assets/al_img_tools/js/zoom.js"></script> <script defer src="/portfolio/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/portfolio/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/portfolio/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/portfolio/";
+    },
+  },{id: "nav-portfolio",
+          title: "portfolio",
+          description: "A collection of technical documentation, API references, and style guidance.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/portfolio/projects/";
+          },
+        },{id: "nav-resume",
+          title: "resume",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/portfolio/resume/";
+          },
+        },{id: "post-a-post-with-plotly-js",
+        
+          title: "a post with plotly.js",
+        
+        description: "this is what included plotly.js code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2025/plotly/";
+          
+        },
+      },{id: "post-a-post-with-image-galleries",
+        
+          title: "a post with image galleries",
+        
+        description: "this is what included image galleries could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/photo-gallery/";
+          
+        },
+      },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
+        
+          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
+          
+        },
+      },{id: "post-a-post-with-tabs",
+        
+          title: "a post with tabs",
+        
+        description: "this is what included tabs in a post could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/tabs/";
+          
+        },
+      },{id: "post-a-post-with-typograms",
+        
+          title: "a post with typograms",
+        
+        description: "this is what included typograms code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/typograms/";
+          
+        },
+      },{id: "post-a-post-that-can-be-cited",
+        
+          title: "a post that can be cited",
+        
+        description: "this is what a post that can be cited looks like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/post-citation/";
+          
+        },
+      },{id: "post-a-post-with-pseudo-code",
+        
+          title: "a post with pseudo code",
+        
+        description: "this is what included pseudo code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/pseudocode/";
+          
+        },
+      },{id: "post-a-post-with-code-diff",
+        
+          title: "a post with code diff",
+        
+        description: "this is how you can display code diffs",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/code-diff/";
+          
+        },
+      },{id: "post-a-post-with-advanced-image-components",
+        
+          title: "a post with advanced image components",
+        
+        description: "this is what advanced image components could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/advanced-images/";
+          
+        },
+      },{id: "post-a-post-with-vega-lite",
+        
+          title: "a post with vega lite",
+        
+        description: "this is what included vega lite code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/vega-lite/";
+          
+        },
+      },{id: "post-a-post-with-geojson",
+        
+          title: "a post with geojson",
+        
+        description: "this is what included geojson code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/geojson-map/";
+          
+        },
+      },{id: "post-a-post-with-echarts",
+        
+          title: "a post with echarts",
+        
+        description: "this is what included echarts code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/echarts/";
+          
+        },
+      },{id: "post-a-post-with-chart-js",
+        
+          title: "a post with chart.js",
+        
+        description: "this is what included chart.js code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/chartjs/";
+          
+        },
+      },{id: "post-a-post-with-tikzjax",
+        
+          title: "a post with TikZJax",
+        
+        description: "this is what included TikZ code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/tikzjax/";
+          
+        },
+      },{id: "post-a-post-with-bibliography",
+        
+          title: "a post with bibliography",
+        
+        description: "an example of a blog post with bibliography",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/post-bibliography/";
+          
+        },
+      },{id: "post-a-post-with-jupyter-notebook",
+        
+          title: "a post with jupyter notebook",
+        
+        description: "an example of a blog post with jupyter notebook",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/jupyter-notebook/";
+          
+        },
+      },{id: "post-a-post-with-custom-blockquotes",
+        
+          title: "a post with custom blockquotes",
+        
+        description: "an example of a blog post with custom blockquotes",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/custom-blockquotes/";
+          
+        },
+      },{id: "post-a-post-with-table-of-contents-on-a-sidebar",
+        
+          title: "a post with table of contents on a sidebar",
+        
+        description: "an example of a blog post with table of contents on a sidebar",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/sidebar-table-of-contents/";
+          
+        },
+      },{id: "post-a-post-with-audios",
+        
+          title: "a post with audios",
+        
+        description: "this is what included audios could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/audios/";
+          
+        },
+      },{id: "post-a-post-with-videos",
+        
+          title: "a post with videos",
+        
+        description: "this is what included videos could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/videos/";
+          
+        },
+      },{id: "post-displaying-beautiful-interactive-tables",
+        
+          title: "displaying beautiful interactive tables",
+        
+        description: "an example of how to use interactive tables in al-folio",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/tables/";
+          
+        },
+      },{id: "post-a-post-with-table-of-contents",
+        
+          title: "a post with table of contents",
+        
+        description: "an example of a blog post with table of contents",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/table-of-contents/";
+          
+        },
+      },{id: "post-a-post-with-giscus-comments",
+        
+          title: "a post with giscus comments",
+        
+        description: "an example of a blog post with giscus comments",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2022/giscus-comments/";
+          
+        },
+      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
+        
+          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
+          
+        },
+      },{id: "post-a-post-with-redirect",
+        
+          title: "a post with redirect",
+        
+        description: "you can also redirect to assets like pdf",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/assets/pdf/example_pdf.pdf";
+          
+        },
+      },{id: "post-a-post-with-diagrams",
+        
+          title: "a post with diagrams",
+        
+        description: "an example of a blog post with diagrams",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2021/diagrams/";
+          
+        },
+      },{id: "post-a-distill-style-blog-post",
+        
+          title: "a distill-style blog post",
+        
+        description: "an example of a distill-style blog post and main elements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2021/distill/";
+          
+        },
+      },{id: "post-a-post-with-twitter",
+        
+          title: "a post with twitter",
+        
+        description: "an example of a blog post with twitter",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2020/twitter/";
+          
+        },
+      },{id: "post-a-post-with-disqus-comments",
+        
+          title: "a post with disqus comments",
+        
+        description: "an example of a blog post with disqus comments",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/disqus-comments/";
+          
+        },
+      },{id: "post-a-post-with-math",
+        
+          title: "a post with math",
+        
+        description: "an example of a blog post with some math",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/math/";
+          
+        },
+      },{id: "post-a-post-with-code",
+        
+          title: "a post with code",
+        
+        description: "an example of a blog post with some code",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/code/";
+          
+        },
+      },{id: "post-a-post-with-images",
+        
+          title: "a post with images",
+        
+        description: "this is what included images could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/images/";
+          
+        },
+      },{id: "post-a-post-with-formatting-and-links",
+        
+          title: "a post with formatting and links",
+        
+        description: "march & april, looking forward to summer",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/formatting-and-links/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/portfolio/books/the_godfather/";
+            },},{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/portfolio/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "projects-content-style-guide",
+          title: 'Content Style Guide',
+          description: "Style guide to ensure consistency in the Developer Portal content.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/content-style-guide/";
+            },},{id: "projects-create-a-deployment-intent-di",
+          title: 'Create a deployment intent (DI)',
+          description: "Describes how to create a deployment intent (DI).",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/create-deployment-intent/";
+            },},{id: "projects-installing-and-configuring-claude-code",
+          title: 'Installing and Configuring Claude Code',
+          description: "Learn how to install and configure the Claude Code CLI for Windows 11 and macOS.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/installing-claude-code/";
+            },},{id: "projects-installing-and-configuring-the-confluence-mcp-server-for-github-copilot",
+          title: 'Installing and Configuring the Confluence MCP Server for GitHub Copilot',
+          description: "Learn how to install and configure the Confluence MCP server to enhance GitHub Copilot's capabilities.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/installing-confluence-mcp-server/";
+            },},{id: "projects-installing-the-github-copilot-plugin",
+          title: 'Installing the GitHub Copilot Plugin',
+          description: "Instructions for installing the GitHub Copilot IDE plugin.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/installing-github-copilot-plugin/";
+            },},{id: "projects-dolby-millicast-api",
+          title: 'Dolby Millicast API',
+          description: "API reference information for Dolby Millicast.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/link-dolby-millicast-api/";
+            },},{id: "projects-zuora-aqua-api",
+          title: 'Zuora AQuA API',
+          description: "API reference information for Zuora AQuA.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/link-zuora-aqua-api/";
+            },},{id: "projects-navigating-the-developer-portal",
+          title: 'Navigating the Developer Portal',
+          description: "Learn how to use the Developer Portal Context selector and the primary navigation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/navigate-dp/";
+            },},{id: "projects-using-onboard-me",
+          title: 'Using Onboard Me',
+          description: "Using the Onboard Me feature.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/onboard-me/";
+            },},{id: "projects-cisco-ucs-director-administration-guide",
+          title: 'Cisco UCS Director Administration Guide',
+          description: "Administering Cisco UCS Director.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-administration-guide/";
+            },},{id: "projects-cisco-ucs-director-compatibility-matrix",
+          title: 'Cisco UCS Director Compatibility Matrix',
+          description: "Supported platform and version compatibility for Cisco UCS Director.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-compatibility-matrix/";
+            },},{id: "projects-cisco-ucs-director-installation-guide-ms-hyper-v-manager",
+          title: 'Cisco UCS Director Installation Guide — MS Hyper-V Manager',
+          description: "Installing Cisco UCS Director on Microsoft Hyper-V Manager.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-installation-hyperv/";
+            },},{id: "projects-cisco-ucs-director-installation-guide-vmware-vsphere",
+          title: 'Cisco UCS Director Installation Guide — VMware vSphere',
+          description: "Installing Cisco UCS Director on VMware vSphere.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-installation-vsphere/";
+            },},{id: "projects-dolby-conference-phone-administrator-39-s-guide",
+          title: 'Dolby Conference Phone Administrator&#39;s Guide',
+          description: "Administering Dolby Conference Phone.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-conference-phone-admin-guide/";
+            },},{id: "projects-dolby-conferencing-console-installation-guide",
+          title: 'Dolby Conferencing Console Installation Guide',
+          description: "Installing Dolby Conferencing Console.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-conferencing-console-installation-guide/";
+            },},{id: "projects-dolby-voice-huddle-administrator-39-s-guide",
+          title: 'Dolby Voice Huddle Administrator&#39;s Guide',
+          description: "Administering Dolby Voice Huddle.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-voice-huddle-admin-guide/";
+            },},{id: "projects-dolby-voice-room-administrator-39-s-guide",
+          title: 'Dolby Voice Room Administrator&#39;s Guide',
+          description: "Administering Dolby Voice Room.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-voice-room-admin-guide/";
+            },},{id: "projects-oracle-email-administrator-39-s-guide",
+          title: 'Oracle Email Administrator&#39;s Guide',
+          description: "Administering Oracle Email server.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-oracle-email-admin-guide/";
+            },},{id: "projects-oracle-email-developer-39-s-guide",
+          title: 'Oracle Email Developer&#39;s Guide',
+          description: "API reference information for Oracle Email.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-oracle-email-developer-guide/";
+            },},{id: "projects-oracle-records-database-concepts-guide",
+          title: 'Oracle Records Database Concepts Guide',
+          description: "Overview of Oracle Records Database and records management.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-oracle-records-database-concepts-guide/";
+            },},{id: "projects-installing-and-running-python-linkchecker",
+          title: 'Installing and Running Python LinkChecker',
+          description: "Installing and running Python LinkChecker.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-python-linkchecker/";
+            },},{id: "projects-saml-overview",
+          title: 'SAML Overview',
+          description: "Overview of SAML-based single sign-on (SSO).",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-saml-overview/";
+            },},{id: "projects-managing-the-preferences-framework",
+          title: 'Managing the Preferences Framework',
+          description: "Creating and managing user preferences across the Developer Portal.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/preferences-framework/";
+            },},{id: "projects-spinnaker-api",
+          title: 'Spinnaker API',
+          description: "API reference information for Spinnaker.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/spinnaker-api/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/portfolio/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/portfolio/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%67%74%61%62%6F%72%61@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/gtabora", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/gtabora510", "_blank");
+        },
+      },{
+        id: 'social-whatsapp',
+        title: 'whatsapp',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://wa.me/16507043374", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/portfolio/assets/al_search/js/shortcut-key.js"></script> </body> </html>

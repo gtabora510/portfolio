@@ -1,0 +1,1062 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Managing the Preferences Framework | Ginger Y. Tabora </title> <meta name="author" content="Ginger Y. Tabora"> <meta name="description" content="Creating and managing user preferences across the Developer Portal."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/portfolio/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/portfolio/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8D%81&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/portfolio/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://gtabora510.github.io/portfolio/projects/preferences-framework/"> <script src="/portfolio/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/portfolio/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/portfolio/"> <span class="font-weight-bold">Ginger</span> Y. Tabora </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/portfolio/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/portfolio/projects/">portfolio <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/portfolio/resume/">resume </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Managing the Preferences Framework</h1> <p class="post-description">Creating and managing user preferences across the Developer Portal.</p> </header> <article> <h2 id="overview">Overview</h2> <p>The <strong>Preferences Framework</strong> is a collection of configuration files and services that enable the creation and management of user preferences across the Developer Portal (DP). The framework provides a standardized way to define, store, view/interact and retrieve user preferences, allowing for a consistent user experience across the platform.</p> <h2 id="key-framework-features">Key Framework Features</h2> <table> <thead> <tr> <th>Feature</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td>Centralized preferences management</td> <td>Define and manage all user preferences in a single location.</td> </tr> <tr> <td>Flexible preferences types</td> <td>Support for various preferences types (boolean, string, number, select, etc.).</td> </tr> <tr> <td>User-specific storage</td> <td>Preferences are stored on a per-user basis, allowing for personalized experiences.</td> </tr> <tr> <td>Integration with DP applications</td> <td>Easily integrate preferences into any DP application or widget using the provided APIs and services.</td> </tr> <tr> <td>Preferences UI components</td> <td>Built-in React components for rendering preferences controls in the UI based on the preference type.</td> </tr> <tr> <td>Accessibility</td> <td>A11y best practices built into the framework and design system components.</td> </tr> </tbody> </table> <h2 id="core-concepts">Core Concepts</h2> <table> <thead> <tr> <th>Concept</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td>Preferences Configuration</td> <td>A JSON configuration that defines a preference — key, type, default value, and optional metadata (label, description, options for select types).</td> </tr> <tr> <td>Preferences API</td> <td>API for interacting with the Preferences Services, including fetching and updating preferences values and configurations.</td> </tr> <tr> <td>Preferences UI Component</td> <td>React components that render the appropriate input controls based on the preference type and handle user interactions to update preferences.</td> </tr> </tbody> </table> <h2 id="what-you-build-vs-what-the-platform-provides">What You Build vs. What the Platform Provides</h2> <p>You define your preferences using the framework’s configuration json, and the platform provides the services and UI components to manage and render those preferences, which would allow you to consume those in your applications and widgets.</p> <h2 id="platform-applications">Platform Applications</h2> <p>The DP Preferences Framework consists of multiple applications and libraries working together:</p> <table> <thead> <tr> <th>Application</th> <th>Type</th> <th>Purpose</th> <th>Docs</th> </tr> </thead> <tbody> <tr> <td>dp-preferences-service/DP-preferences-bundle</td> <td>Backend</td> <td>API for preferences metadata and values (definitions, user-specific values).</td> <td>README</td> </tr> <tr> <td>dp-preferences-ui</td> <td>Frontend</td> <td>Host shell that renders preference UIs and provides context for accessing preferences values.</td> <td>README</td> </tr> <tr> <td>dp-core</td> <td>Library</td> <td>Shared hooks, context providers, and utilities.</td> <td>README</td> </tr> <tr> <td>dp/design-system</td> <td>Library</td> <td>MUI-based design system components for rendering preferences controls.</td> <td>README</td> </tr> <tr> <td>omd-common</td> <td>Library</td> <td>Common utilities and types used across DP applications, eg change verification.</td> <td>README</td> </tr> </tbody> </table> <h2 id="preferences-api-reference">Preferences API Reference</h2> <p>The Preferences API provides RESTful endpoints from the <code class="language-plaintext highlighter-rouge">dp-preferences-service</code> to interact with user preferences data. Use these endpoints to fetch and update preferences configurations.</p> <h3 id="how-data-is-stored">How Data Is Stored</h3> <p>The <code class="language-plaintext highlighter-rouge">dp-preferences-service</code> manages preferences data in a centralized database.</p> <h4 id="preferences-configuration">Preferences Configuration</h4> <table> <thead> <tr> <th>Column</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">namespace</code></td> <td>string</td> <td>Uniquely identifies a preference configuration.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">version</code></td> <td>string</td> <td>Identifies changes in configuration from the user. The version is used in data retrieval. Refer to Data behavior for more details.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">author</code></td> <td>string</td> <td>SID of the user who uploads or updates the configuration.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">configurationJson</code></td> <td>JSON</td> <td>Configuration object for the preference, including default value and metadata.</td> </tr> </tbody> </table> <h4 id="preferences">Preferences</h4> <table> <thead> <tr> <th>Column</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">sid</code></td> <td>string</td> <td>ID of the user to whom the preference belongs.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">namespace</code></td> <td>string</td> <td>Uniquely identifies a preference configuration and links the preference to its configuration.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">name</code></td> <td>string</td> <td>Uniquely identifies a preference being altered. Synonymous with preference ID.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">value</code></td> <td>string</td> <td>Value of the preference for the user, matching the required data field in stringified JSON.</td> </tr> </tbody> </table> <h3 id="data-behavior">Data Behavior</h3> <p>Creating a preferences configuration does not store anything in the database until a user sets a value for that preference. Until then, retrieving the preference returns the default value in the specified format as defined by the configuration. Once a user sets a value for a preference, the system stores that value in the database and retrieves it on subsequent calls, even if the user selects the default option again.</p> <p>Changing the configuration of a preference, such as adding a new option to a select-type preference, is tracked by a version number. When a preference is retrieved, the system checks if the version number stored with the user preference value differs from the configuration version. If the version numbers differ, one of the following occurs:</p> <ul> <li>If the change does not affect the values stored, the system returns the stored value and updates the version number to the new one. For example, changing the description of a preference.</li> <li>If the change affects the values stored: <ul> <li>When adding another required data field to the configuration, the system compares the existing value. If the previous entry still exists, the new field is added with the default value specified in the configuration. The merged value is saved and returned. For example, adding an entry to get the ID of the preference while keeping the value entry the same.</li> <li>When removing or updating a required data field, the system removes the field and any associated data, replacing it with a new one or removing it entirely. The updated value is saved and returned. For example, changing the value entry to a different name or removing it. As this is the key field for storing the preference value, the system removes the old field and replaces it with a new one with the default value specified in the configuration, or removes it if there is no replacement field.</li> <li>When removing an option or preference from the configuration, the system removes that entry from the database and does not return anything for that field. Depending on the retrieval method, an error may indicate that no data for that preference is found, or only the remaining preferences are returned.</li> </ul> </li> </ul> <h3 id="workflow-diagram">Workflow Diagram</h3> <p>A flow describing how the Preference API resolves data for a request:</p> <ol> <li><strong>Preference API requested for data</strong></li> <li>Check: <strong>Preference interacted with by user?</strong> <ul> <li> <strong>No</strong> → Extract default values from configuration → Preference API response returned.</li> </ul> </li> <li>If <strong>Yes</strong> → Check: <strong>Version of data is less than configuration version?</strong> <ul> <li> <strong>No</strong> → Use the stored data → Preference API response returned.</li> </ul> </li> <li>If <strong>Yes</strong> → Check: <strong>Required data change?</strong> <ul> <li> <strong>No</strong> → Use the stored data → Preference API response returned.</li> </ul> </li> <li>If <strong>Yes</strong> → Check: <strong>No fields match?</strong> <ul> <li> <strong>Yes</strong> → Existing data removed and replaced with default value new fields → Preference API response returned.</li> <li> <strong>No</strong> → Merge existing data with new required fields with default values → Update database with merged data → Preference API response returned.</li> </ul> </li> </ol> <h3 id="api-endpoints">API Endpoints</h3> <h4 id="preferences-1">Preferences</h4> <table> <thead> <tr> <th>Method</th> <th>Endpoint</th> <th>Description</th> <th>Response body</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td><code class="language-plaintext highlighter-rouge">/api/v1/preference?sid={sid}&amp;namespace={namespace}&amp;preferenceId={preferenceId}</code></td> <td>Retrieves the value of a specific preference for the current user. If the user has not set a value, the default value from the configuration is returned.</td> <td><code class="language-plaintext highlighter-rouge">{ "sid": "string", "namespace": "string", "name": "string", "value": "string" }</code></td> </tr> <tr> <td>GET</td> <td><code class="language-plaintext highlighter-rouge">/api/v1/preferences?sid={sid}&amp;namespace={namespace}</code></td> <td>Retrieves all preference values for a given namespace for the current user. If a preference has not been set by the user, the default value from the configuration is returned for that preference.</td> <td><code class="language-plaintext highlighter-rouge">[ { "sid": "string", "namespace": "string", "name": "string", "value": "string" }, ... ]</code></td> </tr> <tr> <td>POST</td> <td> <code class="language-plaintext highlighter-rouge">/api/v1/preference/bulkSids?namespace={namespace}</code><br>Body: <code class="language-plaintext highlighter-rouge">{ "sids": ["string"], "namespace": "string", "name": "string" }</code> </td> <td>Retrieves all preference values for a given namespace for the list of users. If a preference has not been set by the user, the default value from the configuration is returned for that preference.</td> <td><code class="language-plaintext highlighter-rouge">[ { "sid": "string", "namespace": "string", "name": "string", "value": "string" }, ... ]</code></td> </tr> </tbody> </table> <h4 id="preferences-admin">Preferences Admin</h4> <table> <thead> <tr> <th>Method</th> <th>Endpoint</th> <th>Description</th> <th>Response body</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td><code class="language-plaintext highlighter-rouge">/api/v1/preference/configuration?namespace={namespace}</code></td> <td>Retrieves a specific preference configuration for the given namespace.</td> <td><code class="language-plaintext highlighter-rouge">{ "namespace": "string", "version": "string", "title": "string", ... }</code></td> </tr> <tr> <td>PUT</td> <td> <code class="language-plaintext highlighter-rouge">/api/v1/preference/configuration</code><br>Body: <code class="language-plaintext highlighter-rouge">{ "namespace": "string", "version": "number", "configurationJson": "JSON" }</code> </td> <td>Updates an existing configuration.</td> <td><code class="language-plaintext highlighter-rouge">{ "namespace": "string", "version": "number", "configurationJson": "JSON" }</code></td> </tr> <tr> <td>POST</td> <td> <code class="language-plaintext highlighter-rouge">/api/v1/preference/configuration</code><br>Body: <code class="language-plaintext highlighter-rouge">{ "namespace": "string", "version": "number", "configurationJson": "JSON" }</code> </td> <td>Creates a new preference configuration.</td> <td><code class="language-plaintext highlighter-rouge">{ "namespace": "string", "version": "number", "configurationJson": "JSON" }</code></td> </tr> </tbody> </table> <h2 id="preferences-configuration-1">Preferences Configuration</h2> <p>The DP Preferences Framework uses a JSON-based configuration format to define user preferences. This configuration specifies the namespace, type, default value(s), and optional metadata for each preference. The framework uses this configuration to manage preference storage, retrieval, and rendering in the UI.</p> <h3 id="configuration-structure">Configuration Structure</h3> <p>The preference configuration is a JSON object with the following structure:</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requiredData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"string"</span><span class="p">],</span><span class="w">
+          </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h3 id="configuration-fields">Configuration Fields</h3> <table> <thead> <tr> <th>Field</th> <th>Type</th> <th>Examples</th> <th>Description</th> <th>Required</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">namespace</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"myapp"</code></td> <td>Unique namespace for preferences, typically using reverse domain notation</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">version</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"1.0"</code></td> <td>Version of the preference configuration, useful for managing updates and changes. Intended for user usage only</td> <td>No</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">title</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"My App Preferences"</code></td> <td>Human-readable title for preferences</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">subtitle</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"Configure your preferences for My App"</code></td> <td>Optional subtitle providing additional context</td> <td>No</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">requiredData</code></td> <td>array of objects</td> <td>Refer to Required Data</td> <td>List of key pair values used to create a preferences JSON that is stored in the database for that user and the preference being updated. Additional detail in Required Data section.</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">groups</code></td> <td>array of objects (preference)</td> <td>Refer to Groups</td> <td>List of groups, each containing a set of related preferences</td> <td>Yes</td> </tr> </tbody> </table> <h3 id="required-data">Required Data</h3> <p>The <code class="language-plaintext highlighter-rouge">requiredData</code> field is an array of objects, where each object defines a key and type that will be used to create a preferences JSON object stored in the database. This allows specification of additional contextual information that may be necessary for preferences, such as specific naming conventions for application context.</p> <table> <thead> <tr> <th>Field</th> <th>Type</th> <th>Examples</th> <th>Description</th> <th>Required</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">key</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"appName"</code></td> <td>The key for the required data field. Any string can be used.</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">type</code></td> <td>string</td> <td>Refer to Required Data Types</td> <td>The type of the required data field. Used to extract the data to save.</td> <td>Yes</td> </tr> </tbody> </table> <p>Refer to the Examples section for variations.</p> <h3 id="required-data-types">Required Data Types</h3> <p>The <code class="language-plaintext highlighter-rouge">type</code> field in the <code class="language-plaintext highlighter-rouge">requiredData</code> array can have the following values:</p> <table> <thead> <tr> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">VERSION</code></td> <td>Adds the current version within the configuration.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">VALUE</code></td> <td>The value of the preference being updated. For example, a boolean preference type would be true or false.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">ID</code></td> <td>The ID of the preference that has been updated.</td> </tr> </tbody> </table> <p>If required data is left empty, the default behavior is to store the preference id and the value being updated, for example: <code class="language-plaintext highlighter-rouge">{ "preferenceId": "value" }</code>. Refer to the Examples section for variations.</p> <h3 id="groups">Groups</h3> <p>The <code class="language-plaintext highlighter-rouge">groups</code> field is an array of objects, where each object defines a group of related preferences. Each group has its own ID, title, subtitle, and an array of preferences.</p> <table> <thead> <tr> <th>Field</th> <th>Type</th> <th>Examples</th> <th>Description</th> <th>Required</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">id</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"displaySettings"</code></td> <td>Unique identifier for the group</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">title</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"Display Settings"</code></td> <td>Human-readable title for the group</td> <td>No</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">subtitle</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"Configure display options"</code></td> <td>Optional subtitle providing additional context for the group</td> <td>No</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">preferences</code></td> <td>array of objects</td> <td>Refer to Preferences</td> <td>List of preferences within the group</td> <td>Yes</td> </tr> </tbody> </table> <p>Refer to the Examples section for variations.</p> <h3 id="preferences-2">Preferences</h3> <p>Each preference within a group is defined as an object with the following fields:</p> <table> <thead> <tr> <th>Field</th> <th>Type</th> <th>Examples</th> <th>Description</th> <th>Required</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">id</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"darkMode"</code></td> <td>Unique identifier for the preference</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">type</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"boolean"</code></td> <td>Type of the preference. Supported values: <code class="language-plaintext highlighter-rouge">"boolean"</code>, <code class="language-plaintext highlighter-rouge">"list"</code>, <code class="language-plaintext highlighter-rouge">"parent"</code>. This dictates the type of data for that preference in both the default value and what is stored when interacted with. Also determines which UI components are used when rendering the preference.</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">default</code></td> <td>any</td> <td> <code class="language-plaintext highlighter-rouge">true</code> (for boolean)</td> <td>Default value for the preference. Varies depending on the preference type.</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">label</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"Enable Dark Mode"</code></td> <td>Human-readable label for the preference</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">children</code></td> <td>array of strings</td> <td><code class="language-plaintext highlighter-rouge">["darkModeIntensity"]</code></td> <td>Used to create a group of preferences with a select all option. Refer to the UI Component documentation for further examples.</td> <td>No</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">options</code></td> <td>array of objects</td> <td>Refer to Options</td> <td>For list type preferences, an array of options that the user can choose from. Required only if one of those types is used.</td> <td>Partial</td> </tr> </tbody> </table> <p>Refer to the Examples section for variations.</p> <h3 id="options">Options</h3> <p>The <code class="language-plaintext highlighter-rouge">options</code> field is an array of objects, where each object defines an option for list type preferences.</p> <table> <thead> <tr> <th>Field</th> <th>Type</th> <th>Examples</th> <th>Description</th> <th>Required</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">id</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"light"</code></td> <td>Unique identifier for the option</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">label</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"Light Mode"</code></td> <td>Human-readable label for the option</td> <td>Yes</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">value</code></td> <td>string</td> <td><code class="language-plaintext highlighter-rouge">"light"</code></td> <td>The value that will be stored when the user selects this option</td> <td>Yes</td> </tr> </tbody> </table> <h3 id="examples">Examples</h3> <h4 id="basic-single-choice-list">Basic Single Choice List</h4> <p>This example sets up a preference where a user selects a single choice from a small list of options:</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icecream"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ice Cream Flavors"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Select your favorite ice cream flavor"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requiredData"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flavorGroup"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flavor Choices"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"favoriteFlavor"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vanilla"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Favorite Ice Cream Flavor"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vanilla"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vanilla"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vanilla"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chocolate"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chocolate"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chocolate"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strawberry"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strawberry"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strawberry"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p>When rendered and the user changes their favorite flavor, as the required data is empty, the stored preference is:</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"favoriteFlavor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chocolate"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h4 id="basic-multi-choice-preference">Basic Multi-Choice Preference</h4> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"burgerToppings"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Burger Toppings"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Select your ideal burger toppings"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requiredData"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appTheWay"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All the way"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parent"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"ketchup"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mustard"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mayo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lettuce"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tomato"</span><span class="p">,</span><span class="w"> </span><span class="s2">"onions"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pickles"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cheese"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bacon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mushrooms"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ketchup"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ketchup"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mustard"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mustard"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mayo"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mayo"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p>This example provides a preference that allows users to select their ideal burger toppings. Each topping is a preference, allowing users to select or deselect any preference independently, except for the “All the way” option, which toggles all the options listed in the children field. As the required data is empty, the stored preference is as follows. The main difference from a list is that each preference that is altered is stored in the database. For example, if the user deselects Ketchup, the following is stored:</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"ketchup"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h4 id="preference-with-required-data">Preference with Required Data</h4> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theme"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Theme Preferences"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Configure your theme settings"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requiredData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"themeElement"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ID"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"choice"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALUE"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mode"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light/Dark Mode"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"modeChoice"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Choose your Mode"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light Mode"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dark"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark Mode"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dark"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System Default"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system"</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"colorScheme"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color Scheme"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"colorChoice"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Choose your Color Scheme"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p>This example has two single choice groups and two methods of interaction. There are entries in the required data, so when any interaction with the preferences occurs, the stored preference would look like this if the mode is altered:</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"themeElement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"modeChoice"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dark"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p>The key point is that for list types, options must be provided.</p> <h2 id="define-your-preferences">Define Your Preferences</h2> <p>Set up your preferences configuration JSON to define the namespace, types, default value, and any additional metadata. The following example shows the preferences configuration:</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icecreams"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ice Cream Flavors"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Use this to choose your favorite ice cream flavor"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requiredData"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iceCreamFlavors"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flavor"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strawberry-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strawberry"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strawberry"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rum-raisin-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rum Raisin"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rum-raisin"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mint-chocolate-chip-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mint Chocolate Chip"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mint-chocolate-chip"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vanilla-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vanilla"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vanilla"</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rum-raisin-flavor"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h3 id="key-configuration-fields">Key Configuration Fields</h3> <table> <thead> <tr> <th>Field</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">namespace</code></td> <td>Unique identifier for your preference, used for retrieval and storage.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">version</code></td> <td>Version number for your preference configuration, used for managing updates.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">title</code></td> <td>Human-readable title for your preference, displayed in the UI.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">subtitle</code></td> <td>Optional subtitle providing additional context for the preference.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">requiredData</code></td> <td>Array of key-value pairs describing data stored for that preference. If empty, defaults to <code class="language-plaintext highlighter-rouge">preference.id : value</code>.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">groups</code></td> <td>Array of preference groups, each containing an <code class="language-plaintext highlighter-rouge">id</code> and an array of <code class="language-plaintext highlighter-rouge">preference</code>.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">preferences</code></td> <td>Array of individual preference definitions, each with an <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">options</code> (for select types), and <code class="language-plaintext highlighter-rouge">default</code> value.</td> </tr> </tbody> </table> <h3 id="upload-your-preferences-configuration">Upload Your Preferences Configuration</h3> <p>Go to the Swagger for DP Preferences Service: DP Platform</p> <p><strong>POST</strong> <code class="language-plaintext highlighter-rouge">/api/v1/preference/configuration</code></p> <ol> <li>Click <strong>“Try it out”</strong>.</li> <li>Add your Change number from your Snow ticket in the <code class="language-plaintext highlighter-rouge">changeRequest</code> field (required in production, optional in non-production environments).</li> <li>Fill in the request body with your details and preferences configuration:</li> </ol> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icecreams"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"configurationJson"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icecreams"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ice Cream Flavors"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Use this to choose your favorite ice cream flavor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requiredData"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iceCreamFlavors"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flavor"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strawberry-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strawberry"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strawberry"</span><span class="w"> </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rum-raisin-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rum Raisin"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rum-raisin"</span><span class="w"> </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mint-chocolate-chip-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mint Chocolate Chip"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mint-chocolate-chip"</span><span class="w"> </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vanilla-flavor"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vanilla"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vanilla"</span><span class="w"> </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rum-raisin-flavor"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <ol> <li>Click <strong>“Execute”</strong> to send the request and create your preferences configuration. A successful response returns status 201 with the details in the response body.</li> <li>Verify retrieval: <ul> <li> <strong>GET</strong> <code class="language-plaintext highlighter-rouge">/api/v1/preference/configuration</code> <ul> <li>Enter your preferences namespace (e.g., <code class="language-plaintext highlighter-rouge">icecreams</code>) in the <code class="language-plaintext highlighter-rouge">namespace</code> text box and execute.</li> <li>A 200 response returns your preferences configuration details in the response body.</li> </ul> </li> </ul> </li> </ol> <h3 id="add-preferences-to-menu">Add Preferences to Menu</h3> <ol> <li>After verifying the preferences is retrievable via the API, add it to the user preferences menu in DP by updating the menu configuration in the DP Registry Swagger.</li> <li>Go to the DP Registry Swagger: DP Registry</li> <li> <strong>POST</strong> <code class="language-plaintext highlighter-rouge">/api/v1/module</code> <ul> <li>Click <strong>“Try it out”</strong> </li> <li>Add your Change number from your Snow ticket in the <code class="language-plaintext highlighter-rouge">changeRequest</code> field (required in production, optional in non-production environments)</li> <li>Fill in the request body with the following details:</li> </ul> </li> </ol> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preferences_icecreams"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A user can manage their preferred ice cream flavor in this menu"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"parents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"preferences"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"instances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instanceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instanceArea"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"navigationEnabled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"navigationItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ice Cream Flavors"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"iconName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"parent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preferences"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"subRoute"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"navigationEntryType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"navigationTarget"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"crossContextTooltip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"featureFlag"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dummyText"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DISABLED"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"route"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/preferences/icecream"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111111"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"supportEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dp_sparc@acme.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"supportQueue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dp_sparc@acme.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEDERATED"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"loading"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"remoteEntryUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dp-preferences-ui.devplatform.prod.aws.acme.net/remoteEntry.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moduleFederationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DP_Preferences"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moduleFederationExposes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./PreferencesApp"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"storeConfig"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h4 id="key-fields-in-the-request-body">Key Fields in the Request Body</h4> <table> <thead> <tr> <th>Field</th> <th>Path</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">id</code></td> <td><code class="language-plaintext highlighter-rouge">id</code></td> <td>Unique identifier for the menu node. Use the convention <code class="language-plaintext highlighter-rouge">preferences-[namespace]</code>, for example <code class="language-plaintext highlighter-rouge">preferences-icecream</code> </td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">name</code></td> <td><code class="language-plaintext highlighter-rouge">instances.navigationItems.name</code></td> <td>The display name in the side bar menu.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">route</code></td> <td><code class="language-plaintext highlighter-rouge">route</code></td> <td>The URL used to access the preference and render your config. Use <code class="language-plaintext highlighter-rouge">/preferences/[namespace]</code> and match the namespace in your configuration, for example <code class="language-plaintext highlighter-rouge">preference/icecream</code>.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">sid</code></td> <td><code class="language-plaintext highlighter-rouge">sid</code></td> <td>Your team’s system ID.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">supportEmail</code></td> <td><code class="language-plaintext highlighter-rouge">supportEmail</code></td> <td>Contact email for your team.</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">remoteEntryUrl</code></td> <td><code class="language-plaintext highlighter-rouge">loading.remoteEntryUrl</code></td> <td>Endpoint used by the module that processes the UI components. Adjust only the environment part, for example: <code class="language-plaintext highlighter-rouge">https://dp-preferences-ui.devplatform.prod.aws.acme.net/remoteEntry.js</code>, to <code class="language-plaintext highlighter-rouge">dev</code>, <code class="language-plaintext highlighter-rouge">uat</code>, or <code class="language-plaintext highlighter-rouge">prod</code> as needed.</td> </tr> </tbody> </table> <ol> <li>Click <strong>“Execute”</strong> to send the request and create your menu node.</li> <li>Update the DP Registry Swagger manually with the provided JSON and adjust the fields as needed.</li> </ol> <h3 id="use-your-preferences">Use Your Preferences</h3> <p>After setting up and adding your preferences to the menu, use the Preferences API to retrieve data that a user has interacted with via the rendered UI components.</p> <p>Workflow: Preference API requested for data → Check if preference was interacted with by user → <strong>Yes</strong>: Preference API returns the preference value stored in the backend → <strong>No</strong>: Preference API returns the default value set for that preference.</p> <p>Three endpoints are available for retrieving preferences data, depending on your needs:</p> <table> <thead> <tr> <th>Endpoint</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td>GET <code class="language-plaintext highlighter-rouge">/api/v1/preference?sid={sid}&amp;namespace={namespace}&amp;preferenceId={preferenceId}</code> </td> <td>Retrieve the value of a specific preference for the current user. If the user has not set a value, returns the default value from the configuration.</td> </tr> <tr> <td>GET <code class="language-plaintext highlighter-rouge">/api/v1/preferences?sid={sid}&amp;namespace={namespace}</code> </td> <td>Retrieve all preference values for a given namespace for the current user. If a preference has not been set by the user, the default value from the configuration will be returned for that preference.</td> </tr> <tr> <td>POST <code class="language-plaintext highlighter-rouge">/api/v1/preference/bulkSids?namespace={namespace}</code><br>Body: <code class="language-plaintext highlighter-rouge">{ "sids": ["string"], "namespace": "string", "name": "string" }</code> </td> <td>Retrieve all preference values for a given namespace for the list of users. If a preference has not been set by the user, the default value from the configuration will be returned for that preference.</td> </tr> </tbody> </table> <h3 id="test-your-preferences">Test Your Preferences</h3> <p>Open the DP Portal and select the user preferences menu (usually in the top right corner under your profile) to test your preferences. Your new preferences (for example, “Ice Cream Flavors”) should appear in the menu. Interact with the preferences UI, change the value, and save it. Use the Preferences API endpoints to confirm that the updated value stores and retrieves correctly. The API also returns the default value when you have not set a value for the preference.</p> <h2 id="preferences-ui-components">Preferences UI Components</h2> <p>The DP Preferences Framework provides a set of React components for rendering user preferences in the UI. These components are predefined for visual consistency and are selected based on the preference type defined in the configuration. The following sections explain which <code class="language-plaintext highlighter-rouge">type</code> relates to which component is rendered and what interaction result you can expect.</p> <table> <thead> <tr> <th>Preference Type</th> <th>UI Component</th> <th>Description</th> <th>User Interaction</th> <th>Example</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">boolean</code></td> <td><code class="language-plaintext highlighter-rouge">Toggle</code></td> <td>Renders a toggle switch for boolean preferences.</td> <td>Users toggle the switch on or off to update the preferences value.</td> <td>Toggle Example</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">list</code></td> <td><code class="language-plaintext highlighter-rouge">RadioGroup</code></td> <td>Renders a group of radio buttons for single-select preferences.</td> <td>Users select one option from the list to update the preferences value.</td> <td>Radio Example</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">parent</code></td> <td><code class="language-plaintext highlighter-rouge">Toggle</code></td> <td>Renders a toggle switch for parent preferences that control the visibility of child preferences.</td> <td>Users toggle the switch on or off to affect the associated child preferences.</td> <td>Toggle (parent) Example</td> </tr> </tbody> </table> <h3 id="examples-of-each-preference-type">Examples of Each Preference Type</h3> <h4 id="boolean-type">Boolean Type</h4> <p>When you define preference type <code class="language-plaintext highlighter-rouge">boolean</code> in the preferences configuration, the framework renders a <code class="language-plaintext highlighter-rouge">Toggle</code> switch in the UI. Users interact with the toggle to turn it on or off, which updates the corresponding preferences value in the backend.</p> <p><strong>Rendered Example:</strong> Page Title / Page Subtitle → Group Title → “Preference Label” toggle.</p> <p><strong>Boolean Preferences Configuration Example</strong></p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleTypeBoolean"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleBooleanPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h4 id="list-type">List Type</h4> <p>When you define preferences type <code class="language-plaintext highlighter-rouge">list</code> in the preferences configuration, the framework renders a <code class="language-plaintext highlighter-rouge">RadioGroup</code> in the UI. Users select one option from the list of radio buttons, which updates the corresponding preferences value in the backend.</p> <p><strong>List Preferences Configuration Example</strong></p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleTypeList"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleListPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option-1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option1"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option-2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option2"</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p><strong>Rendered Example:</strong> Page Title / Page Subtitle → Group Title → radio buttons “Option 1” (selected), “Option 2”.</p> <h3 id="parent-type">Parent Type</h3> <h4 id="general-behavior">General Behavior</h4> <p>When you define preferences type <code class="language-plaintext highlighter-rouge">parent</code> in the preferences configuration, the framework renders a <code class="language-plaintext highlighter-rouge">Toggle</code> switch in the UI. This parent preferences also creates a grouping effect: preferences listed in the children field of the parent preference appears indented under the parent preferences in the UI. Toggling the parent preferences off turns off all child preferences, and toggling it on turns on all child preferences. If a user toggles on any single child preferences, the parent preferences toggles on as well.</p> <h4 id="preferences-storage-behavior">Preferences Storage Behavior</h4> <p>The parent preference has a toggle and entry in the configuration, but the system does not create a database entry for it. When a user selects all on the parent preferences, the system triggers a single call for each child, and those preferences are stored in the database. If a user toggles on a single preferences within the child group, only that preferences has an entry in the database, not the parent preferences, even though the parent appears toggled on.</p> <h4 id="parent-child-nesting-behavior">Parent-Child Nesting Behavior</h4> <p>Each child of a parent should appear directly under the parent preferences in the configuration to render the grouping effect properly in the UI. The UI visually indents child preferences under their parent. The framework does not limit the number of nesting levels, but for clarity and user experience, use no more than two levels (one parent and its children). For deeper nesting, create a new grouping with the desired parent-child structure rather than nesting further. Achieve nesting by making one of the children preferences a <code class="language-plaintext highlighter-rouge">parent</code> type itself, referencing its own children, and placing those child preferences another indent level down in the UI.</p> <h4 id="parent-preferences-configuration-examples">Parent Preferences Configuration Examples</h4> <p><strong>Single Level of Nesting Example</strong></p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleTypeParent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleParentPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleChildPreference"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p><strong>Multiple Levels of Nesting Example</strong></p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleTypeParent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleParentPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleChildPreference"</span><span class="p">,</span><span class="w"> </span><span class="s2">"exampleChildParentPreference"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildParentPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleGrandChildPreference"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleGrandChildPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <p><strong>Complex Example</strong> (two parent groups, each with nested child and grandchild parent/boolean preferences following the same pattern as above, duplicated with a second set of preferences suffixed <code class="language-plaintext highlighter-rouge">2</code>):</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleTypeParent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleParentPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleChildPreference"</span><span class="p">,</span><span class="w"> </span><span class="s2">"exampleChildParentPreference"</span><span class="p">,</span><span class="w"> </span><span class="s2">"exampleChildPreference2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"exampleChildParentPreference2"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildParentPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleGrandChildPreference"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleGrandChildPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildPreference2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildParentPreference2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleGrandChildPreference2"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleGrandChildPreference2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleParentPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleChildPreference"</span><span class="p">,</span><span class="w"> </span><span class="s2">"exampleChildParentPreference"</span><span class="p">,</span><span class="w"> </span><span class="s2">"exampleChildPreference2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"exampleChildParentPreference2"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildParentPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleGrandChildPreference"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleGrandChildPreference"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildPreference2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleChildParentPreference2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exampleGrandChildPreference2"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exampleGrandChildPreference2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference Label"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h3 id="notable-ui-behaviors">Notable UI Behaviors</h3> <h4 id="visual-ordering-of-preferences">Visual Ordering of Preferences</h4> <p>The order in which you define preferences in the configuration file determines the order in which the UI renders them. You control the visual layout of preferences by ordering them as desired in the configuration. This ordering is especially important for parent preferences, as their child preferences appear directly under them, creating a clear visual grouping effect.</p> <h4 id="identifying-preferences-title-etc">Identifying Preferences (Title, etc.)</h4> <p>You can identify what preferences a user is viewing in three locations:</p> <ul> <li> <p>Configuration Level — Use the <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">subtitle</code> fields to identify the preferences a user is viewing. The UI renders the title in a larger font at the top of the page and the subtitle directly under it in a smaller font. The title conventionally uses a capitalized version of the namespace, so if the namespace is <code class="language-plaintext highlighter-rouge">exampleNamespace</code>, the title is “Example Namespace”. Use the subtitle to describe the preferences and their context.</p> </li> <li> <p>Group Level — Use the <code class="language-plaintext highlighter-rouge">title</code> field to group preferences under a common heading. This approach visually separates preferences into sections and clarifies what each section relates to. The UI renders the group title in a font size between the configuration title and the preference label, making it clear that it is a grouping element.</p> </li> <li> <p>Preferences Level — Use the <code class="language-plaintext highlighter-rouge">label</code> field to identify the preferences itself. This is the most granular level of identification and describes the purpose of the preferences. The UI renders the label directly next to the UI component for the preferences (such as a toggle or radio button). Write labels in clear, human-readable language. For example, use “This is my Preference Choice” rather than “this-is-my-preference-choice” or “another_preference”.</p> </li> </ul> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ginger Y. Tabora. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/portfolio/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/portfolio/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/portfolio/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/portfolio/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/portfolio/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/portfolio/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/portfolio/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/portfolio/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/portfolio/assets/al_img_tools/js/zoom.js"></script> <script defer src="/portfolio/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/portfolio/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/portfolio/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/portfolio/";
+    },
+  },{id: "nav-portfolio",
+          title: "portfolio",
+          description: "A collection of technical documentation, API references, and style guidance.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/portfolio/projects/";
+          },
+        },{id: "nav-resume",
+          title: "resume",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/portfolio/resume/";
+          },
+        },{id: "post-a-post-with-plotly-js",
+        
+          title: "a post with plotly.js",
+        
+        description: "this is what included plotly.js code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2025/plotly/";
+          
+        },
+      },{id: "post-a-post-with-image-galleries",
+        
+          title: "a post with image galleries",
+        
+        description: "this is what included image galleries could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/photo-gallery/";
+          
+        },
+      },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
+        
+          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
+          
+        },
+      },{id: "post-a-post-with-tabs",
+        
+          title: "a post with tabs",
+        
+        description: "this is what included tabs in a post could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/tabs/";
+          
+        },
+      },{id: "post-a-post-with-typograms",
+        
+          title: "a post with typograms",
+        
+        description: "this is what included typograms code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/typograms/";
+          
+        },
+      },{id: "post-a-post-that-can-be-cited",
+        
+          title: "a post that can be cited",
+        
+        description: "this is what a post that can be cited looks like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/post-citation/";
+          
+        },
+      },{id: "post-a-post-with-pseudo-code",
+        
+          title: "a post with pseudo code",
+        
+        description: "this is what included pseudo code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/pseudocode/";
+          
+        },
+      },{id: "post-a-post-with-code-diff",
+        
+          title: "a post with code diff",
+        
+        description: "this is how you can display code diffs",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/code-diff/";
+          
+        },
+      },{id: "post-a-post-with-advanced-image-components",
+        
+          title: "a post with advanced image components",
+        
+        description: "this is what advanced image components could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/advanced-images/";
+          
+        },
+      },{id: "post-a-post-with-vega-lite",
+        
+          title: "a post with vega lite",
+        
+        description: "this is what included vega lite code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/vega-lite/";
+          
+        },
+      },{id: "post-a-post-with-geojson",
+        
+          title: "a post with geojson",
+        
+        description: "this is what included geojson code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/geojson-map/";
+          
+        },
+      },{id: "post-a-post-with-echarts",
+        
+          title: "a post with echarts",
+        
+        description: "this is what included echarts code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/echarts/";
+          
+        },
+      },{id: "post-a-post-with-chart-js",
+        
+          title: "a post with chart.js",
+        
+        description: "this is what included chart.js code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2024/chartjs/";
+          
+        },
+      },{id: "post-a-post-with-tikzjax",
+        
+          title: "a post with TikZJax",
+        
+        description: "this is what included TikZ code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/tikzjax/";
+          
+        },
+      },{id: "post-a-post-with-bibliography",
+        
+          title: "a post with bibliography",
+        
+        description: "an example of a blog post with bibliography",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/post-bibliography/";
+          
+        },
+      },{id: "post-a-post-with-jupyter-notebook",
+        
+          title: "a post with jupyter notebook",
+        
+        description: "an example of a blog post with jupyter notebook",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/jupyter-notebook/";
+          
+        },
+      },{id: "post-a-post-with-custom-blockquotes",
+        
+          title: "a post with custom blockquotes",
+        
+        description: "an example of a blog post with custom blockquotes",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/custom-blockquotes/";
+          
+        },
+      },{id: "post-a-post-with-table-of-contents-on-a-sidebar",
+        
+          title: "a post with table of contents on a sidebar",
+        
+        description: "an example of a blog post with table of contents on a sidebar",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/sidebar-table-of-contents/";
+          
+        },
+      },{id: "post-a-post-with-audios",
+        
+          title: "a post with audios",
+        
+        description: "this is what included audios could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/audios/";
+          
+        },
+      },{id: "post-a-post-with-videos",
+        
+          title: "a post with videos",
+        
+        description: "this is what included videos could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/videos/";
+          
+        },
+      },{id: "post-displaying-beautiful-interactive-tables",
+        
+          title: "displaying beautiful interactive tables",
+        
+        description: "an example of how to use interactive tables in al-folio",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/tables/";
+          
+        },
+      },{id: "post-a-post-with-table-of-contents",
+        
+          title: "a post with table of contents",
+        
+        description: "an example of a blog post with table of contents",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2023/table-of-contents/";
+          
+        },
+      },{id: "post-a-post-with-giscus-comments",
+        
+          title: "a post with giscus comments",
+        
+        description: "an example of a blog post with giscus comments",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2022/giscus-comments/";
+          
+        },
+      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
+        
+          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
+          
+        },
+      },{id: "post-a-post-with-redirect",
+        
+          title: "a post with redirect",
+        
+        description: "you can also redirect to assets like pdf",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/assets/pdf/example_pdf.pdf";
+          
+        },
+      },{id: "post-a-post-with-diagrams",
+        
+          title: "a post with diagrams",
+        
+        description: "an example of a blog post with diagrams",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2021/diagrams/";
+          
+        },
+      },{id: "post-a-distill-style-blog-post",
+        
+          title: "a distill-style blog post",
+        
+        description: "an example of a distill-style blog post and main elements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2021/distill/";
+          
+        },
+      },{id: "post-a-post-with-twitter",
+        
+          title: "a post with twitter",
+        
+        description: "an example of a blog post with twitter",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2020/twitter/";
+          
+        },
+      },{id: "post-a-post-with-disqus-comments",
+        
+          title: "a post with disqus comments",
+        
+        description: "an example of a blog post with disqus comments",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/disqus-comments/";
+          
+        },
+      },{id: "post-a-post-with-math",
+        
+          title: "a post with math",
+        
+        description: "an example of a blog post with some math",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/math/";
+          
+        },
+      },{id: "post-a-post-with-code",
+        
+          title: "a post with code",
+        
+        description: "an example of a blog post with some code",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/code/";
+          
+        },
+      },{id: "post-a-post-with-images",
+        
+          title: "a post with images",
+        
+        description: "this is what included images could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/images/";
+          
+        },
+      },{id: "post-a-post-with-formatting-and-links",
+        
+          title: "a post with formatting and links",
+        
+        description: "march & april, looking forward to summer",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/portfolio/blog/2015/formatting-and-links/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/portfolio/books/the_godfather/";
+            },},{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/portfolio/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "projects-content-style-guide",
+          title: 'Content Style Guide',
+          description: "Style guide to ensure consistency in the Developer Portal content.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/content-style-guide/";
+            },},{id: "projects-create-a-deployment-intent-di",
+          title: 'Create a deployment intent (DI)',
+          description: "Describes how to create a deployment intent (DI).",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/create-deployment-intent/";
+            },},{id: "projects-installing-and-configuring-claude-code",
+          title: 'Installing and Configuring Claude Code',
+          description: "Learn how to install and configure the Claude Code CLI for Windows 11 and macOS.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/installing-claude-code/";
+            },},{id: "projects-installing-and-configuring-the-confluence-mcp-server-for-github-copilot",
+          title: 'Installing and Configuring the Confluence MCP Server for GitHub Copilot',
+          description: "Learn how to install and configure the Confluence MCP server to enhance GitHub Copilot's capabilities.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/installing-confluence-mcp-server/";
+            },},{id: "projects-installing-the-github-copilot-plugin",
+          title: 'Installing the GitHub Copilot Plugin',
+          description: "Instructions for installing the GitHub Copilot IDE plugin.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/installing-github-copilot-plugin/";
+            },},{id: "projects-dolby-millicast-api",
+          title: 'Dolby Millicast API',
+          description: "API reference information for Dolby Millicast.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/link-dolby-millicast-api/";
+            },},{id: "projects-zuora-aqua-api",
+          title: 'Zuora AQuA API',
+          description: "API reference information for Zuora AQuA.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/link-zuora-aqua-api/";
+            },},{id: "projects-navigating-the-developer-portal",
+          title: 'Navigating the Developer Portal',
+          description: "Learn how to use the Developer Portal Context selector and the primary navigation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/navigate-dp/";
+            },},{id: "projects-using-onboard-me",
+          title: 'Using Onboard Me',
+          description: "Using the Onboard Me feature.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/onboard-me/";
+            },},{id: "projects-cisco-ucs-director-administration-guide",
+          title: 'Cisco UCS Director Administration Guide',
+          description: "Administering Cisco UCS Director.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-administration-guide/";
+            },},{id: "projects-cisco-ucs-director-compatibility-matrix",
+          title: 'Cisco UCS Director Compatibility Matrix',
+          description: "Supported platform and version compatibility for Cisco UCS Director.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-compatibility-matrix/";
+            },},{id: "projects-cisco-ucs-director-installation-guide-ms-hyper-v-manager",
+          title: 'Cisco UCS Director Installation Guide — MS Hyper-V Manager',
+          description: "Installing Cisco UCS Director on Microsoft Hyper-V Manager.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-installation-hyperv/";
+            },},{id: "projects-cisco-ucs-director-installation-guide-vmware-vsphere",
+          title: 'Cisco UCS Director Installation Guide — VMware vSphere',
+          description: "Installing Cisco UCS Director on VMware vSphere.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-cisco-ucs-director-installation-vsphere/";
+            },},{id: "projects-dolby-conference-phone-administrator-39-s-guide",
+          title: 'Dolby Conference Phone Administrator&#39;s Guide',
+          description: "Administering Dolby Conference Phone.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-conference-phone-admin-guide/";
+            },},{id: "projects-dolby-conferencing-console-installation-guide",
+          title: 'Dolby Conferencing Console Installation Guide',
+          description: "Installing Dolby Conferencing Console.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-conferencing-console-installation-guide/";
+            },},{id: "projects-dolby-voice-huddle-administrator-39-s-guide",
+          title: 'Dolby Voice Huddle Administrator&#39;s Guide',
+          description: "Administering Dolby Voice Huddle.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-voice-huddle-admin-guide/";
+            },},{id: "projects-dolby-voice-room-administrator-39-s-guide",
+          title: 'Dolby Voice Room Administrator&#39;s Guide',
+          description: "Administering Dolby Voice Room.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-dolby-voice-room-admin-guide/";
+            },},{id: "projects-oracle-email-administrator-39-s-guide",
+          title: 'Oracle Email Administrator&#39;s Guide',
+          description: "Administering Oracle Email server.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-oracle-email-admin-guide/";
+            },},{id: "projects-oracle-email-developer-39-s-guide",
+          title: 'Oracle Email Developer&#39;s Guide',
+          description: "API reference information for Oracle Email.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-oracle-email-developer-guide/";
+            },},{id: "projects-oracle-records-database-concepts-guide",
+          title: 'Oracle Records Database Concepts Guide',
+          description: "Overview of Oracle Records Database and records management.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-oracle-records-database-concepts-guide/";
+            },},{id: "projects-installing-and-running-python-linkchecker",
+          title: 'Installing and Running Python LinkChecker',
+          description: "Installing and running Python LinkChecker.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-python-linkchecker/";
+            },},{id: "projects-saml-overview",
+          title: 'SAML Overview',
+          description: "Overview of SAML-based single sign-on (SSO).",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/pdf-saml-overview/";
+            },},{id: "projects-managing-the-preferences-framework",
+          title: 'Managing the Preferences Framework',
+          description: "Creating and managing user preferences across the Developer Portal.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/preferences-framework/";
+            },},{id: "projects-spinnaker-api",
+          title: 'Spinnaker API',
+          description: "API reference information for Spinnaker.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio/projects/spinnaker-api/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/portfolio/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/portfolio/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%67%74%61%62%6F%72%61@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/gtabora", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/gtabora510", "_blank");
+        },
+      },{
+        id: 'social-whatsapp',
+        title: 'whatsapp',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://wa.me/16507043374", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/portfolio/assets/al_search/js/shortcut-key.js"></script> </body> </html>
