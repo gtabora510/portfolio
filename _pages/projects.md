@@ -2,7 +2,7 @@
 layout: page
 title: portfolio
 permalink: /projects/
-description: A collection of technical documentation, API references, and style guidance.
+description: A sampling of the technical documentation, API references, and content style guidance I've produced over 20-plus years working across developer tools, enterprise platforms, and internal engineering teams.
 nav: true
 nav_order: 3
 categories:
@@ -27,6 +27,26 @@ categories:
 ---
 
 <!-- pages/projects.md -->
+<style>
+  .projects .card {
+    border-left: 4px solid #222222;
+  }
+  .projects .card .card-title {
+    color: #222222;
+  }
+  .projects .card .card-text {
+    color: #222222;
+  }
+  .post-title {
+    color: #222222;
+  }
+  .post-description {
+    color: #222222;
+  }
+  .navbar-nav a.nav-link {
+    color: #222222;
+  }
+</style>
 <div class="projects">
   <div class="row row-cols-1 row-cols-md-3">
     {% for cat in page.categories %}
