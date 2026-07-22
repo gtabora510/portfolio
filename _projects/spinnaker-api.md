@@ -1,10 +1,18 @@
+---
+layout: page
+title: Spinnaker API
+description: API reference information for Spinnaker.
+importance: 3
+category: developer
+---
+
 # Spinnaker API
 
-Query JET Spinnaker pipelines, execution status, SEAL applications, and project entitlements — read-only via OAuth2 SSO
+Query the Acme Development Toolchain (ADT) Spinnaker pipelines, execution status, SID applications, and project entitlements
 
 ## Overview
 
-The Spinnaker API skill provides read-only access to JET Spinnaker's REST API for pipeline inspection and deployment monitoring. It supports project and application discovery, pipeline configuration retrieval, execution status queries, entitlement validation, and SEAL application lookup. Authentication is OAuth2 SSO via IDAnywhere ADFS — no PAT fallback is available for Spinnaker.
+The Spinnaker API skill provides read-only access to ADT Spinnaker's REST API for pipeline inspection and deployment monitoring. It supports project and application discovery, pipeline configuration retrieval, execution status queries, entitlement validation, and SEAL application lookup. Authentication is OAuth2 SSO via IDAnywhere ADFS — no PAT fallback is available for Spinnaker.
 
 ## Metadata
 
@@ -15,12 +23,12 @@ The Spinnaker API skill provides read-only access to JET Spinnaker's REST API fo
 | Compatibility  | Windows                                                      |
 | Runtime        | PowerShell 7+                                                |
 | Authentication | OAuth2 PKCE via IDAnywhere ADFS (SSO only — no PAT fallback) |
-| Target         | JET Spinnaker (`jet-spinnaker-api.jpmchase.net`)             |
+| Target         | ADT Spinnaker (`adt-spinnaker-api.acme.net`)                 |
 
 ## Installation
 
-1. Install `authentication-helper-plugin` from the CIB Marketplace.
-2. Install `spinnaker-api-plugin` from the CIB Marketplace.
+1. Install `authentication-helper-plugin` from the Marketplace.
+2. Install `spinnaker-api-plugin` from the Marketplace.
 
 ## What it provides
 
@@ -31,14 +39,6 @@ The Spinnaker API skill provides read-only access to JET Spinnaker's REST API fo
 - Look up onboarded SEAL applications
 
 All HTTP operations are `GET` only. Write operations are explicitly blocked.
-
-## RBAC requirements
-
-Access to Spinnaker projects requires membership in DevX Fabric groups:
-
-- Format: `devx_{project}_deploy_read` (for example, `devx_gwpay_deploy_read`)
-- Project IDs are DevX keys (for example, `GWPAY`), not SEAL IDs
-- Contact the DevX Fabric team to request group membership
 
 ## Sample usage
 
@@ -58,16 +58,16 @@ Verify entitlements:
 
 > "Check my Spinnaker entitlements for project GWPAY"
 
-List SEAL applications:
+List SID applications:
 
-> "Which SEAL applications are onboarded to Spinnaker?"
+> "Which SID applications are onboarded to Spinnaker?"
 
 ## Troubleshooting
 
 | Symptom                   | Likely cause                               | Resolution                                                                     |
 | ------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------ |
-| `DEPENDENCY_MISSING`      | authentication-helper-plugin not installed | Install `authentication-helper-plugin` from CIB Marketplace first              |
-| 403 on project access     | Missing DevX DEPLOY_READ group             | Check entitlements via the skill or request group access from DevX Fabric team |
+| `DEPENDENCY_MISSING`      | authentication-helper-plugin not installed | Install `authentication-helper-plugin` from Marketplace first                  |
+| 403 on project access     | Missing DEPLOY_READ group                  | Check entitlements via the skill                                               |
 | OAuth2 token not acquired | SSO session issue                          | Skill will reattempt authentication automatically; confirm consent if prompted |
-| Project not found         | Incorrect project key                      | Verify the DevX project key — it may differ from the Jira project key          |
+| Project not found         | Incorrect project key                      | Verify the Jira project key                                                    |
 | Execution ID not found    | Execution has expired or ID is incorrect   | Spinnaker execution history has a retention window; verify the ID format       |

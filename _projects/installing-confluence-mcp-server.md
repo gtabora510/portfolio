@@ -1,7 +1,9 @@
 ---
+layout: page
 title: Installing and Configuring the Confluence MCP Server for GitHub Copilot
-linkTitle: Installing the Confluence MCP Server
 description: Learn how to install and configure the Confluence MCP server to enhance GitHub Copilot's capabilities.
+importance: 6
+category: installation
 ---
 
 ## Overview

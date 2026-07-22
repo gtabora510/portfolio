@@ -1,16 +1,14 @@
 ---
+layout: page
 title: Create a deployment intent (DI)
-linkTitle: Create a deployment intent (DI)
 description: Describes how to create a deployment intent (DI).
-aliases:
-  - /docs/iep/iep-portal/user/guides/app_space/day_2/add_dids/
-  - /docs/iep/iep-portal/user/guides/project/add_dids/
-  - /docs/iep/iep-portal/user/guides/dids/add_dids/
+importance: 1
+category: configuration
 ---
 
-## Launch the Create deployment intent wizard
+## Launch the Create Deployment Intent Wizard
 
-> **Note on the Context selector:** The Context selector is not visible when you are within Insights, Configuration, or Documentation. If you are in one of these areas and want to access the Context selector, you must click on the IEP logo.
+> **Note on the Context selector:** The Context selector is not visible when you are within Analytics, Configuration, or Documentation. If you are in one of these areas and want to access the Context selector, you must click on the IEP logo.
 
 If you are in one of these areas and want to access the Context selector, you must click the IEP logo.
 
@@ -23,7 +21,7 @@ If you are in one of these areas and want to access the Context selector, you mu
 
 Refer to Deployment Intent/Deployment Scope (DI/DS) for more information.
 
-## Provide deployment intent details
+## Provide Deployment Intent Details
 
 Under Deployment intent details, provide the following information:
 
@@ -31,7 +29,7 @@ Under Deployment intent details, provide the following information:
 - **Deployment intent description:** Enter a description for the deployment scope.
 - **Environment:** Select the environment (DEV, TEST, PROD) in which to associate with this deployment intent.
 
-## Set environment
+## Set Environment
 
 Select one of the following environments to associate with the deployment intent:
 
@@ -39,7 +37,7 @@ Select one of the following environments to associate with the deployment intent
 - **TEST**
 - **PROD**
 
-## Set deployment intent controls
+## Set Deployment Intent Controls
 
 Set the deployment intent controls to apply to the deployment intent. The following controls are available for Atlas 2.0:
 
@@ -63,18 +61,18 @@ Set the deployment intent controls to apply to the deployment intent. The follow
 | soc1, soc2, none                                    | yes        |
 | false, true                                         | yes        |
 
-## Review summary
+## Review Summary
 
 - Validate the information provided in the steps to create the deployment intent.
 - If information requires revising, click the **Edit** button to revise the information.
 - After validating the information, click **Submit**.
 
-## Submit deployment intent request
+## Submit Deployment Intent Request
 
 - When the **Submit** button is clicked, the system returns you to the DI/DS screen where a snackbar confirms the request submission.
 - Submitting generates an approval request that is sent to the Design Authority (DA) of the SEAL ID.
 
-## Track status
+## Track Status
 
 To track the status of the deployment intent creation workflow:
 
@@ -102,14 +100,14 @@ To track the status of the deployment intent creation workflow:
   - MyAccess Deployment Scope Resource Registration
   - MyAccess Factory Requestables Creation
 
-## Review notifications
+## Review Notifications
 
 - Project creators receive notifications on the progress of the deployment intent creation workflow.
 - The notifications icon is located in the top right corner.
 - Notifications are sent when the deployment intent creation request is approved.
 - Project owners are notified when the Design Authority approves or declines the deployment intent creation request.
 
-## Retry workflow failures
+## Retry Workflow Failures
 
 - If a step fails during the workflow, retry re-triggers the process.
 - Retry is only supported for certain failed steps in the workflow.
@@ -120,7 +118,7 @@ To track the status of the deployment intent creation workflow:
 
 - While adding a deployment intent to an existing project, if the smartApproval request expires or is rejected by the DA, retry re-submits the deployment intent request to the Design Authority.
 
-## Additional references
+## Additional References
 
 See the following documentation for more information on Atlas and boundary creation:
 

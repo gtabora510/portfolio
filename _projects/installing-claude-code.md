@@ -1,8 +1,9 @@
 ---
-title: Installing and configuring Claude Code
-linkTitle: Installation
+layout: page
+title: Installing and Configuring Claude Code
 description: Learn how to install and configure the Claude Code CLI for Windows 11 and macOS.
-weight: 3
+importance: 5
+category: installation
 ---
 
 > **Note for Early Access users:** If you were part of Early Access and used `npm` to install Claude Code, run the following command to uninstall the previous version before installing via Dev Shell:
@@ -21,7 +22,7 @@ Refer to the [Supported Environments](#) section of the Availability Matrix for 
 
 **If you have not been selected by your line of business to participate in the Waved Expansion, you will not have access to Claude Code and will not be able to complete the installation steps outlined in this guide.**
 
-## Installation steps by platform
+## Installation Steps by Platform
 
 ### Windows 11
 
@@ -57,7 +58,7 @@ Refer to the [Supported Environments](#) section of the Availability Matrix for 
    # Output: /usr/local/jpmc/claude-code/latest/bin/claude
    ```
 
-## Next steps
+## Next Steps
 
 ### Run Claude Code
 
@@ -69,6 +70,6 @@ Once installed, `cd` into any directory and run `claude` to start, without speci
 
 Review the official Claude Code CLI Reference documentation for a list of CLI commands and their functions. For the list of operational commands using `/`, see Built-in commands.
 
-### Complete quickstart
+### Complete Quickstart
 
 Refer to the Quickstart Guide to learn how to use Claude Code, and the Claude Code Reference to learn about available features and capabilities. If you encounter any issues during installation or configuration, refer to the Support page for guidance on how to get help.

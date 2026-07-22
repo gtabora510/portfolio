@@ -1,4 +1,12 @@
-﻿# Content Style Guide
+---
+layout: page
+title: Content Style Guide
+description: Style guide to ensure consistency in the Developer Portal content.
+importance: 1
+category: style
+---
+
+# Content Style Guide
 
 Access this style guide to ensure consistency in the content across Developer Portal.
 

@@ -1,12 +1,9 @@
 ---
-title: Installing the Plugin
-description: Instructions for installing the GitHub Copilot IDE plugin
-weight: 2
-aliases:
-  - /docs/jet/plan-and-create/jet-smart-code-ai/github-copilot/getting-started/installing/
-  - /docs/jet/plan-and-create/jet-smart-code-ai/non-ga-products/github-copilot/getting-started/installing/
-  - /docs/jet/plan-and-create/smart-code-ai/non-ga-products/github-copilot/getting-started/installing/
-  - /docs/jet/plan-and-create/smart-code-ai/ga-products/github-copilot/getting-started/installing/
+layout: page
+title: Installing the GitHub Copilot Plugin
+description: Instructions for installing the GitHub Copilot IDE plugin.
+importance: 8
+category: installation
 ---
 
 ## Overview
@@ -36,7 +33,7 @@ Complete **all the following steps** before proceeding with installation:
 
 5. Launch the freshly installed IDE by running `idea` or `rcode` in DevShell.
 
-## Installation steps by platform
+## Installation Steps by Platform
 
 > **Warning — Compatible plugin versions**
 > Ensure you install the latest compatible version of the Copilot plugin:
@@ -237,7 +234,7 @@ At JPMC, the GitHub Copilot plugin is available for the following IDEs on macOS:
     - Select **Editor** > **Copilot** > **Open Chat** from the Xcode menu bar.
 11. Review the Next Steps below to leverage Copilot further.
 
-## Next steps
+## Next Steps
 
 Review the following guides to get the most out of GitHub Copilot:
 
@@ -247,14 +244,14 @@ Review the following guides to get the most out of GitHub Copilot:
 
 ## Troubleshooting
 
-### Scenario 1: You cannot install the plugin but can log in to GitHub with `SID_jpmcai` but do not see the "Copilot Business is active for your account" message.
+### Scenario 1: You Cannot Install the Plugin but Can Log in to GitHub with `SID_jpmcai` but Do Not See the "Copilot Business is active for your account" Message
 
 If you cannot install the plugin and do not see the "Copilot Business is active for your account" message (when logging into https://github.com/settings/copilot), this likely means you do not have a license.
 
 - Ensure you have a license to the tool by following the Onboarding steps.
 - If you were previously able to install the plugin but are no longer able to access it, check to ensure you have logged out of your `SID_bemgmt` account, then log back in with your `<SID>_jpmcai` account. If you are still unable to log in, please reach out to your L2B POC for further assistance.
 
-### Scenario 2: You cannot install the plugin but can log in to GitHub and see the "Copilot Business is active for your account" message.
+### Scenario 2: You Cannot Install the Plugin but Can Log in to GitHub and See the "Copilot Business is active for your account" Message
 
 If you cannot install the plugin but see the "Copilot Business is active for your account" message when logging into https://github.com/settings/copilot, complete the following steps **in the order presented** to troubleshoot this issue:
 
