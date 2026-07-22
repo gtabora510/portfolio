@@ -1,50 +1,48 @@
 ---
 layout: page
-title: Create a deployment intent (DI)
-description: Describes how to create a deployment intent (DI).
+title: Create a deployment intent
+description: Creating a deployment intent.
 importance: 1
 category: configuration
 ---
 
-## Launch the Create Deployment Intent Wizard
+## Launch the Create Deployment Intent (DI) Wizard
 
-> **Note on the Context selector:** The Context selector is not visible when you are within Analytics, Configuration, or Documentation. If you are in one of these areas and want to access the Context selector, you must click on the IEP logo.
+> **Note:** The Context selector is not visible when you are within Analytics, Configuration, or Documentation. If you are in one of these areas and want to access the Context selector, you must click on the Developer Portal (DP) logo.
 
-If you are in one of these areas and want to access the Context selector, you must click the IEP logo.
+If you are in one of these areas and want to access the Context selector, you must click the DP logo.
 
 1. From the Context selector, select **Projects**.
-2. Select the Boundary Project to which you want to add a deployment scope.
+2. Select the Boundary Project to which you want to add a deployment scope (DS).
 3. On the left navigation, select **DI/DS**.
 4. Under **Actions**, click **Add deployment intent** to launch the wizard.
 
 **Note:** You must have Project Owner permission and be in a Boundary Project to add a DI.
 
-Refer to Deployment Intent/Deployment Scope (DI/DS) for more information.
+## Provide DI Details
 
-## Provide Deployment Intent Details
+Under **DI details**, provide the following information:
 
-Under Deployment intent details, provide the following information:
-
-- **Deployment intent name:** Enter a name for the deployment scope.
-- **Deployment intent description:** Enter a description for the deployment scope.
-- **Environment:** Select the environment (DEV, TEST, PROD) in which to associate with this deployment intent.
+- **DI name:** Enter a name for the DS.
+- **DI description:** Enter a description for the DS.
+- **Environment:** Select the environment (DEV, TEST, PROD) in which to associate with this DI.
 
 ## Set Environment
 
-Select one of the following environments to associate with the deployment intent:
+Select one of the following environments to associate with the DI:
 
 - **DEV**
 - **TEST**
 - **PROD**
 
-## Set Deployment Intent Controls
+## Set DI Controls
 
-Set the deployment intent controls to apply to the deployment intent. The following controls are available for Atlas 2.0:
+Set the following DI controls.
 
 | Control attribute   | Description                                                                                                                                                                                                        |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Data Classification | Organizes and categorizes data based on sensitivity and importance, ensuring proper handling and protection.                                                                                                       |
-| Connectivity        | Ensures applications communicate in an appropriate way that satisfies JPMC standards and risk allowance. Refer to Connectivity Risk Governance for more information.                                               |
+| Connectivity        | Ensures applications communicate in an appropriate way that satisfies JPMC standards and risk allowance.                                                                                                           |
 | Jurisdiction        | Refers to the legal authority or geographic area where certain laws, regulations, and rules apply.                                                                                                                 |
 | HITrust             | HITRUST certification by the HITRUST Alliance enables vendors and covered entities to demonstrate healthcare data compliance requirements based on a standardized framework.                                       |
 | PCI                 | Payment Card Industry (PCI) workloads are subject to additional scrutiny across all platforms. Refer to PCI Compliance to review obligations and initiate conversations.                                           |
@@ -70,58 +68,49 @@ Set the deployment intent controls to apply to the deployment intent. The follow
 ## Submit Deployment Intent Request
 
 - When the **Submit** button is clicked, the system returns you to the DI/DS screen where a snackbar confirms the request submission.
-- Submitting generates an approval request that is sent to the Design Authority (DA) of the SEAL ID.
+- Submitting generates an approval request that is sent to the Design Committee (DC) of the SID.
 
 ## Track Status
 
 To track the status of the deployment intent creation workflow:
 
-1. Access the Project through the **My Projects** page or the context selector in the top-left of IEP.
+1. Access the Project through the **Projects** page or the context selector in the top-left of DP.
 2. Select **Audit log** in the second-hand navigation menu.
 3. Click **View details** on the deployment intent creation workflow.
 4. Click on a step (represented as a node in the workflow visualization) to view its granular status.
 
 ## Approvals
 
-- IEP initiates a smartApproval request to the Design Authority of the corresponding SEAL.
-- Requests created for Atlas 2.0 Beta and Atlas 2.0 Gold, the approvals go to **smartApproval PROD**.
-- To view the following details of the Design Authority request created by IEP, select the **Waiting for Smart Approval** step:
+- DP initiates an approval request to the DC of the corresponding SID.
+- Requests created for Beta and Gold, the approvals go to **Approval PROD**.
+- To view the following details of the DC request, select **Waiting for Approval**:
   - Request ID
   - Requested For
   - Description
   - DI information to be created
 
-**Note:** If the L0B Design Authority approval is taking longer than expected, contact the approvers listed.
+**Note:** If the L0B DC approval is taking longer than expected, contact the approvers listed.
 
-- Upon DA approval, the workflow moves to deployment intent creation. DI creation initiates MyAccess Deployment Intent Resource Registration and MyAccess Factory Requestable Creation.
-- JPMC resource numbers (JRNs) are generated and can be viewed by selecting the Deployment intent creation step:
-  - Deployment intent
-  - Deployment scope
-  - MyAccess Deployment Scope Resource Registration
-  - MyAccess Factory Requestables Creation
+- Upon approval, the workflow moves to DI creation.
+- Acme resource numbers (ARNs) are generated and can be viewed by selecting the DI creation step:
+  - DI
+  - DS
+  - DS resource registration
 
 ## Review Notifications
 
-- Project creators receive notifications on the progress of the deployment intent creation workflow.
+- Project creators receive notifications on the progress of the DI creation workflow.
 - The notifications icon is located in the top right corner.
-- Notifications are sent when the deployment intent creation request is approved.
-- Project owners are notified when the Design Authority approves or declines the deployment intent creation request.
+- Notifications are sent when the DI creation request is approved.
+- Project owners are notified when the DC approves or declines the DI creation request.
 
 ## Retry Workflow Failures
 
 - If a step fails during the workflow, retry re-triggers the process.
 - Retry is only supported for certain failed steps in the workflow.
-- The retry icon appears within the diagram view (accessed by clicking **View details** from within the Audit log screen) where retrying is possible or enabled.
+- The retry icon appears within the diagram view (accessed by clicking **View details** from within the Audit screen) where retrying is possible or enabled.
 - Steps without the retry button cannot be retriggered.
 
 **Retry is available in the following scenarios:**
 
-- While adding a deployment intent to an existing project, if the smartApproval request expires or is rejected by the DA, retry re-submits the deployment intent request to the Design Authority.
-
-## Additional References
-
-See the following documentation for more information on Atlas and boundary creation:
-
-- Atlas 2.0
-- Atlas 2.0 Portfolio Boundary Creation
-- Atlas 2.0 Network Boundary Creation
+While adding a DI to an existing project, if the smartApproval request expires or is rejected by the DC, retry re-submits the DI request to the DC.

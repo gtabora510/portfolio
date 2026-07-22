@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Installing and Configuring Claude Code
-description: Learn how to install and configure the Claude Code CLI for Windows 11 and macOS.
+description: Installing Claude Code for Windows 11 and macOS.
 importance: 5
 category: installation
 ---
@@ -16,11 +16,11 @@ category: installation
 
 This guide provides instructions for installing and configuring Claude Code, an AI-assisted coding tool. It covers prerequisites, installation steps, and configuration details to ensure a smooth setup process.
 
-Refer to the [Supported Environments](#) section of the Availability Matrix for more details on which environments are currently supported.
+Refer to the Availability Matrix for more details on which environments are currently supported.
 
 ## Prerequisites
 
-**If you have not been selected by your line of business to participate in the Waved Expansion, you will not have access to Claude Code and will not be able to complete the installation steps outlined in this guide.**
+You must have department permission to use Claude Code.
 
 ## Installation Steps by Platform
 

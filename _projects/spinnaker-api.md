@@ -52,7 +52,7 @@ Inspect a pipeline:
 
 Check execution status:
 
-> "What is the status of Spinnaker execution 01HXR5G7K2ABCDEF?"
+> "What is the status of Spinnaker execution?"
 
 Verify entitlements:
 
