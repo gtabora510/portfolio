@@ -8,7 +8,7 @@ category: installation
 
 > **Note for Early Access users:** If you were part of Early Access and used `npm` to install Claude Code, run the following command to uninstall the previous version before installing via Dev Shell:
 >
-> ```bash
+> ```shell
 > npm uninstall -g @anthropic/claude-code
 > ```
 
@@ -31,7 +31,7 @@ You must have department permission to use Claude Code.
    2. Open a Dev Shell instance by clicking the dropdown arrow in the tab menu and selecting **Dev Shell** from the list of profiles. Note that you can adjust the Terminal app's settings to default to Dev Shell if you prefer not to have to select it each time you open the Terminal app.
 2. Install Claude Code by running:
 
-   ```bash
+   ```shell
    os-tool install claude-code
    ```
 
@@ -41,7 +41,7 @@ You must have department permission to use Claude Code.
    where claude
    ```
 
-   ```
+   ```text
    # Output: C:\Users\<sid>\tools\claude-code\latest\claude.exe
    ```
 
@@ -54,7 +54,7 @@ You must have department permission to use Claude Code.
    which claude
    ```
 
-   ```
+   ```text
    # Output: /usr/local/jpmc/claude-code/latest/bin/claude
    ```
 

@@ -732,7 +732,7 @@ Each child of a parent should appear directly under the parent preferences in th
 }
 ```
 
-**Complex Example** (two parent groups, each with nested child and grandchild parent/boolean preferences following the same pattern as above, duplicated with a second set of preferences suffixed `2`):
+**Complex Example** (two parent groups, each with nested child and grandchild parent/boolean preferences following the same previous pattern, duplicated with a second set of preferences suffixed `2`):
 
 ```json
 {

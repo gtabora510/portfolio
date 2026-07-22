@@ -26,7 +26,7 @@ By clicking on the Context selector, you can change the lens with which you view
 
 Each of the contextual areas has its own set of secondary navigation options, relevant content, and tasks.
 
-When you click on the Context selector, the contextual area you are in is highlighted (as shown above). To switch to another contextual area, click on its name and then make any relevant selections, such as SID or Project.
+When you click on the Context selector, the contextual area you are in is highlighted. To switch to another contextual area, click on its name and then make any relevant selections, such as SID or Project.
 
 After selecting your contextual area, the Context selector navigation item and the secondary navigation options update to show relevant content and tasks.
 

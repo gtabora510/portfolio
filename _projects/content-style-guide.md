@@ -408,11 +408,24 @@ Refer to the Terminology section under User Interface for additional guidance on
 | ------------------------------------------------------------------ | ----------------------------------------------------------------- |
 | _The team should spin up a work stream to address the initiative._ | _The team should create a work stream to address the initiative._ |
 
-**Do not use _please_ when directing the reader to take a normal course of action.** However, it is appropriate to use please when asking the reader to take a step or action that inconveniences them or implies a potential issue with the product.
+**Avoid using _above_ or _below_ to reference other content.** Content may be reorganized, reflowed, or read out of order (for example, in search results or exported formats), so positional references can be inaccurate or confusing. Reference the specific section name instead.
 
-| Avoid                                                                                                      | Recommended                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| _Please enter your name in the **Name** field._<br>OR<br>_Report this issue to your system administrator._ | _Enter your name in the **Name** field._<br>OR<br>_Please report this issue to your system administrator._ |
+| Avoid                                                         | Recommended                                                                                |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| _As described above, you must configure your proxy settings._ | _As described in the Proxy Configuration section, you must configure your proxy settings._ |
+| _Follow the steps below to personalize the portal._           | _Follow these steps to personalize the portal._                                            |
+
+**Do not use _please_ when directing the reader.** State the action directly.
+
+| Avoid                                           | Recommended                              |
+| ----------------------------------------------- | ---------------------------------------- |
+| _Please enter your name in the **Name** field._ | _Enter your name in the **Name** field._ |
+
+**Do not use _wish_.** Use _want_ instead, or state the action directly.
+
+| Avoid                                                 | Recommended                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- |
+| _If you wish to change your notification settings..._ | _If you want to change your notification settings..._ |
 
 **Avoid using _etc._ whenever possible.** Instead, use _such as_ or _including_. If you must use _etc._ be sure to place a period at the end, even it is followed by a comma.
 

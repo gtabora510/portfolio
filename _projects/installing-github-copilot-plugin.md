@@ -27,7 +27,7 @@ Complete **all the following steps** before proceeding with installation:
    2. If you have Visual Studio (not to be confused with VS Code) installed from go/software, you must manually check what version you have installed (Help > About); ensure you are on version VS 2022 17.11 or later.
 4. Run the following command to perform a clean installation of the latest IDE version, if you are not on the latest version:
 
-   ```bash
+   ```shell
    os-tool install -u "<latestIDEversion>"
    ```
 
@@ -214,7 +214,7 @@ The GitHub Copilot plugin is available for the following IDEs on macOS:
    6. Select your desired **Memory** option.
    7. Optionally, you can set a desired **Default system prompt**. Use the following prompt to start:
 
-      ```
+      ```text
       You are a helpful senior programming assistant.
       You should respond in natural language.
       Your response should be correct, concise, clear, informative, and factual, etc.
@@ -232,7 +232,6 @@ The GitHub Copilot plugin is available for the following IDEs on macOS:
 10. To open the chat dialogue and begin using Copilot, use one of two methods; in either case, a separate chat window opens, allowing you to interact with Copilot:
     - Click the grey circle in the bottom-right corner of the Xcode editor window, then click the "+". This adds a new chat tab to the pop-up and turns the circle blue, indicating you have a Copilot chat open. If you close the window, the circle returns to grey; or,
     - Select **Editor** > **Copilot** > **Open Chat** from the Xcode menu bar.
-11. Review the Next Steps below to leverage Copilot further.
 
 ## Next Steps
 
@@ -249,20 +248,18 @@ Review the following guides to get the most out of GitHub Copilot:
 If you cannot install the plugin and do not see the "Copilot Business is active for your account" message (when logging into https://github.com/settings/copilot), this likely means you do not have a license.
 
 - Ensure you have a license to the tool by following the Onboarding steps.
-- If you were previously able to install the plugin but are no longer able to access it, check to ensure you have logged out of your `<SID>` account, then log back in with your `<SID>` account. If you are still unable to log in, please reach out to your L2B POC for further assistance.
+- If you were previously able to install the plugin but are no longer able to access it, check to ensure you have logged out of your `<SID>` account, then log back in with your `<SID>` account. If you are still unable to log in, reach out to Customer Support for further assistance.
 
 ### Scenario 2: You Cannot Install the Plugin but Can Log in to GitHub and See the "Copilot Business is active for your account" Message
 
 If you cannot install the plugin but see the "Copilot Business is active for your account" message when logging into https://github.com/settings/copilot, complete the following steps **in the order presented** to troubleshoot this issue:
 
-1. Ensure you have configured the proxy properly (see steps above). Be sure to restart your IDE after any proxy setting change. **Note that inaccurate proxy configuration is an extremely common reason users have issues installing the plugin.**
+1. Ensure you have configured the proxy properly. Be sure to restart your IDE after any proxy setting change. **Note that inaccurate proxy configuration is an extremely common reason users have issues installing the plugin.**
    - If the Chrome browser opens with the login/device activation screen, that is indicative of an incorrect proxy configuration.
    - If you received either of these errors, these are indicative of an incorrect proxy configuration.
 2. Ensure you've completed all the Prerequisites.
    - Only certain versions of the GitHub Copilot plugin are compatible with the latest version of IntelliJ IDEA. If you are using an older version of either, you may encounter issues.
-   - If you are using a corporate Mac, there may be additional configurations needed, depending on use case. Review the steps above for configuring the **Login Items and Extensions** in your System Settings.
+   - If you are using a corporate Mac, there may be additional configurations needed, depending on use case.
 3. Check the GitHub Copilot Stack Overflow community for any known issues with the plugin.
 
-If you are still unable to install the plugin after completing the steps above, reach out to your L2B POC for further assistance.
-
-If you belong to the CIB Payments Technology organization, you may need to follow these workaround steps to successfully install the plugin. If you are unable to resolve the issue, visit go/MYitHelp or reach out to your L2B POC for further assistance.
+If you are still unable to install the plugin, reach out to your L2B POC for further assistance.
