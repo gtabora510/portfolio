@@ -6,13 +6,9 @@ importance: 3
 category: developer
 ---
 
-# Spinnaker API
-
-Query the Acme Development Toolchain (ADT) Spinnaker pipelines, execution status, SID applications, and project entitlements
-
 ## Overview
 
-The Spinnaker API skill provides read-only access to ADT Spinnaker's REST API for pipeline inspection and deployment monitoring. It supports project and application discovery, pipeline configuration retrieval, execution status queries, entitlement validation, and SEAL application lookup. Authentication is OAuth2 SSO via IDAnywhere ADFS — no PAT fallback is available for Spinnaker.
+Use the Spinnaker API skill to query ADT Spinnaker pipelines, execution status, SID applications, and project entitlements. It gives you read-only access to ADT Spinnaker's REST API for pipeline inspection and deployment monitoring — discover projects and applications, retrieve pipeline configurations, check execution status, validate entitlements, and look up onboarded SEAL applications. Authenticate with OAuth2 SSO via IDAnywhere ADFS; PAT fallback isn't available for Spinnaker.
 
 ## Metadata
 

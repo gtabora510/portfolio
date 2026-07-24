@@ -8,7 +8,7 @@ category: configuration
 
 ## Overview
 
-The **Preferences Framework** is a collection of configuration files and services that enable the creation and management of user preferences across the Developer Portal (DP). The framework provides a standardized way to define, store, view/interact and retrieve user preferences, allowing for a consistent user experience across the platform.
+The **Preferences Framework** is a collection of configuration files and services you use to create and manage user preferences across the Developer Portal (DP). Use it to define, store, and retrieve preferences in a standardized way, so your application delivers a consistent experience across the platform.
 
 ## Key Framework Features
 
@@ -31,7 +31,7 @@ The **Preferences Framework** is a collection of configuration files and service
 
 ## What You Build vs. What the Platform Provides
 
-You define your preferences using the framework's configuration json, and the platform provides the services and UI components to manage and render those preferences, which would allow you to consume those in your applications and widgets.
+You define your preferences using the framework's configuration JSON. The platform provides the services and UI components to manage and render those preferences, so you can consume them in your applications and widgets.
 
 ## Platform Applications
 
@@ -77,11 +77,11 @@ Creating a preferences configuration does not store anything in the database unt
 
 Changing the configuration of a preference, such as adding a new option to a select-type preference, is tracked by a version number. When a preference is retrieved, the system checks if the version number stored with the user preference value differs from the configuration version. If the version numbers differ, one of the following occurs:
 
-- If the change does not affect the values stored, the system returns the stored value and updates the version number to the new one. For example, changing the description of a preference.
+- If the change doesn't affect the values stored, the system returns the stored value and updates the version number. For example, changing the description of a preference.
 - If the change affects the values stored:
-  - When adding another required data field to the configuration, the system compares the existing value. If the previous entry still exists, the new field is added with the default value specified in the configuration. The merged value is saved and returned. For example, adding an entry to get the ID of the preference while keeping the value entry the same.
-  - When removing or updating a required data field, the system removes the field and any associated data, replacing it with a new one or removing it entirely. The updated value is saved and returned. For example, changing the value entry to a different name or removing it. As this is the key field for storing the preference value, the system removes the old field and replaces it with a new one with the default value specified in the configuration, or removes it if there is no replacement field.
-  - When removing an option or preference from the configuration, the system removes that entry from the database and does not return anything for that field. Depending on the retrieval method, an error may indicate that no data for that preference is found, or only the remaining preferences are returned.
+  - When you add a required data field, the system compares it to the existing value. If the previous entry still exists, the system adds the new field with its default value and saves the merged result. For example, adding an entry to get the ID of the preference while keeping the value entry the same.
+  - When you remove or update a required data field, the system removes the field and any associated data, then saves the updated value. For example, changing the value entry to a different name or removing it. Because this is the key field for storing the preference value, the system replaces it with a new field using the configuration's default value — or removes it entirely if there's no replacement field.
+  - When you remove an option or preference from the configuration, the system removes that entry from the database and returns nothing for that field. Depending on the retrieval method, you may see an error indicating no data was found, or just the remaining preferences.
 
 ### Workflow Diagram
 
@@ -653,15 +653,15 @@ When you define preferences type `list` in the preferences configuration, the fr
 
 #### General Behavior
 
-When you define preferences type `parent` in the preferences configuration, the framework renders a `Toggle` switch in the UI. This parent preferences also creates a grouping effect: preferences listed in the children field of the parent preference appears indented under the parent preferences in the UI. Toggling the parent preferences off turns off all child preferences, and toggling it on turns on all child preferences. If a user toggles on any single child preferences, the parent preferences toggles on as well.
+When you set a preference's type to `parent` in the configuration, the framework renders a `Toggle` switch in the UI. Parent preferences also create a grouping effect: preferences listed in the parent's children field appear indented underneath it. Toggling the parent off turns off all child preferences; toggling it on turns them all on. If you toggle on any single child, the parent toggles on too.
 
 #### Preferences Storage Behavior
 
-The parent preference has a toggle and entry in the configuration, but the system does not create a database entry for it. When a user selects all on the parent preferences, the system triggers a single call for each child, and those preferences are stored in the database. If a user toggles on a single preferences within the child group, only that preferences has an entry in the database, not the parent preferences, even though the parent appears toggled on.
+The parent preference has a toggle and an entry in the configuration, but the system doesn't create a database entry for it. When you select all under the parent, the system triggers a single call per child, and those preferences are stored in the database. If you toggle on a single child preference, only that child gets a database entry — not the parent, even though the parent appears toggled on.
 
 #### Parent-Child Nesting Behavior
 
-Each child of a parent should appear directly under the parent preferences in the configuration to render the grouping effect properly in the UI. The UI visually indents child preferences under their parent. The framework does not limit the number of nesting levels, but for clarity and user experience, use no more than two levels (one parent and its children). For deeper nesting, create a new grouping with the desired parent-child structure rather than nesting further. Achieve nesting by making one of the children preferences a `parent` type itself, referencing its own children, and placing those child preferences another indent level down in the UI.
+Each child should appear directly under its parent in the configuration, so the UI renders the grouping effect correctly. The UI visually indents children under their parent. The framework doesn't limit nesting depth, but for clarity, use no more than two levels (one parent and its children). For deeper nesting, create a new grouping instead of nesting further — or make one of the children a `parent` type itself, give it its own children, and the UI indents that level further.
 
 #### Parent Preferences Configuration Examples
 
@@ -844,7 +844,7 @@ Each child of a parent should appear directly under the parent preferences in th
 
 #### Visual Ordering of Preferences
 
-The order in which you define preferences in the configuration file determines the order in which the UI renders them. You control the visual layout of preferences by ordering them as desired in the configuration. This ordering is especially important for parent preferences, as their child preferences appear directly under them, creating a clear visual grouping effect.
+The order you define preferences in the configuration determines the order the UI renders them. This matters most for parent preferences, since their children appear directly under them, creating a clear visual grouping effect.
 
 #### Identifying Preferences (Title, etc.)
 
