@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "agent",
+            "if": "Bash(git commit *)",
+            "prompt": "A `git commit` is about to run in this repo. First run `git diff --cached --name-only --diff-filter=ACM -- '*.md'` to list staged markdown files. If that list is empty, immediately allow: output {\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"allow\"}} and stop.\n\nOtherwise, read `_projects/master-style-guide.md` (the repo's style guide) once. Skip checking `_projects/master-style-guide.md` and `_projects/content-style-guide.md` themselves even if staged — they intentionally quote bad phrasing inside 'Avoid' example columns/tables, which are not real violations.\n\nFor every other staged markdown file, get its staged content with `git show :<path>` and check it against the style guide's rules: word preferences (avoid utilize, leverage, please, wish, above/below, spin up, surface-as-verb, text box, we/our/us, ampersand-for-and), headline-style capitalization for headings, serial/oxford comma, numbers (spell out zero-nine, numerals for 10+), full month names in dates, lowercase a.m./p.m. with periods, that/which usage, hyphenation of compound modifiers before nouns, singular they. Contractions are fine (not a violation). When judging, use context — don't flag a word inside an explicit 'Avoid' column of a comparison table that is teaching the rule; only flag it in genuine prose.\n\nIf you find clear, concrete violations, block the commit: output {\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"<bulleted list, each with file path, the offending text, and the specific rule/fix>\"}}. If the staged markdown is clean, output {\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"allow\"}}.\n\nOutput ONLY that JSON object, nothing else.\n\nHook input: $ARGUMENTS",
+            "model": "claude-sonnet-5",
+            "timeout": 180,
+            "statusMessage": "Checking staged markdown against master-style-guide.md..."
+          }
+        ]
+      }
+    ]
+  }
+}
