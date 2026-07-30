@@ -50,17 +50,17 @@ A succinctly conversational tone means that you should avoid being too friendly 
 
 Imagine an engineer is sitting next to you, and you are clearly and directly guiding them through the steps to complete a task. The following examples illustrate differences in tone.
 
-| Avoid                                                                                                                                    | Recommended                                                                                              |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Avoid                                                                                                                                   | Recommended                                                                                              |
+| --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | _Oops! Something's wrong with the update process. Let's see what went wrong and how you can fix it._<br>**This is too conversational.** | _Update Process Error: Discover what went wrong and how to correct it._<br>**This is the correct tone.** |
-| _Error detected in update process. Learn about the error detected and its remediation steps._<br>**This is too formal.**                |                                                                                                            |
+| _Error detected in update process. Learn about the error detected and its remediation steps._<br>**This is too formal.**                |                                                                                                          |
 
 ### Contractions
 
 **Source: Google, overriding the original guide's blanket avoidance.** Google recommends contractions (_you're_, _it's_, _don't_) because they read as more natural and conversational, and CMOS doesn't prohibit them. Use contractions where they help the sentence read naturally; avoid them only where the surrounding sentence is already formal (for example, legal or compliance text).
 
-| Avoid                                             | Recommended                    |
-| --------------------------------------------------- | -------------------------------- |
+| Avoid                                             | Recommended                                            |
+| ------------------------------------------------- | ------------------------------------------------------ |
 | _Do not use contractions in most portal content._ | _Don't avoid contractions — they read more naturally._ |
 
 ## Global Audience
@@ -69,9 +69,9 @@ It is important that you keep your writing simple and consistent for a global au
 
 To ensure that your content is universally understood:
 
-| Avoid                                                                                | Recommended                                                                                                    |
-| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Do not use idioms or metaphors, as they may not be widely understood.               | Write in short sentences.                                                                                        |
+| Avoid                                                                               | Recommended                                                                                                  |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Do not use idioms or metaphors, as they may not be widely understood.               | Write in short sentences.                                                                                    |
 | Avoid culturally specific references, such as specific holidays or sporting events. | Use active voice, which means that the subject of the sentence is the person or thing performing the action. |
 | Avoid references to seasons.                                                        | Write in second person. Address the engineer reading your content as _you_ or write with _you_ implied.      |
 
@@ -92,13 +92,13 @@ Per CMOS and Google style, developer portal content should be written in U.S. En
 **Source: Chicago, overriding both Google and the original guide (both prefer sentence case).** Chicago wins per the precedence order above, so this guide breaks from the original sentence-case rule and from Google's own house style.
 
 | Avoid                              | Recommended                        |
-| ------------------------------------- | ------------------------------------- |
+| ---------------------------------- | ---------------------------------- |
 | _Text formatting and organization_ | _Text Formatting and Organization_ |
 
 **Avoid phrasing your section headings as questions.** It is good to consider what question you may be answering in a particular section, but you do not need to title it as such.
 
 | Avoid                | Recommended  |
-| ----------------------- | -------------- |
+| -------------------- | ------------ |
 | _What Do I Do Next?_ | _Next Steps_ |
 
 ### Lists
@@ -178,9 +178,9 @@ For guidance on capitalizing section titles or headings, reference the Headings 
 
 **Spell out zero through nine; use numerals for 10 and higher.** This is Chicago's carve-out for technical and data-heavy writing (its general-prose default of spelling out zero through one hundred doesn't fit developer content), and it matches Google's numeral rule directly.
 
-| Avoid                                     | Recommended                              |
-| -------------------------------------------- | ------------------------------------------- |
-| _The API supports 3 retry attempts._      | _The API supports three retry attempts._ |
+| Avoid                                      | Recommended                              |
+| ------------------------------------------ | ---------------------------------------- |
+| _The API supports 3 retry attempts._       | _The API supports three retry attempts._ |
 | _The API supports fifteen retry attempts._ | _The API supports 15 retry attempts._    |
 
 **Always use numerals with units of measurement, versions, and UI counts**, regardless of value (for example, _2 GB_, _version 3_, _9 tabs open_). See Units of Measure.
@@ -193,10 +193,10 @@ For guidance on capitalizing section titles or headings, reference the Headings 
 
 **Use _that_ for restrictive clauses** (clauses essential to the sentence's meaning, no comma). **Use _which_ for nonrestrictive clauses** (extra, non-essential information, set off by a comma).
 
-| Avoid                                                            | Recommended                                                          |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| _The build which fails validation is rejected._ (ambiguous)     | _The build that fails validation is rejected._ (this build, specifically) |
-| _The build, that was triggered manually, took longer._ (incorrect) | _The build, which was triggered manually, took longer._ (extra detail)  |
+| Avoid                                                              | Recommended                                                               |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| _The build which fails validation is rejected._ (ambiguous)        | _The build that fails validation is rejected._ (this build, specifically) |
+| _The build, that was triggered manually, took longer._ (incorrect) | _The build, which was triggered manually, took longer._ (extra detail)    |
 
 ### Hyphenation
 
@@ -231,8 +231,8 @@ See the Contractions rule under Voice and Tone.
 
 When writing a day after a month, do not add _"st, nd, rd, or th"_ after the number. Those suffixes are added when the date is spoken, but are incorrect in the written format.
 
-| Avoid                                                                                                     | Recommended                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Avoid                                                                                                     | Recommended                                                                                                                                    |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | _January 31st, 2026, is a major delivery milestone._<br>OR<br>_The target delivery date is January 31st._ | _January 31, 2026, is a major delivery milestone._<br>OR<br>_The target delivery date is January 31._<br>(Table/label context: _Jan 31, 2026_) |
 
 When referencing days of the week, **write out the full name of the day**. If space is limited, use the day's 3-letter abbreviation. Do not place periods at the end of these abbreviations unless the abbreviation is the last word in the sentence.
@@ -250,7 +250,7 @@ When referencing days of the week, **write out the full name of the day**. If sp
 **Write in present tense**; avoiding future tense.
 
 | Avoid                                      | Recommended                            |
-| --------------------------------------------- | ----------------------------------------- |
+| ------------------------------------------ | -------------------------------------- |
 | _The system will display your local time._ | _The system displays your local time._ |
 
 Another component to using present tense and not future is Timeless content.
@@ -260,7 +260,7 @@ Another component to using present tense and not future is Timeless content.
 **Use second person.** Address the engineer reading your content as you or write with you implied. Avoid using first person language, such as _we will_, _let's_, or _our_.
 
 | Avoid                                                | Recommended                                                     |
-| -------------------------------------------------------- | ------------------------------------------------------------------- |
+| ---------------------------------------------------- | --------------------------------------------------------------- |
 | _Let's review our technical writing best practices._ | _Technical writing best practices are covered in this section._ |
 
 ### Spelling
@@ -270,13 +270,13 @@ Another component to using present tense and not future is Timeless content.
 **Use American spellings** per CMOS and Google style.
 
 | Avoid                                                                                                                          | Recommended                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | -ise, as in authorise, prioritise, minimise<br>-our, as in colour, favourite, behaviour<br>-re, as in centre, fibre, manoeuvre | -ize, as in authorize, prioritize, minimize<br>-or, as in color, favorite, behavior<br>-er, as center, fiber, maneuver |
 
 Preferred spellings for commonly used words:
 
 | Avoid                           | Recommended    |
-| ----------------------------------- | ---------------- |
+| ------------------------------- | -------------- |
 | back-end or back end            | backend        |
 | cancelled                       | canceled       |
 | cancelling                      | canceling      |
@@ -310,7 +310,7 @@ Preferred spellings for commonly used words:
 If space is constrained and abbreviations must be used, use the following abbreviations for units of time.
 
 | Unit        | Abbreviation |
-| --------------- | -------------- |
+| ----------- | ------------ |
 | Millisecond | ms           |
 | Second      | s            |
 | Minute      | min          |
@@ -323,7 +323,7 @@ Whether you use **absolute** or **relative** timestamps depends on the context. 
 To represent how long ago an event occurred, use a relative timestamp. When reporting relative time, follow these examples:
 
 | Time frame          | Usage examples                |
-| ---------------------- | -------------------------------- |
+| ------------------- | ----------------------------- |
 | 0-60 seconds        | Just now                      |
 | 1-60 minutes        | 4 minutes ago; 16 minutes ago |
 | 1-24 hours          | 4 hours ago; 18 hours ago     |
@@ -339,14 +339,14 @@ To represent how long ago an event occurred, use a relative timestamp. When repo
 
 When writing a time of day, use numerals for the time values. Times should be written on a 12-hour clock with lowercase _a.m._ or _p.m._, each followed by periods, and a space before the abbreviation.
 
-| Avoid                                                                                                 | Recommended                                                                              |
-| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Avoid                                                                                                                                            | Recommended                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
 | _The report is updated daily at eight in the morning._<br>OR<br>_Submit your changes by 14:00 hours._<br>OR<br>_Submit your changes by 2:00 PM._ | _The report is updated daily at 8:00 a.m._<br>OR<br>_Submit your changes by 2:00 p.m._ |
 
 For the most part, time should be displayed in the user's local time on the developer portal. However, when it is necessary to express a time zone, such as for an event, use ET, PT, CT, etc. It is not necessary to include the distinction of daylight saving time or standard time.
 
-| Avoid                                           | Recommended                                    |
-| --------------------------------------------------- | -------------------------------------------------- |
+| Avoid                                             | Recommended                                      |
+| ------------------------------------------------- | ------------------------------------------------ |
 | _The onboarding session starts at 8:00 a.m. EST._ | _The onboarding session starts at 8:00 a.m. ET._ |
 
 ### Timeless Content
@@ -362,19 +362,19 @@ Time-based words may be used when writing time-specific content, such as release
 **Be consistent when using units** and avoid mixing them.
 
 | Avoid                                                  | Recommended                                  |
-| ---------------------------------------------------------- | ----------------------------------------------- |
+| ------------------------------------------------------ | -------------------------------------------- |
 | _The data refreshes every 10 seconds to 1.25 minutes._ | _The data refreshes every 10 to 75 seconds._ |
 
 **Use a space between numbers and units** except when you are writing about percentages.
 
 | Avoid                                               | Recommended                                         |
-| -------------------------------------------------------- | ---------------------------------------------------- |
+| --------------------------------------------------- | --------------------------------------------------- |
 | _A reduction of 25MB results in a savings of 30 %._ | _A reduction of 25 MB results in a savings of 30%._ |
 
 **Display the full name of the unit,** unless space is constrained.
 
 | Avoid                                           | Recommended                                            |
-| ----------------------------------------------------- | --------------------------------------------------------- |
+| ----------------------------------------------- | ------------------------------------------------------ |
 | _The process should complete in less than 10s._ | _The process should complete in less than 10 seconds._ |
 
 If you must abbreviate units, consider the following:
@@ -382,13 +382,13 @@ If you must abbreviate units, consider the following:
 - **Do not make unit abbreviations plural.**
 
 | Avoid                                                      | Recommended                                                   |
-| --------------------------------------------------------------- | ----------------------------------------------------------------- |
+| ---------------------------------------------------------- | ------------------------------------------------------------- |
 | _The report processed and was available in about 15 mins._ | _The report processed and was available in about 15 minutes._ |
 
 - **Do not put a period after a unit abbreviation** unless it is at the end of a sentence.
 
 | Avoid                                                                   | Recommended                                                          |
-| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | _Reports process every 15 min. and will be available on the dashboard._ | _Reports process every 15 min. They are available on the dashboard._ |
 
 ### Word Preferences
@@ -398,98 +398,98 @@ Refer to the Terminology section under User Interface for additional guidance on
 **Do not use _once_ to mean order of events**; use after instead. Once means one time.
 
 | Avoid                                                      | Recommended                                          |
-| ---------------------------------------------------------------- | ----------------------------------------------------- |
+| ---------------------------------------------------------- | ---------------------------------------------------- |
 | _Once you enter the name of the product, select **Save.**_ | _After you enter the product name, select **Save.**_ |
 
 **Do not use _utilize_ when you mean _use_.** Utilize refers to using something beyond its intended purpose.
 
 | Avoid                                                                        | Recommended                                                                                            |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | _I utilize my umbrella to stay dry in the rain and as a weapon when needed._ | _Use your umbrella to stay dry in the rain. Utilize your umbrella to ward off an attacker, if needed._ |
 
 **Do not use _leverage_ as a verb when you mean _use_.**
 
 **Source: Google.** New rule; the original guide only covered _utilize_.
 
-| Avoid                                              | Recommended                          |
-| ------------------------------------------------------ | --------------------------------------- |
+| Avoid                                            | Recommended                                 |
+| ------------------------------------------------ | ------------------------------------------- |
 | _Leverage the API to fetch account information._ | _Use the API to fetch account information._ |
 
 **Use the word _engineer_ rather than the word _developer_.** As the content you are writing is for the firm's engineering staff, you should reference the role as such.
 
-| Avoid                                                                                                                                                    | Recommended                                                                                                                                             |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Avoid                                                                                                                                                    | Recommended                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _The developer portal provides solutions to developers, leveraging a suite of capabilities geared toward self-service, automation, and personalization._ | _The developer portal provides solutions to engineers, using a suite of capabilities geared toward self-service, automation, and personalization._ |
 
 **Do not use an ampersand (&) in place of the word _and_.** They are not interchangeable. An ampersand should only be used in writing when it is part of an official name.
 
 | Avoid                                                                                               | Recommended                                                                                              |
-| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | _The goal is to discover & connect across a complex ecosystem of products, components & solutions._ | _The goal is to discover and connect across a complex ecosystem of products, components, and solutions._ |
 
 **Do not use _we, our, or us._** Instead, use the name of the entity.
 
 | Avoid                                                                                                       | Recommended                                                                                                                                          |
-| ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _Our goal is to discover and connect us across a complex ecosystem of products, components, and solutions._ | _The developer portal's goal is for the firm's engineers to discover and connect across a complex ecosystem of products, components, and solutions._ |
 
 **Use the word _user_ to refer to an individual using the software/service** that you are developing. Otherwise, refer to the reader as _you_ or write with _you_ implied.
 
 | Avoid                                                                                                                            | Recommended                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | _The customer should select **Save** to save their changes._<br>OR<br>_With this function, the customer can save their changes._ | _Select **Save** to save your changes._<br>OR<br>_This function enables the user to save their changes._ |
 
 **Avoid using _text box_,** instead use _box_ or _field_ when directing your user to enter information.
 
 | Avoid                                       | Recommended                                                                              |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | _Enter your name in the **Name** text box._ | _Enter your name in the **Name** field._<br>OR<br>_Enter your name in the **Name** box._ |
 
 **Avoid using _surface_ as a verb;** instead, use a more direct term such as _make aware, expose,_ or _inform._
 
 | Avoid                                                | Recommended                                                |
-| -------------------------------------------------------- | ------------------------------------------------------------ |
+| ---------------------------------------------------- | ---------------------------------------------------------- |
 | _The analytics provided surface the user's journey._ | _The analytics provided inform you of the user's journey._ |
 
 **Avoid using _spin up_;** use a more specific term such as _create_ or _start._
 
 | Avoid                                                              | Recommended                                                       |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------- |
 | _The team should spin up a work stream to address the initiative._ | _The team should create a work stream to address the initiative._ |
 
 **Avoid using _above_ or _below_ to reference other content.** Content may be reorganized, reflowed, or read out of order (for example, in search results or exported formats), so positional references can be inaccurate or confusing. Reference the specific section name instead.
 
 | Avoid                                                         | Recommended                                                                                |
-| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | _As described above, you must configure your proxy settings._ | _As described in the Proxy Configuration section, you must configure your proxy settings._ |
 | _Follow the steps below to personalize the portal._           | _Follow these steps to personalize the portal._                                            |
 
 **Do not use _please_ when directing the reader.** State the action directly.
 
 | Avoid                                           | Recommended                              |
-| ----------------------------------------------------- | ------------------------------------------- |
+| ----------------------------------------------- | ---------------------------------------- |
 | _Please enter your name in the **Name** field._ | _Enter your name in the **Name** field._ |
 
 **Do not use _wish_.** Use _want_ instead, or state the action directly.
 
 | Avoid                                                 | Recommended                                           |
-| ----------------------------------------------------------- | ----------------------------------------------------------- |
+| ----------------------------------------------------- | ----------------------------------------------------- |
 | _If you wish to change your notification settings..._ | _If you want to change your notification settings..._ |
 
 **Use _e.g._, _i.e._, and _etc._ where they aid concision, following CMOS punctuation rules.**
 
 **Source: Chicago, overriding both Google and the original guide (both recommend avoiding Latin abbreviations entirely).** Chicago wins per the precedence order above. Place a comma after each abbreviation, reserve them for parenthetical asides rather than the main clause of a sentence, and don't italicize them since they're common in English usage.
 
-| Usage                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- |
-| _To create your account, enter your personal information (e.g., name, address, and phone number)._                |
+| Usage                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------- |
+| _To create your account, enter your personal information (e.g., name, address, and phone number)._                      |
 | _To create your account, you'll need personally identifiable information (i.e., your name, address, and phone number)._ |
-| _To create your account, enter information such as name, address, phone number, etc._                              |
+| _To create your account, enter information such as name, address, phone number, etc._                                   |
 
 **Avoid using idioms or metaphors,** as they may not be widely understood.
 
 | Avoid                                                                                   | Recommended                                                 |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | _You want your audience to be all ears and quiet as a mouse when reading your content._ | _You want your audience engaged when reading your content._ |
 
 ### Singular "They"
@@ -498,8 +498,8 @@ Refer to the Terminology section under User Interface for additional guidance on
 
 **Use singular _they/them/their_** to refer to a person of unspecified or non-binary gender, rather than defaulting to _he_ or constructing awkward _he or she_ phrasing.
 
-| Avoid                                                    | Recommended                                     |
-| ------------------------------------------------------------- | -------------------------------------------------- |
+| Avoid                                             | Recommended                                  |
+| ------------------------------------------------- | -------------------------------------------- |
 | _Each user must verify his or her email address._ | _Each user must verify their email address._ |
 
 ## Punctuation
@@ -516,8 +516,8 @@ Example: _Susan was invited to a meeting with a new hire, her former manager and
 
 **Place periods and commas inside closing quotation marks**, per American convention. Place colons, semicolons, and other punctuation outside, unless they're part of the quoted material itself.
 
-| Avoid                                        | Recommended                                  |
-| ------------------------------------------------ | ------------------------------------------------ |
+| Avoid                                       | Recommended                                 |
+| ------------------------------------------- | ------------------------------------------- |
 | _Select "Save", then close the dialog box._ | _Select "Save," then close the dialog box._ |
 
 ### Bulleted Lists
@@ -543,9 +543,9 @@ _Keep these three things top of mind when writing for the Developer Portal:_
 
 **Source: Google; new rule.** Link text should make sense on its own, out of context (for example, read aloud by a screen reader), and should describe the destination.
 
-| Avoid                                                     | Recommended                                                     |
-| --------------------------------------------------------------- | -------------------------------------------------------------------- |
-| _To learn about preferences, click here._                  | _Learn more in the [Preferences Framework](/projects/preferences-framework/) guide._ |
+| Avoid                                     | Recommended                                                                          |
+| ----------------------------------------- | ------------------------------------------------------------------------------------ |
+| _To learn about preferences, click here._ | _Learn more in the [Preferences Framework](/projects/preferences-framework/) guide._ |
 
 ## User Interface (UI)
 
@@ -554,25 +554,25 @@ _Keep these three things top of mind when writing for the Developer Portal:_
 The following are common UI terms and their usage.
 
 | Recommended | Usage guidelines                                                                                                                                                                                                                                                                      | Avoid                                |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | Add         | Describes adding an existing item to an existing list, group, view, or other container element. You may add a noun to provide additional context if needed; for example, _Add User_. If you are creating a new object, such as a new user, do not use _Add_, but rather use _Create_. | Create (for this use case)           |
-| Cancel      | Describes ending an action that is in progress or ending an action where changes might be lost, such as in a form.                                                                                                                                                                    |                                        |
-| Click       | Prompts the user to click a button, radio button, link, or any other item that is not part of a list, group, view, or other container element. _Click_ is not interchangeable with _Select_.                                                                                          |                                        |
-| Close       | Describes shutting an open window or modal. _Close_ is not interchangeable with _Cancel_ or _Quit_.                                                                                                                                                                                   |                                        |
+| Cancel      | Describes ending an action that is in progress or ending an action where changes might be lost, such as in a form.                                                                                                                                                                    |                                      |
+| Click       | Prompts the user to click a button, radio button, link, or any other item that is not part of a list, group, view, or other container element. _Click_ is not interchangeable with _Select_.                                                                                          |                                      |
+| Close       | Describes shutting an open window or modal. _Close_ is not interchangeable with _Cancel_ or _Quit_.                                                                                                                                                                                   |                                      |
 | Collapse    | Describes minimizing a container element, such as a list, so that it is partially visible.                                                                                                                                                                                            | Hide (for this use case)             |
-| Continue    | Describes proceeding with an action or process that is in progress.                                                                                                                                                                                                                   |                                        |
+| Continue    | Describes proceeding with an action or process that is in progress.                                                                                                                                                                                                                   |                                      |
 | Create      | Describes creating something new, such as a user account for a new hire. You may add a noun to provide additional context if needed; for example, _Create User_.                                                                                                                      | Add (for this use case)              |
 | Delete      | Describes completely removing an object.                                                                                                                                                                                                                                              | Erase and Remove (for this use case) |
-| Deselect    | Prompts the user to deselect an item from a list, group, view, or other container element.                                                                                                                                                                                            |                                        |
+| Deselect    | Prompts the user to deselect an item from a list, group, view, or other container element.                                                                                                                                                                                            |                                      |
 | Edit        | Describes making changes to an object, such as a file, configuration, or policy.                                                                                                                                                                                                      | Change or Modify                     |
-| Expand      | Describes expanding a container element, such as a list, to display all of its contents.                                                                                                                                                                                              |                                        |
-| Hide        | Describes hiding something that is displayed in the UI.                                                                                                                                                                                                                               |                                        |
-| Open        | Describes launching or accessing something in the interface.                                                                                                                                                                                                                          |                                        |
+| Expand      | Describes expanding a container element, such as a list, to display all of its contents.                                                                                                                                                                                              |                                      |
+| Hide        | Describes hiding something that is displayed in the UI.                                                                                                                                                                                                                               |                                      |
+| Open        | Describes launching or accessing something in the interface.                                                                                                                                                                                                                          |                                      |
 | Remove      | Describes removing an item from a list, group, view, or other container element without completely deleting it. You may add a noun to provide additional context if needed; for example, _Remove User_.                                                                               | Delete (for this use case)           |
-| Save        | Describes preserving the information or changes made by the user.                                                                                                                                                                                                                     |                                        |
+| Save        | Describes preserving the information or changes made by the user.                                                                                                                                                                                                                     |                                      |
 | Select      | Prompts the user to select an item from a list, group, view, or other container elements.                                                                                                                                                                                             | Choose (for this use case)           |
-| Show        | Describes displaying something that is hidden in the interface. _Show_ is not interchangeable with _View_ or _Expand_.                                                                                                                                                                |                                        |
-| View        | Describes accessing another page to display detailed information. _OR_ Represents the arrangement of data in the UI, such as a list view. _View_ is not interchangeable with _Show_ or _Expand_.                                                                                      |                                        |
+| Show        | Describes displaying something that is hidden in the interface. _Show_ is not interchangeable with _View_ or _Expand_.                                                                                                                                                                |                                      |
+| View        | Describes accessing another page to display detailed information. _OR_ Represents the arrangement of data in the UI, such as a list view. _View_ is not interchangeable with _Show_ or _Expand_.                                                                                      |                                      |
 
 ### Code and UI Text Formatting
 
@@ -580,16 +580,16 @@ The following are common UI terms and their usage.
 
 **Use monospace (code) font for anything the user types or reads verbatim**: commands, file names, code snippets, API endpoints, and configuration values. Use **bold** for UI element names the user interacts with (menu names, buttons, field names, dialog names) as described in Instructional Text.
 
-| Avoid                                                    | Recommended                                                       |
-| --------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| _Run npm install to install dependencies._                  | _Run `npm install` to install dependencies._                       |
+| Avoid                                      | Recommended                                  |
+| ------------------------------------------ | -------------------------------------------- |
+| _Run npm install to install dependencies._ | _Run `npm install` to install dependencies._ |
 
 ### Statuses
 
 To promote consistency and enforce a common understanding among users, the following terms should be used to depict status within the developer portal, whenever possible:
 
 | Standardized term | Definition                                                                                                                    |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Failed            | Indicates that the process or step did not complete successfully.                                                             |
 | In Progress       | Indicates that the work associated with the process or step is underway.                                                      |
 | Scheduled         | Indicates that the work associated with the process or step has been canceled.                                                |
@@ -603,8 +603,8 @@ When stepping engineers through onscreen selections, such as checkboxes or data 
 
 When directing the reader to select screen elements, **bold the name of the screen element** to make it stand out from the rest of the content. Use bold on menu names, menu selections, dialog box names, fields names, buttons and so on. Consistent use of bolding promotes readability.
 
-| Avoid                                                                                         | Recommended                                                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Avoid                                                                                         | Recommended                                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _To create a new document, from the File menu, select New. The New file dialog box displays._ | _To create a new document, from the **File** menu, select **New**. The **New File** dialog box displays._<br>OR<br>_To create a new document, select **File > New**. The **New File** dialog box displays._ |
 
 ### Alt Text
@@ -620,31 +620,31 @@ This section discusses best practices for documenting a process. Processes are d
 Processes should start with an introductory sentence that provides context to the reader. However, the introductory sentence should not be a repeat of the section header. You can end the introductory sentence with a colon or a period. A colon should be used if the sentence precedes the process' steps. Use a complete sentence and not a partial sentence that is complete by the steps.
 
 | Avoid                        | Recommended                                      |
-| ------------------------------- | --------------------------------------------------- |
+| ---------------------------- | ------------------------------------------------ |
 | _To personalize the portal:_ | _To personalize the portal, follow these steps:_ |
 
 If a procedure only has one step, do not number the step.
 
 | Avoid                                          | Recommended                              |
-| -------------------------------------------------- | ------------------------------------------- |
+| ---------------------------------------------- | ---------------------------------------- |
 | _To save your changes:_<br>1. Select **Save.** | _To save your changes, select **Save.**_ |
 
 Each step in a procedure should have its own numbered step. However, you may consolidate small steps into one step when it makes sense to do so.
 
 | Avoid                                                                 | Recommended                                                        |
-| --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | _To save your changes:_<br>1. Select **File.**<br>2. Select **Save.** | _To save your changes, select **File**, and then select **Save.**_ |
 
 If your procedure contains **optional steps,** clearly indicate to the reader that the step is optional by adding the word _Optional_ followed by a colon (:) at the beginning of the step.
 
 | Avoid                                                                                                                                     | Recommended                                                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. To save your changes, select **File**, and then select **Save.**<br>2. Inform your teammates that the file has been updated (optional) | 1. To save your changes, select **File**, and then select **Save.**<br>2. Optional: Inform your teammates that the file has been updated. |
 
 You should orient your reader by telling them what task they are completing before giving the direction of what to do. Orienting the reader also includes giving them guidance on where in the user interface the step occurs.
 
 | Avoid                                                                                                               | Recommended                                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | _Press **Ctrl+B** to bold the selected word._<br>OR<br>_Select **OK** to save your changes in the Edit dialog box._ | _To bold a word, select it and press **Ctrl+B.**_<br>OR<br>_In the Edit dialog box, to save your changes, select **OK.**_ |
 
 ## Notifications
@@ -660,7 +660,7 @@ All notifications should follow these best practices:
 The following table summarizes common notifications.
 
 | Category           | Sub-category           | Frequency                                                                                                                                                 |
-| --------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Product            | Release notes          | One time                                                                                                                                                  |
 |                    | Announcements          | One time                                                                                                                                                  |
 |                    | Incident               | Minimum of three messages: Notification, Update, Resolution. Additional update messaging may be needed depending on the duration of the outage.           |
