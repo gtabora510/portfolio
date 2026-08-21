@@ -29,26 +29,30 @@ categories:
 <!-- pages/projects.md -->
 <style>
   .projects .card {
-    border-left: 4px solid var(--global-text-color, #222222);
+    border-left: 4px solid #1f2937 !important;
   }
   .projects .card .card-title,
   .projects .card .card-text,
+  .projects .card .card-body,
+  .projects a,
   .post-title,
   .post-description,
   .navbar-nav a.nav-link {
-    color: var(--global-text-color, #222222);
+    color: #1f2937 !important;
   }
 
   @media (prefers-color-scheme: dark) {
     .projects .card {
-      border-left-color: #f8f9fa;
+      border-left-color: #f8f9fa !important;
     }
     .projects .card .card-title,
     .projects .card .card-text,
+    .projects .card .card-body,
+    .projects a,
     .post-title,
     .post-description,
     .navbar-nav a.nav-link {
-      color: #f8f9fa;
+      color: #f8f9fa !important;
     }
   }
 </style>
