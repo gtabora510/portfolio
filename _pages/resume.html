@@ -80,24 +80,25 @@ nav_order: 9
       margin: 0 auto;
       gap: 0;
     }
-    @media (max-width: 860px) {
-      .resume-page .layout {
-        grid-template-columns: 1fr;
-      }
-      .resume-page .sidebar {
-        position: static;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-      }
-    }
-
     /* ---------- SIDEBAR ---------- */
     .resume-page .sidebar {
       padding: 36px 24px;
       border-right: 1px solid var(--line);
       position: sticky;
       top: 0;
+    }
+
+    @media (max-width: 860px) {
+      .resume-page .layout {
+        grid-template-columns: 1fr;
+      }
+      .resume-page .sidebar {
+        position: static;
+        top: auto;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
     }
     .resume-page .name {
       font-family: var(--display);
