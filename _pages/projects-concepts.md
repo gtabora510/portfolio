@@ -9,19 +9,25 @@ horizontal: false
 
 <style>
   .projects .card {
-    border-left: 4px solid #222222;
+    border-left: 4px solid var(--global-text-color, #222222);
   }
-  .projects .card .card-title {
-    color: #222222;
-  }
-  .projects .card .card-text {
-    color: #222222;
-  }
-  .post-description {
-    color: #222222;
-  }
+  .projects .card .card-title,
+  .projects .card .card-text,
+  .post-description,
   .navbar-nav a.nav-link {
-    color: #222222;
+    color: var(--global-text-color, #222222);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .projects .card {
+      border-left-color: #f8f9fa;
+    }
+    .projects .card .card-title,
+    .projects .card .card-text,
+    .post-description,
+    .navbar-nav a.nav-link {
+      color: #f8f9fa;
+    }
   }
 </style>
 <div class="projects">
