@@ -6,22 +6,27 @@
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/portfolio/"> <span class="font-weight-bold">Ginger</span> Y. Tabora </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/portfolio/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/portfolio/projects/">portfolio <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/portfolio/resume/">resume </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">portfolio</h1> <p class="post-description">A sampling of the technical documentation, API references, and content style guidance I've produced over 20-plus years working across developer tools, enterprise platforms, and internal engineering teams.</p> </header> <article> <style>
   .projects .card {
-    border-left: 4px solid #222222;
+    border-left: 4px solid var(--global-text-color, #222222);
   }
-  .projects .card .card-title {
-    color: #222222;
-  }
-  .projects .card .card-text {
-    color: #222222;
-  }
-  .post-title {
-    color: #222222;
-  }
-  .post-description {
-    color: #222222;
-  }
+  .projects .card .card-title,
+  .projects .card .card-text,
+  .post-title,
+  .post-description,
   .navbar-nav a.nav-link {
-    color: #222222;
+    color: var(--global-text-color, #222222);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .projects .card {
+      border-left-color: #f8f9fa;
+    }
+    .projects .card .card-title,
+    .projects .card .card-text,
+    .post-title,
+    .post-description,
+    .navbar-nav a.nav-link {
+      color: #f8f9fa;
+    }
   }
 </style> <div class="projects"> <div class="row row-cols-1 row-cols-md-3"> <div class="col mb-4"> <a href="/portfolio/projects/administration/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Administration</h3> <p class="card-text">Administering developer tools.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/concepts/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Concepts</h3> <p class="card-text">Explaining developer concepts.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/configuration/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Configuration</h3> <p class="card-text">Configuring developer tools.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/developer/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Developer</h3> <p class="card-text">Referencing and integrating developer APIs.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/installation/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Installation</h3> <p class="card-text">Installing developer tools.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/style/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Style</h3> <p class="card-text">Content and writing style guidance.</p> </div> </div> </a> </div> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ginger Y. Tabora. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
   window.alFolio = {
