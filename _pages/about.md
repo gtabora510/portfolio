@@ -23,6 +23,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I love words — how the right ones, put together the right way, can turn a difficult concept into something that just clicks. That love turned into a career: over two decades in Silicon Valley writing for consumer and enterprise products, moving between UX copy for product flows and technical docs for developers, always chasing the same goal of making things consistently accurate, clear, and concise.
+I love words — how the right ones, put together the right way, can turn a difficult concept into something that just clicks. [That love turned into a career]({{ '/cv/' | relative_url }}): over two decades in Silicon Valley writing for consumer and enterprise products, moving between UX copy for product flows and technical docs for developers, always chasing the same goal of making things consistently accurate, clear, and concise.
 
 Most of [my work]({{ '/projects/' | relative_url }}) happens at the intersection of other people's expertise — sitting down with researchers, designers, and engineers and turning what they know into something a user can follow. I've migrated legacy docs into modern single-sourced systems, built style guides that hold up across teams, and lately, folded AI tools into that process to move faster without losing the craft.
