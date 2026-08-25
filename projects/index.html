@@ -18,19 +18,17 @@
     color: #1f2937 !important;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .projects .card {
-      border-left-color: #f8f9fa !important;
-    }
-    .projects .card .card-title,
-    .projects .card .card-text,
-    .projects .card .card-body,
-    .projects a,
-    .post-title,
-    .post-description,
-    .navbar-nav a.nav-link {
-      color: #f8f9fa !important;
-    }
+  html[data-theme="dark"] .projects .card {
+    border-left-color: #f8f9fa !important;
+  }
+  html[data-theme="dark"] .projects .card .card-title,
+  html[data-theme="dark"] .projects .card .card-text,
+  html[data-theme="dark"] .projects .card .card-body,
+  html[data-theme="dark"] .projects a,
+  html[data-theme="dark"] .post-title,
+  html[data-theme="dark"] .post-description,
+  html[data-theme="dark"] .navbar-nav a.nav-link {
+    color: #f8f9fa !important;
   }
 </style> <div class="projects"> <div class="row row-cols-1 row-cols-md-3"> <div class="col mb-4"> <a href="/portfolio/projects/administration/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Administration</h3> <p class="card-text">Administering developer tools.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/concepts/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Concepts</h3> <p class="card-text">Explaining developer concepts.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/configuration/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Configuration</h3> <p class="card-text">Configuring developer tools.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/developer/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Developer</h3> <p class="card-text">Referencing and integrating developer APIs.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/installation/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Installation</h3> <p class="card-text">Installing developer tools.</p> </div> </div> </a> </div> <div class="col mb-4"> <a href="/portfolio/projects/style/" class="text-decoration-none"> <div class="card h-100"> <div class="card-body"> <h3 class="card-title">Style</h3> <p class="card-text">Content and writing style guidance.</p> </div> </div> </a> </div> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ginger Y. Tabora. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
   window.alFolio = {
