@@ -20,18 +20,16 @@ horizontal: false
     color: #1f2937 !important;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .projects .card {
-      border-left-color: #f8f9fa !important;
-    }
-    .projects .card .card-title,
-    .projects .card .card-text,
-    .projects .card .card-body,
-    .projects a,
-    .post-description,
-    .navbar-nav a.nav-link {
-      color: #f8f9fa !important;
-    }
+  html[data-theme="dark"] .projects .card {
+    border-left-color: #f8f9fa !important;
+  }
+  html[data-theme="dark"] .projects .card .card-title,
+  html[data-theme="dark"] .projects .card .card-text,
+  html[data-theme="dark"] .projects .card .card-body,
+  html[data-theme="dark"] .projects a,
+  html[data-theme="dark"] .post-description,
+  html[data-theme="dark"] .navbar-nav a.nav-link {
+    color: #f8f9fa !important;
   }
 </style>
 <div class="projects">
