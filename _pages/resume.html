@@ -43,11 +43,12 @@ nav_order: 9
       font-size: 16px;
     }
 
-    html[data-theme="dark"] .resume-page {
-      color: var(--ink);
-      background: linear-gradient(180deg, #eef1f3, #dfe4e7);
-    }
-    html[data-theme="dark"] .resume-page * {
+    /* The resume intentionally always renders in its own light palette,
+       regardless of the site's dark/light toggle. This unconditional
+       rule protects bare, unclassed elements (e.g. a plain <p>) from
+       the site theme's global tag-based text color, which otherwise
+       wins over inheritance since it targets the element directly. */
+    .resume-page * {
       color: inherit;
     }
 
