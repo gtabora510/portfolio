@@ -6,12 +6,6 @@ importance: 5
 category: installation
 ---
 
-> **Note for Early Access users:** If you were part of Early Access and used `npm` to install Claude Code, run the following command to uninstall the previous version before installing via Dev Shell:
->
-> ```shell
-> npm uninstall -g @anthropic/claude-code
-> ```
-
 ## Overview
 
 This guide provides instructions for installing and configuring Claude Code, an AI-assisted coding tool. It covers prerequisites, installation steps, and configuration details to ensure a smooth setup process.
@@ -69,7 +63,3 @@ Once installed, `cd` into any directory and run `claude` to start, without speci
 - Haiku handles simple tasks, and is fast/efficient
 
 Review the official Claude Code CLI Reference documentation for a list of CLI commands and their functions. For the list of operational commands using `/`, see Built-in commands.
-
-### Complete Quickstart
-
-Refer to the Quickstart Guide to learn how to use Claude Code, and the Claude Code Reference to learn about available features and capabilities. If you encounter any issues during installation or configuration, refer to the Support page for guidance on how to get help.

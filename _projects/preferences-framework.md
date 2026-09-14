@@ -59,14 +59,14 @@ The `dp-preferences-service` manages preferences data in a centralized database.
 | ------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `namespace`         | string | Uniquely identifies a preference configuration.                                                                                    |
 | `version`           | string | Identifies changes in configuration from the user. The version is used in data retrieval. Refer to Data behavior for more details. |
-| `author`            | string | SID of the user who uploads or updates the configuration.                                                                          |
+| `author`            | string | ID of the user who uploads or updates the configuration.                                                                          |
 | `configurationJson` | JSON   | Configuration object for the preference, including default value and metadata.                                                     |
 
 #### Preferences
 
 | Column      | Type   | Description                                                                                   |
 | ----------- | ------ | --------------------------------------------------------------------------------------------- |
-| `sid`       | string | ID of the user to whom the preference belongs.                                                |
+| `id`       | string | ID of the user to whom the preference belongs.                                                |
 | `namespace` | string | Uniquely identifies a preference configuration and links the preference to its configuration. |
 | `name`      | string | Uniquely identifies a preference being altered. Synonymous with preference ID.                |
 | `value`     | string | Value of the preference for the user, matching the required data field in stringified JSON.   |
@@ -104,9 +104,9 @@ A flow describing how the Preference API resolves data for a request:
 
 | Method | Endpoint                                                                                                                       | Description                                                                                                                                                                                          | Response body                                                                              |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| GET    | `/api/v1/preference?sid={sid}&namespace={namespace}&preferenceId={preferenceId}`                                               | Retrieves the value of a specific preference for the current user. If the user has not set a value, the default value from the configuration is returned.                                            | `{ "sid": "string", "namespace": "string", "name": "string", "value": "string" }`          |
-| GET    | `/api/v1/preferences?sid={sid}&namespace={namespace}`                                                                          | Retrieves all preference values for a given namespace for the current user. If a preference has not been set by the user, the default value from the configuration is returned for that preference.  | `[ { "sid": "string", "namespace": "string", "name": "string", "value": "string" }, ... ]` |
-| POST   | `/api/v1/preference/bulkSids?namespace={namespace}`<br>Body: `{ "sids": ["string"], "namespace": "string", "name": "string" }` | Retrieves all preference values for a given namespace for the list of users. If a preference has not been set by the user, the default value from the configuration is returned for that preference. | `[ { "sid": "string", "namespace": "string", "name": "string", "value": "string" }, ... ]` |
+| GET    | `/api/v1/preference?id={id}&namespace={namespace}&preferenceId={preferenceId}`                                               | Retrieves the value of a specific preference for the current user. If the user has not set a value, the default value from the configuration is returned.                                            | `{ "id": "string", "namespace": "string", "name": "string", "value": "string" }`          |
+| GET    | `/api/v1/preferences?id={id}&namespace={namespace}`                                                                          | Retrieves all preference values for a given namespace for the current user. If a preference has not been set by the user, the default value from the configuration is returned for that preference.  | `[ { "id": "string", "namespace": "string", "name": "string", "value": "string" }, ... ]` |
+| POST   | `/api/v1/preference/bulkids?namespace={namespace}`<br>Body: `{ "ids": ["string"], "namespace": "string", "name": "string" }` | Retrieves all preference values for a given namespace for the list of users. If a preference has not been set by the user, the default value from the configuration is returned for that preference. | `[ { "id": "string", "namespace": "string", "name": "string", "value": "string" }, ... ]` |
 
 #### Preferences Admin
 
@@ -536,7 +536,7 @@ Go to the Swagger for DP Preferences Service: DP Platform
     }
   ],
   "route": "/preferences/icecream",
-  "sid": "111111",
+  "id": "111111",
   "supportEmail": "dp_sparc@acme.com",
   "supportQueue": "dp_sparc@acme.com",
   "type": "FEDERATED",
@@ -556,7 +556,7 @@ Go to the Swagger for DP Preferences Service: DP Platform
 | `id`             | `id`                             | Unique identifier for the menu node. Use the convention `preferences-[namespace]`, for example `preferences-icecream`                                                                                                        |
 | `name`           | `instances.navigationItems.name` | The display name in the side bar menu.                                                                                                                                                                                       |
 | `route`          | `route`                          | The URL used to access the preference and render your config. Use `/preferences/[namespace]` and match the namespace in your configuration, for example `preference/icecream`.                                               |
-| `sid`            | `sid`                            | Your team's system ID.                                                                                                                                                                                                       |
+| `id`            | `id`                            | Your team's system ID.                                                                                                                                                                                                       |
 | `supportEmail`   | `supportEmail`                   | Contact email for your team.                                                                                                                                                                                                 |
 | `remoteEntryUrl` | `loading.remoteEntryUrl`         | Endpoint used by the module that processes the UI components. Adjust only the environment part, for example: `https://dp-preferences-ui.devplatform.prod.aws.acme.net/remoteEntry.js`, to `dev`, `uat`, or `prod` as needed. |
 
@@ -573,9 +573,9 @@ Three endpoints are available for retrieving preferences data, depending on your
 
 | Endpoint                                                                                                                            | Description                                                                                                                                                                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GET `/api/v1/preference?sid={sid}&namespace={namespace}&preferenceId={preferenceId}`                                                | Retrieve the value of a specific preference for the current user. If the user has not set a value, returns the default value from the configuration.                                                     |
-| GET `/api/v1/preferences?sid={sid}&namespace={namespace}`                                                                           | Retrieve all preference values for a given namespace for the current user. If a preference has not been set by the user, the default value from the configuration will be returned for that preference.  |
-| POST `/api/v1/preference/bulkSids?namespace={namespace}`<br>Body: `{ "sids": ["string"], "namespace": "string", "name": "string" }` | Retrieve all preference values for a given namespace for the list of users. If a preference has not been set by the user, the default value from the configuration will be returned for that preference. |
+| GET `/api/v1/preference?id={id}&namespace={namespace}&preferenceId={preferenceId}`                                                | Retrieve the value of a specific preference for the current user. If the user has not set a value, returns the default value from the configuration.                                                     |
+| GET `/api/v1/preferences?id={id}&namespace={namespace}`                                                                           | Retrieve all preference values for a given namespace for the current user. If a preference has not been set by the user, the default value from the configuration will be returned for that preference.  |
+| POST `/api/v1/preference/bulkids?namespace={namespace}`<br>Body: `{ "ids": ["string"], "namespace": "string", "name": "string" }` | Retrieve all preference values for a given namespace for the list of users. If a preference has not been set by the user, the default value from the configuration will be returned for that preference. |
 
 ### Test Your Preferences
 

@@ -8,7 +8,7 @@ category: administration
 
 ## Launch the Onboard Me Wizard
 
-**Onboard me** allows you to initiate access requests to add yourself to SDLC Projects by assigning access profiles.
+**Onboard me** allows you to initiate access requests to add yourself to SDLC projects by assigning access profiles.
 
 Before using Onboard me, verify which projects, access profiles, and software profile suites you will need.
 
@@ -20,25 +20,25 @@ Before using Onboard me, verify which projects, access profiles, and software pr
 
 Under **Projects**, select one of the following:
 
-- **Clone existing user's Projects**: Clone projects from a group member who reports to your manager.
-- **Select from list of Projects**: You can search for and join Projects across the firm. You can filter through Project name or SID.
+- **Clone existing user's projects**: Clone projects from a group member who reports to your manager.
+- **Select from list of projects**: You can search for and join projects and filter through project name or ID.
 
 ### Clone Existing User's Projects
 
-> **Note:** Cloning an existing user's Project(s) also clones the user's access profiles associated with the Project(s).
+> **Note:** Cloning an existing user's project(s) also clones the user's access profiles associated with the project(s).
 
-1. Enter the user's name/SID or select the user from the dropdown. Only group members reporting to your manager are displayed. You can view all the groups to which the user belongs.
-2. Select the Project(s) you want to clone. If you select a Project(s) outside your Line of Business (LOB), a warning message displays.
+1. Enter the user's name or select the user from the dropdown. Only group members reporting to your manager are displayed. You can view all the groups to which the user belongs.
+2. Select the project(s) you want to clone. 
 3. Click **Next**.
 
 ### Select from List of Projects
 
-1. Select the Project(s) you want to add. If you select a Project(s) outside your Line of Business, a warning message displays.
+1. Select the project(s) you want to add. 
 2. Click **Next**.
 
 ## Assign Access Profiles
 
-1. Select which access profiles you want for the selected Project(s). You can filter the access profiles displayed by profile name, system profiles, custom profiles, or all. Click on the information icon to view access profile details.
+1. Select which access profiles you want for the selected project(s). You can filter the access profiles displayed by profile name, system profiles, custom profiles, or all. Click on the information icon to view access profile details.
 2. Click **Next**.
 
 ## Assign Software Profiles
@@ -62,7 +62,7 @@ Software tools within selected profiles are automatically installed during the t
 ## Review and Submit Requests
 
 1. Validate the information selected in the previous steps.
-2. If you need to change the Project or access profiles, click **Edit**.
+2. If you need to change the project or access profiles, click **Edit**.
 3. After validating the information, click **Submit**.
 
 ## Track Request Status
